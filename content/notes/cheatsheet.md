@@ -98,19 +98,19 @@ This is my personal safe for arsenals. Feel free to refer and use at anytime. Yo
 # ACLs possible abuse
 ACL/ACE | Object | Permission | Abuse | ScreenShot
 --- | --- | --- | --- | ---
-**GenericAll** | User  | Full rights | [Force change user's password](#force-change-user-password), [Targeted Kerberoast](#targeted-kerberoast), Shadow Credentials | ![](./images/ad/GenericAll_user.PNG)
-**GenericAll** | Group  | Full rights | [Self add to group](#add-users-to-group) | ![](./src/images/GenericAll_Group.PNG)
-**GenericAll** | Computer  | Full rights | [RBCD](#resource-based-contrained-delegation) | ![](./images/ad/GenericAll_Computer.PNG)
-**GenericWrite</br>WriteProperty** | User | Write/update object's attributes | [Targeted Kerberoast](#targeted-kerberoast), [Overwrite Logon Script](#overwrite-logon-script) | ![](./images/ad/GenericWrite.PNG)
-**GenericWrite** | Group | ability to self add to group | [Self add to group](#add-users-to-group) | ![](./images/ad/GenericWrite_Group.PNG)
+**GenericAll** | User  | Full rights | [Force change user's password](#force-change-user-password), [Targeted Kerberoast](#targeted-kerberoast), Shadow Credentials | ![[GenericAll_user.PNG]]
+**GenericAll** | Group  | Full rights | [Self add to group](#add-users-to-group) | [[GenericAll_Group.PNG]]
+**GenericAll** | Computer  | Full rights | [RBCD](#resource-based-contrained-delegation) | [[GenericAll_Computer.PNG]]
+**GenericWrite</br>WriteProperty** | User | Write/update object's attributes | [Targeted Kerberoast](#targeted-kerberoast), [Overwrite Logon Script](#overwrite-logon-script) | ![[GenericWrite.PNG]]
+**GenericWrite** | Group | ability to self add to group | [Self add to group](#add-users-to-group) | ![[GenericWrite_Group.PNG]]
 **GenericWrite</br>WriteProperty** | Computer | Write/update object's attributes | [RBCD](#resource-based-constrained-delegation) |
 **GenericWrite</br>AllExtendedWrite</br>GenericAll</br>WriteOwner</br>WriteProperty** | GPO | Write object's properties | [Add self to local admin](#gpo-abuse-with-powerview) |
 **WriteDACL** | Domain | modify object's ACE (full control) | [Give owned users DCsync Privilege](#add-dcsync-to-object) |
 **WriteOwner** | User  | change owner/password | [Change user's password with credential](#change-password-with-credential) |
 **Self-Membership/Self** | Group | ability to add ourself to the group | [Self add to group](#add-users-to-group) |
-**ExtendedRights** | User  | change user's password | [Force change user's password](#force-change-user-password) | ![](./images/ad/AllExtendedRights.PNG)
+**ExtendedRights** | User  | change user's password | [Force change user's password](#force-change-user-password) | ![[AllExtendedRights.PNG]]
 **ExtendedRights** | Group  | Read LAPS Password | [Read LAPS Password](#read-laps-local-administrator-password) |
-**User-Force-Change-Password** | User | change user's password | [Force change user's password](#force-change-user-password) | ![](./images/ad/Force-Change-User-Password.PNG)
+**User-Force-Change-Password** | User | change user's password | [Force change user's password](#force-change-user-password) | ![[Force-Change-User-Password.PNG]]
 
 # LDAP Filters
 | PowerView                            | Description                            | LDAP Filter                                                                                  |
