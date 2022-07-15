@@ -1,3 +1,7 @@
+---
+title: 📝 AD CheatSheet
+tags: #cheatsheet
+---
 ## Reverse Shells
 _Credits: These reverse shells examples are reffered to [EzpzShell](https://github.com/H0j3n/EzpzShell) by [@h0j3n](https://twitter.com/h0j3n)_
 ### php reverse shell
