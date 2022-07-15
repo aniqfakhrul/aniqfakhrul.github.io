@@ -1,6 +1,8 @@
 ---
-title: 🪴 Aniq Fakhrul
+title: $whoami
 ---
+
+I'm Aniq Fakhrul or mostly known as @ch4rm on the internet. 
 
 Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
 

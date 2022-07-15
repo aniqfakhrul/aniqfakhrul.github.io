@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6, ol, ul, thead {
 }
 
 p, ul, text {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: var(--gray);
   fill: var(--gray);
   font-weight: revert;
@@ -275,7 +275,7 @@ html {
 body {
   margin: 0;
   height: 100vh;
-  width: 100vw;
+  width: 200vw;
   //overflow-x: hidden;
   max-width: 100%;
   box-sizing: border-box;
