@@ -11,7 +11,7 @@ This is my personal safe for arsenals. Feel free to refer and use at anytime. Yo
 ## ACLs possible abuse
 ACL/ACE | Object | Permission | Abuse | ScreenShot
 --- | --- | --- | --- | ---
-**GenericAll** | User  | Full rights | [Force change user's password](#force-change-user-password), [Targeted Kerberoast](#targeted-kerberoast), Shadow Credentials | ![[GenericAll_user.PNG]]
+**GenericAll** | User  | Full rights | [Force change user's password](#force-change-user-password), [Targeted Kerberoast](#targeted-kerberoast), Shadow Credentials | ![Generic_AllUsers](/notes/images/GenericAll_user.png)
 **GenericAll** | Group  | Full rights | [Self add to group](#add-users-to-group) | [[GenericAll_Group.PNG]]
 **GenericAll** | Computer  | Full rights | [RBCD](#resource-based-contrained-delegation) | [[GenericAll_Computer.PNG]]
 **GenericWrite</br>WriteProperty** | User | Write/update object's attributes | [Targeted Kerberoast](#targeted-kerberoast), [Overwrite Logon Script](#overwrite-logon-script) | ![[GenericWrite.PNG]]
