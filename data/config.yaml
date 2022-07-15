@@ -1,6 +1,6 @@
 name: Aniq Fakhrul
 enableToc: true
-openToc: false
+openToc: true
 enableLinkPreview: true
 enableLatex: true
 enableCodeBlockTitle: true
