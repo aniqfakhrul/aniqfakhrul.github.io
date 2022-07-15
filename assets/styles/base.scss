@@ -275,7 +275,7 @@ html {
 body {
   margin: 0;
   height: 100vh;
-  width: 200vw;
+  width: 100vw;
   //overflow-x: hidden;
   max-width: 100%;
   box-sizing: border-box;
@@ -306,7 +306,7 @@ hr {
 }
 
 .singlePage {
-  padding: 4em 30vw;
+  padding: 10em 30vw;
 
   @media all and (max-width: 1200px) {
     padding: 25px 5vw;
