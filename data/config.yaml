@@ -10,7 +10,7 @@ enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: false
 enableGitHubEdit: false
-GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
+GitHubLink: https://github.com/aniqfakhrul/aniqfakhrul.github.io/tree/hugo/content
 description:
   Host your second brain and digital garden for free. Quartz features extremely fast full-text search,
   Wikilink support, backlinks, local graph, tags, and link previews.
@@ -18,6 +18,6 @@ page_title:
   "🤟 ch4rm"
 links:
   - link_name: Twitter
-    link: https://twitter.com/_jzhao
+    link: https://twitter.com/aniqfakhrul
   - link_name: Github
-    link: https://github.com/jackyzha0
+    link: https://github.com/aniqfakhrul

