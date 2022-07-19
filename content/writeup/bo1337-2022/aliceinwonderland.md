@@ -50,6 +50,7 @@ The interesting file found is the robots.txt file which contains a few list of d
 > Check your URL. It's long enough to get into my rabbit hole?
 
 This got me thingking, maybe its a recursing url that could be very long as I remembered doing a challenge named Alice in Wonderland from Tryhackme also use the same tricks. Here is one of the [writeups](https://musyokaian.medium.com/wonderland-tryhackme-walkthrough-4ae729c62423) i found on the web. Lets do a recursive search with the random numbers and letters from robots.txt. We could achieve nicely formatted recursion search with `dirb` built-in features. Below is the final whole directory that we received.
-![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719104849866.png]]
+![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719105401287.png]]
 Striping the slashes in [CyberChef](https://gchq.github.io/CyberChef/#recipe=Find_/_Replace(%7B'option':'Regex','string':'/'%7D,'',true,false,true,false)From_Hex('Auto')&input=NzkvNmYvNzUvNzIvMjAvNjYvNmMvNjEvNjcvMjAvNjkvNzMvM2EvMjAvNzcvNjUvNmMvNjMvNmYvNmQvNjUvNzQvNmYvNzIvNjEvNjIvNjIvNjkvNzQvNjgvNmYvNmMvNjUv) and convert from hex to ascii and we received the flag
-![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719105146758.png]]
+![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719105347568.png]]
+
