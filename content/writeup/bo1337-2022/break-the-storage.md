@@ -5,6 +5,9 @@ tags:
 - writeups
 - web
 ---
+| Name              | Description                                   |
+| ----------------- | --------------------------------------------- |
+| Break The Storage | **UNBattleOf1337**, **PwordBattleOf1337**|
 This is a web challenge that shows the impact of a hard-coded credential which can be used by attackers to login as authenticated user on the web page. So lets begin, the page presents with a login panel which includes username and password field. Upon entering invalid password, I was prompted that I have nth number of left attempt. Here is the response once we entered an invalid credential. 
 ![[writeup/bo1337-2022/assets/break-the-storage/Pasted image 20220719081735.png]]
 This got me thinking, how does the password got validated without having to redirect to any page/endpoint upon logging in. Its only getting the XHR request which is embedded in client-side javascript. This can be shown in the network tab

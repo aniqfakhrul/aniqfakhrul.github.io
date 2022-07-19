@@ -5,6 +5,9 @@ tags:
 - writeups
 - web
 ---
+| Name | Description |
+| ---- | ----------- |
+| AliceInWonderland     |     Welcome to Rabbit Spice Sir and Madam Please view or pricing and do contact us if you have any inquires        |
 This is a web challenge that reflects the name of the challenge because it is full of rabbit holes. You can found multiple vulnerabilities in this web portal that literally leads you to nothingness. Heres the break down of what kind of vulnerabilities that I found throughout the recon process
 * SQL Injection
 * Possible Path Traversal (not working)
