@@ -8,6 +8,7 @@ tags:
 | Name           | Description                                                          |
 | -------------- | -------------------------------------------------------------------- |
 | Cat-Dalmantion | find the flag in side the cat... dang i can be a poet... wink* wink* |
+
 This is a web challenge that shows an endpoint or file that accept both GET and POST request and shows a different response. Lets begin, we retrieve this page upon accessing the given url.
 ![image-20220719090551057](assets/cat-dalmantion/image-20220719090551057.png)
 We have two options to either chose a *Black Cat* or a *White Cat*. This might be one of the tricky question but lets inspect the source. 

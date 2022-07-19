@@ -8,6 +8,8 @@ tags:
 | Name       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Streamline | We've been investigating Mr. Ridzuan lately, we can feel he's doing some illegal activities. How in the world he can use Lamborghini? He maybe a drug dealer. We successfully captured the packet file of his router. We need your help to crack the wifi password. What we know is he just uses his pet name as the wifi password inluding one symbol that we don't know, and his 4-digit car plate number. Can you get his wifi password? |
+
+## Introduction
 For this challenge, we have given an image file named _LamboRidzuan.jpg_ . Below is the image view snippet.
 ![[writeup/bo1337-2022/assets/streamline/streamline-20220719115950418.png]]
 ## Stego

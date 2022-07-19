@@ -1,5 +1,5 @@
 ---
-title: AliceInWonderland
+title: 🐇 AliceInWonderland
 tags:
 - ctf
 - writeups
@@ -8,9 +8,10 @@ tags:
 | Name | Description |
 | ---- | ----------- |
 | AliceInWonderland     |     Welcome to Rabbit Spice Sir and Madam Please view or pricing and do contact us if you have any inquires        |
+
 This is a web challenge that reflects the name of the challenge because it is full of rabbit holes. You can found multiple vulnerabilities in this web portal that literally leads you to nothingness. Heres the break down of what kind of vulnerabilities that I found throughout the recon process
 * SQL Injection
-* Possible Path Traversal (not working)
+* Possible Path Traversal (not exploitable)
 
 ### Path Traversal
 Lets walk you through the process, Note that below attack is not working but the errors definitely shows in the output. I retrieved this page upon accesing the web portal.
