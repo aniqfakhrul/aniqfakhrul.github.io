@@ -16,6 +16,7 @@ This is a web challenge that reflects the name of the challenge because it is fu
 ### Path Traversal
 Lets walk you through the process, Note that below attack is not working but the errors definitely shows in the output. I retrieved this page upon accesing the web portal.
 ![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719092929916.png]]
+
 Clicking on the links on the page (Pricing, Features, Contract). We can see the pages are requested directly from url using GET request. 
 ![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719093404875.png]]
 Directory bruteforce shows that we have another directory called /pages which is the abosolute path to the pricing page.

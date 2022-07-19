@@ -12,6 +12,7 @@ tags:
 ## Introduction
 This challenge is quite straight forward since I have encountered this challenge previously. The file given is called _zodiac.PNG_ which might refere to **zodiac killer** cipher. Detailed explanation of a Zodiac Killer history can be read [here](https://www.britannica.com/biography/Zodiac-killer). Here is the image given to us.
 ![[writeup/bo1337-2022/assets/sheng-xiao/zodiac.png]]
+
 Heres is the translated portion from the text except the bottom line.
 ```
 HAI MY NAME IS LEE IF YOU CAN
