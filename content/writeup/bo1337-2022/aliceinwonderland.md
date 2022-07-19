@@ -58,3 +58,7 @@ This got me thingking, maybe its a recursing url that could be very long as I re
 Striping the slashes in [CyberChef](https://gchq.github.io/CyberChef/#recipe=Find_/_Replace(%7B'option':'Regex','string':'/'%7D,'',true,false,true,false)From_Hex('Auto')&input=NzkvNmYvNzUvNzIvMjAvNjYvNmMvNjEvNjcvMjAvNjkvNzMvM2EvMjAvNzcvNjUvNmMvNjMvNmYvNmQvNjUvNzQvNmYvNzIvNjEvNjIvNjIvNjkvNzQvNjgvNmYvNmMvNjUv) and convert from hex to ascii and we received the flag
 ![[writeup/bo1337-2022/assets/aliceinwonderland/aliceinwonderland-20220719105347568.png]]
 
+## Reference
+- https://gchq.github.io/CyberChef/
+- https://portswigger.net/burp/
+- https://github.com/sqlmapproject/sqlmap

@@ -9,8 +9,10 @@ tags:
 | ------------ | --------------------------------------------------------------------------------------------------------- |
 | Semerah Padi | Mat Kilau inspected our logs and found someone downloading a file from a machine within the same network. | 
 
+## Introduction
 Here comes the networking challenge, we were given a *pcap* file named *flaghere.pcap* and lets try inspect the traffic with a traffic analyser tool called [Wireshark](https://www.wireshark.org). From the pcap file, I can see that there are not many traffic available which made my scope smaller and easier. From the list of traffics, there is only one HTTP request made with an endpoint /Flag. 
 ![[writeup/bo1337-2022/assets/semerah-padi/semerah-padi-20220719113137271.png]]
+## Finding Needle in a Haystack
 Lets try to view the packet in details by right-clicking on the packet and click on `Follow > HTTP Stream` and you should be presented with a human readable strings. From the parsed output, we can see the request made with a red highlight and response with a blug highlight. 
 ![[writeup/bo1337-2022/assets/semerah-padi/semerah-padi-20220719113349885.png]]
 I went through the huge text. Like literally the whole text :'). Luckily, I saw a URL look alike string as shown in the following screenshot. This looks like a scrambled characters and we might need to reconstruct the characters to form a valid url.

@@ -22,3 +22,6 @@ YOU CAN FIND THE ANSWER
 ## Solving The Cipher
 Googling gives us multiple decoders for zodiac killer cipher but the one I normally used is this [site](http://zodiackillerciphers.com/typewriter/).
 ![[writeup/bo1337-2022/assets/sheng-xiao/sheng-xiao-20220719112649957.png]]
+
+## Reference
+- http://zodiackillerciphers.com/typewriter/

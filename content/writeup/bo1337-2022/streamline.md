@@ -13,7 +13,7 @@ tags:
 For this challenge, we have given an image file named _LamboRidzuan.jpg_ . Below is the image view snippet.
 ![[writeup/bo1337-2022/assets/streamline/streamline-20220719115950418.png]]
 ## Stego
-Herm... what is the cat doing on top of a blue Lambo? Lets save it for later. First approach when I retrieve a file is to try extract any hidden file with `steghide` command and provide a null password. Luckily, it turns out to be a correct approach, here we have another file called _handshake.cap_
+Herm... what is the cat doing on top of a blue Lambo? Lets save it for later. First approach when I retrieve a file is to try extract any hidden file with `steghide` command and provide a null password. Luckily, it turns out to be a correct approach, here we have another file called handshake.cap
 ![[writeup/bo1337-2022/assets/streamline/streamline-20220719120204083.png]]
 Lets try to analyze it with [Wireshark](https://www.wireshark.org). 
 ![[writeup/bo1337-2022/assets/streamline/streamline-20220719120304265.png]]
