@@ -2,7 +2,18 @@
 title: $whoami
 ---
 
-I'm Aniq Fakhrul or mostly known as @ch4rm on the internet. 
+I'm Aniq Fakhrul or mostly known as @ch4rm on the internet. I love Active Directory and mostly do tools dev during my burnout time. Feel free to checkout my tools on my github.
+
+## Cheatsheets and Notes
+[[notes]]
+
+## Writeups
+[[writeup]]
+
+### Lets Connect
+👀 ch4rm#4940
+🐦 twitter.com/aniqfakhrul
+📁 github.com/aniqfakhrul
 
 Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
 
