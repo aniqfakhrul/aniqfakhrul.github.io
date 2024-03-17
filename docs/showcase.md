@@ -4,7 +4,7 @@ title: "Quartz Showcase"
 
 Want to see what Quartz can do? Here are some cool community gardens:
 
-- [Quartz Documentation (this site!)](https://aniqfakhrul.github.io/)
+- [Quartz Documentation (this site!)](https://quartz.jzhao.xyz/)
 - [Jacky Zhao's Garden](https://jzhao.xyz/)
 - [Socratica Toolbox](https://toolbox.socratica.info/)
 - [oldwinter の数字花园](https://garden.oldwinter.top/)
