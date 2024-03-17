@@ -1,0 +1,6 @@
+[submodule "contents"]
+	path = contents
+	url = https://github.com/aniqfakhrul/archives.git
+[submodule "content"]
+	path = content
+	url = https://github.com/aniqfakhrul/archives.git
