@@ -1,0 +1,120 @@
+---
+import Shell from '../layouts/Shell.astro';
+import FolderListing from '../components/FolderListing.astro';
+import { notes, folderPages, formatDate, config } from '../lib/data';
+import { displayName, folderPathUrl, type FolderPage } from '../lib/navigation';
+import type { Note } from '../lib/vault';
+export function getStaticPaths() {
+  return [
+    ...notes.map((note) => ({
+      params: { slug: note.slug || undefined },
+      props: { note },
+    })),
+    ...folderPages.map((folder) => ({
+      params: { slug: folder.slug || undefined },
+      props: { folder },
+    })),
+  ];
+}
+const { note, folder } = Astro.props as { note?: Note; folder?: FolderPage };
+const folders = note?.file.split('/').slice(0, -1) ?? [];
+const minimumHeading = Math.min(...(note?.headings ?? []).map((h) => h.depth));
+const source =
+  note &&
+  `${config.source.repository}/blob/${encodeURIComponent(config.source.branch)}/${note.file.split('/').map(encodeURIComponent).join('/')}`;
+---
+
+<Shell
+  title={note?.title ?? folder!.title}
+  description={note?.description}
+  current={note?.file ?? folder!.path + '/'}
+  kind={note && note.url !== '/' ? 'article' : 'website'}
+>
+  {
+    note ? (
+      <>
+        {note.url !== '/' && (
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            {folders.map((name, i) => (
+              <>
+                <span aria-hidden="true">/</span>
+                <a href={folderPathUrl(folders.slice(0, i + 1).join('/'))}>
+                  {name}
+                </a>
+              </>
+            ))}
+            <span aria-hidden="true">/</span>
+            <span>{displayName(note.file.split('/').at(-1)!)}</span>
+          </nav>
+        )}
+        <div class="article-layout">
+          <article class="article" data-pagefind-body>
+            <header class="article-header">
+              <h1 data-pagefind-meta="title">{note.title}</h1>
+              <div class="article-meta" data-pagefind-ignore>
+                {note.date && (
+                  <>
+                    <span>
+                      Updated{' '}
+                      <time datetime={note.date}>{formatDate(note.date)}</time>
+                    </span>
+                    <span aria-hidden="true">·</span>
+                  </>
+                )}
+                <span>{note.minutes} min read</span>
+                <span aria-hidden="true">·</span>
+                <a href={source}>View Markdown</a>
+              </div>
+              {note.tags.length > 0 && (
+                <p class="tags">
+                  {note.tags.map((tag) => (
+                    <a href={`?q=${encodeURIComponent(tag)}`}>#{tag}</a>
+                  ))}
+                </p>
+              )}
+            </header>
+            <div class="prose" set:html={note.html} />
+            {note.backlinks.length > 0 && (
+              <section class="backlinks" data-pagefind-ignore>
+                <h2>Linked from</h2>
+                <ul>
+                  {note.backlinks.map((link) => (
+                    <li>
+                      <a href={link.url}>{link.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </article>
+          {note.toc && note.headings.length > 0 && (
+            <aside class="toc" data-pagefind-ignore>
+              <h2>On this page</h2>
+              <nav aria-label="Table of contents">
+                <ol>
+                  {note.headings.map((heading) => (
+                    <li
+                      style={`--indent: ${Math.max(0, heading.depth - minimumHeading)}`}
+                    >
+                      <a href={`#${heading.id}`}>{heading.text}</a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+              <a class="toc-top" href="#top">
+                Back to top ↑
+              </a>
+            </aside>
+          )}
+        </div>
+      </>
+    ) : (
+      folder && <FolderListing folder={folder} />
+    )
+  }
+</Shell>
+
+<script>
+  import '../scripts/toc';
+</script>

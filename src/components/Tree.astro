@@ -1,0 +1,64 @@
+---
+import type { TreeNode } from '../lib/vault';
+import { config } from '../lib/config';
+import {
+  isIndex,
+  displayName,
+  folderIndex,
+  folderPathUrl,
+} from '../lib/navigation';
+interface Props {
+  nodes: TreeNode[];
+  current?: string;
+  depth?: number;
+}
+const { nodes, current = '', depth = 0 } = Astro.props;
+const visible = nodes.filter((node) => !isIndex(node.name));
+---
+
+<ul class="file-tree" class:list={{ 'tree-root': depth === 0 }}>
+  {
+    visible.map((node) => (
+      <li>
+        {node.children ? (
+          <details
+            data-folder={node.path}
+            open={config.content.defaultExpandedFolders.includes(node.path)}
+          >
+            <summary title={node.path}>
+              <a
+                class="folder-link"
+                data-folder-page
+                href={folderIndex(node)?.url ?? folderPathUrl(node.path)}
+                aria-current={
+                  folderIndex(node)?.file === current ||
+                  current === node.path + '/'
+                    ? 'page'
+                    : undefined
+                }
+              >
+                <span class="folder-icon" aria-hidden="true" />
+                <span>{node.name}</span>
+              </a>
+            </summary>
+            <Astro.self
+              nodes={node.children}
+              current={current}
+              depth={depth + 1}
+            />
+          </details>
+        ) : (
+          <a
+            class="file-link"
+            href={node.note!.url}
+            aria-current={node.path === current ? 'page' : undefined}
+            title={node.note!.title}
+          >
+            <span class="file-icon" aria-hidden="true" />
+            <span>{displayName(node.name)}</span>
+          </a>
+        )}
+      </li>
+    ))
+  }
+</ul>

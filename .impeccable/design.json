@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-06T20:35:14.487Z",
+  "title": "Design System: Nix",
+  "extensions": {
+    "colorMeta": {
+      "brand": {
+        "role": "primary",
+        "displayName": "Wordmark Blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.0971 251.25)",
+          "oklch(26.43% 0.0971 251.25)",
+          "oklch(37.86% 0.0971 251.25)",
+          "oklch(49.29% 0.0971 251.25)",
+          "oklch(60.71% 0.0971 251.25)",
+          "oklch(72.14% 0.0971 251.25)",
+          "oklch(83.57% 0.0971 251.25)",
+          "oklch(95.00% 0.0971 251.25)"
+        ]
+      },
+      "brand-stroke": {
+        "role": "primary",
+        "displayName": "Wordmark Stroke",
+        "tonalRamp": [
+          "oklch(15.00% 0.1138 266.40)",
+          "oklch(26.43% 0.1138 266.40)",
+          "oklch(37.86% 0.1138 266.40)",
+          "oklch(49.29% 0.1138 266.40)",
+          "oklch(60.71% 0.1138 266.40)",
+          "oklch(72.14% 0.1138 266.40)",
+          "oklch(83.57% 0.1138 266.40)",
+          "oklch(95.00% 0.1138 266.40)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "White Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 0.00)",
+          "oklch(26.43% 0.0000 0.00)",
+          "oklch(37.86% 0.0000 0.00)",
+          "oklch(49.29% 0.0000 0.00)",
+          "oklch(60.71% 0.0000 0.00)",
+          "oklch(72.14% 0.0000 0.00)",
+          "oklch(83.57% 0.0000 0.00)",
+          "oklch(95.00% 0.0000 0.00)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Reading Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 0.00)",
+          "oklch(26.43% 0.0000 0.00)",
+          "oklch(37.86% 0.0000 0.00)",
+          "oklch(49.29% 0.0000 0.00)",
+          "oklch(60.71% 0.0000 0.00)",
+          "oklch(72.14% 0.0000 0.00)",
+          "oklch(83.57% 0.0000 0.00)",
+          "oklch(95.00% 0.0000 0.00)"
+        ]
+      },
+      "navy": {
+        "role": "primary",
+        "displayName": "Navy",
+        "tonalRamp": [
+          "oklch(15.00% 0.1879 264.05)",
+          "oklch(26.43% 0.1879 264.05)",
+          "oklch(37.86% 0.1879 264.05)",
+          "oklch(49.29% 0.1879 264.05)",
+          "oklch(60.71% 0.1879 264.05)",
+          "oklch(72.14% 0.1879 264.05)",
+          "oklch(83.57% 0.1879 264.05)",
+          "oklch(95.00% 0.1879 264.05)"
+        ]
+      },
+      "link": {
+        "role": "primary",
+        "displayName": "Link Blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.2647 264.05)",
+          "oklch(26.43% 0.2647 264.05)",
+          "oklch(37.86% 0.2647 264.05)",
+          "oklch(49.29% 0.2647 264.05)",
+          "oklch(60.71% 0.2647 264.05)",
+          "oklch(72.14% 0.2647 264.05)",
+          "oklch(83.57% 0.2647 264.05)",
+          "oklch(95.00% 0.2647 264.05)"
+        ]
+      },
+      "visited": {
+        "role": "primary",
+        "displayName": "Visited Purple",
+        "tonalRamp": [
+          "oklch(15.00% 0.1393 300.47)",
+          "oklch(26.43% 0.1393 300.47)",
+          "oklch(37.86% 0.1393 300.47)",
+          "oklch(49.29% 0.1393 300.47)",
+          "oklch(60.71% 0.1393 300.47)",
+          "oklch(72.14% 0.1393 300.47)",
+          "oklch(83.57% 0.1393 300.47)",
+          "oklch(95.00% 0.1393 300.47)"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Pale Sidebar Blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.0236 256.10)",
+          "oklch(26.43% 0.0236 256.10)",
+          "oklch(37.86% 0.0236 256.10)",
+          "oklch(49.29% 0.0236 256.10)",
+          "oklch(60.71% 0.0236 256.10)",
+          "oklch(72.14% 0.0236 256.10)",
+          "oklch(83.57% 0.0236 256.10)",
+          "oklch(95.00% 0.0236 256.10)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Blue Rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.0403 256.60)",
+          "oklch(26.43% 0.0403 256.60)",
+          "oklch(37.86% 0.0403 256.60)",
+          "oklch(49.29% 0.0403 256.60)",
+          "oklch(60.71% 0.0403 256.60)",
+          "oklch(72.14% 0.0403 256.60)",
+          "oklch(83.57% 0.0403 256.60)",
+          "oklch(95.00% 0.0403 256.60)"
+        ]
+      },
+      "subtle": {
+        "role": "neutral",
+        "displayName": "Subtle Blue-White",
+        "tonalRamp": [
+          "oklch(15.00% 0.0074 260.73)",
+          "oklch(26.43% 0.0074 260.73)",
+          "oklch(37.86% 0.0074 260.73)",
+          "oklch(49.29% 0.0074 260.73)",
+          "oklch(60.71% 0.0074 260.73)",
+          "oklch(72.14% 0.0074 260.73)",
+          "oklch(83.57% 0.0074 260.73)",
+          "oklch(95.00% 0.0074 260.73)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "tonalRamp": [
+          "oklch(15.00% 0.0540 260.44)",
+          "oklch(26.43% 0.0540 260.44)",
+          "oklch(37.86% 0.0540 260.44)",
+          "oklch(49.29% 0.0540 260.44)",
+          "oklch(60.71% 0.0540 260.44)",
+          "oklch(72.14% 0.0540 260.44)",
+          "oklch(83.57% 0.0540 260.44)",
+          "oklch(95.00% 0.0540 260.44)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Wordmark",
+        "purpose": "Nix wordmark only; mobile size is defined by the responsive component."
+      },
+      "headline": {
+        "displayName": "Page headline",
+        "purpose": "Article and folder page titles."
+      },
+      "title": {
+        "displayName": "Section title",
+        "purpose": "Second-level headings."
+      },
+      "body": {
+        "displayName": "Reading copy",
+        "purpose": "Source-rendered article prose."
+      },
+      "label": {
+        "displayName": "Interface",
+        "purpose": "Sidebar navigation and controls."
+      },
+      "metadata": {
+        "displayName": "Metadata",
+        "purpose": "Dates, reading time, tags and source links."
+      },
+      "code": {
+        "displayName": "Code block",
+        "purpose": "Monospaced preformatted content; smaller at mobile widths."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "contents-below-article",
+        "value": "1100px"
+      },
+      {
+        "name": "collapsed-navigation",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "wordmark",
+      "description": "Outlined Nix wordmark on the pale-blue masthead.",
+      "html": "<div class=\"ds-wordmark-surface\"><a class=\"ds-wordmark\" href=\"#\" aria-label=\"Nix home\">Nix</a></div>",
+      "css": ".ds-wordmark-surface { background: var(--sky, #dce7f6); padding: 9px 12px 10px; } .ds-wordmark, .ds-wordmark:visited { font: 800 44px/1 var(--ui, Arial, Helvetica, sans-serif); letter-spacing: -0.025em; color: var(--brand, #6698ce); -webkit-text-stroke: 1px var(--brand-stroke, #4b66ab); text-shadow: 1px 1px 0 #f0f6ff; text-decoration: none; white-space: nowrap; } .ds-wordmark:hover { text-decoration: none; } .ds-wordmark:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; } @media (max-width: 760px) { .ds-wordmark { font-size: 38px; } }"
+    },
+    {
+      "name": "Compact utility button",
+      "kind": "button",
+      "refersTo": "compact-button",
+      "description": "Sidebar search pagination and clear actions use this compact button treatment.",
+      "html": "<button class=\"ds-compact-button\" type=\"button\">Clear search</button>",
+      "css": ".ds-compact-button { padding: 4px 6px; border: 1px solid var(--line, #b7c9e2); border-radius: 0; background: var(--subtle, #f2f5fa); color: var(--navy, #000080); font: 11px/1.35 var(--ui, Arial, Helvetica, sans-serif); cursor: pointer; } .ds-compact-button:hover { background: var(--sky, #dce7f6); } .ds-compact-button:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; } .ds-compact-button:disabled { opacity: 0.6; cursor: wait; }"
+    },
+    {
+      "name": "Sidebar search",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "Labeled white search field with an adjacent square magnifier button.",
+      "html": "<div class=\"ds-search\"><label class=\"ds-search-label\" for=\"ds-query\">Search the notebook</label><div class=\"ds-search-control\"><input class=\"ds-search-input\" id=\"ds-query\" type=\"search\" placeholder=\"Find a note…\" required><button class=\"ds-search-submit\" type=\"button\" aria-label=\"Search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"5.5\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"m12 12 5 5\" stroke=\"currentColor\" stroke-width=\"1.5\"></path></svg></button></div></div>",
+      "css": ".ds-search { max-width: 240px; background: var(--sky, #dce7f6); padding: 12px 8px; font: 12px/1.35 var(--ui, Arial, Helvetica, sans-serif); } .ds-search-label { display: block; color: var(--navy, #000080); font-weight: bold; margin-bottom: 5px; } .ds-search-control { display: flex; border: 1px solid var(--line, #b7c9e2); background: var(--paper, #ffffff); } .ds-search-input { min-width: 0; width: 100%; padding: 5px 6px; border: 0; border-radius: 0; font: var(--ui-size, 12px)/1.35 var(--ui, Arial, Helvetica, sans-serif); background: var(--paper, #ffffff); color: var(--ink, #161616); caret-color: var(--link, #0000cc); } .ds-search-input::placeholder { color: var(--muted, #475977); } .ds-search-submit { display: grid; place-items: center; width: 29px; flex: none; border: 0; border-left: 1px solid var(--line, #b7c9e2); border-radius: 0; background: var(--subtle, #f2f5fa); color: var(--navy, #000080); cursor: pointer; } .ds-search-submit:hover { background: var(--sky, #dce7f6); } .ds-search-input:focus-visible, .ds-search-submit:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; } @media (max-width: 760px) { .ds-search-input { padding: 8px; font-size: 16px; } .ds-search-submit { width: 36px; } }"
+    },
+    {
+      "name": "Markdown file navigation",
+      "kind": "nav",
+      "refersTo": "file-navigation",
+      "description": "Native folder disclosure with a linked folder name and current-file styling. Folders start collapsed unless configured in content.defaultExpandedFolders; browsing state is remembered until defaults change. Sample labels and the expanded preview state are illustrative.",
+      "html": "<nav class=\"ds-tree\" aria-label=\"Markdown files\"><details class=\"ds-folder\" open><summary class=\"ds-folder-summary\"><a class=\"ds-folder-link\" href=\"#\"><span class=\"ds-folder-icon\" aria-hidden=\"true\"></span>Folder</a></summary><ul class=\"ds-tree-children\"><li class=\"ds-tree-item\"><a class=\"ds-file-link\" href=\"#\" aria-current=\"page\"><span class=\"ds-file-icon\" aria-hidden=\"true\"></span>Note</a></li></ul></details></nav>",
+      "css": ".ds-tree { max-width: 240px; padding: 12px 8px; background: var(--sky, #dce7f6); font: var(--ui-size, 12px)/1.35 var(--ui, Arial, Helvetica, sans-serif); } .ds-folder-summary { list-style: none; display: flex; align-items: flex-start; gap: 5px; padding: 4px 2px; cursor: pointer; line-height: 1.3; overflow-wrap: anywhere; } .ds-folder-summary::-webkit-details-marker { display: none; } .ds-folder-summary:before { content: \"+\"; flex: none; width: 11px; height: 11px; margin-top: 2px; border: 1px solid #849bbd; background: var(--paper, #ffffff); color: var(--navy, #000080); font: 10px/9px var(--mono, Consolas, monospace); text-align: center; } .ds-folder[open] > .ds-folder-summary:before { content: \"−\"; } .ds-folder-link, .ds-folder-link:visited { display: flex; gap: 5px; flex: 1; min-width: 0; color: var(--navy, #000080); text-decoration: none; } .ds-folder-link:hover { text-decoration: underline; } .ds-folder-icon { display: inline-block; position: relative; flex: none; width: 13px; height: 10px; margin: 3px 1px 0 0; background: #e9cd81; border: 1px solid #9a7935; } .ds-folder-icon:before { content: \"\"; position: absolute; top: -3px; left: -1px; width: 6px; height: 3px; border: 1px solid #9a7935; border-bottom: 0; background: #e9cd81; } .ds-tree-children { list-style: none; margin: 0 0 0 8px; padding: 0 0 0 7px; border-left: 1px dotted #9aaecb; } .ds-tree-item { margin: 0; } .ds-file-link { display: flex; align-items: flex-start; gap: 5px; padding: 4px 2px 4px 18px; color: var(--link, #0000cc); text-decoration: none; line-height: 1.3; overflow-wrap: anywhere; } .ds-file-link:visited { color: var(--visited, #67429a); } .ds-folder-summary:hover, .ds-file-link:hover { background: #c5d6ed; } .ds-file-link[aria-current=\"page\"] { background: #bfd2ed; font-weight: bold; } .ds-file-icon { position: relative; display: inline-block; flex: none; width: 10px; height: 12px; margin: 1px 2px 0 1px; border: 1px solid #7993b7; background: #f8fbff; } .ds-file-icon:after { content: \"\"; position: absolute; left: 2px; right: 2px; top: 3px; height: 1px; background: #a3b4cd; box-shadow: 0 3px #a3b4cd; } .ds-folder-summary:focus-visible, .ds-folder-link:focus-visible, .ds-file-link:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; } @media (max-width: 760px) { .ds-folder-summary, .ds-file-link { min-height: 30px; padding-top: 7px; padding-bottom: 7px; } }"
+    },
+    {
+      "name": "Plain tag links",
+      "kind": "custom",
+      "refersTo": "tag-link",
+      "description": "Source tags render as ordinary hash-prefixed text links without chip containers.",
+      "html": "<p class=\"ds-tags\"><a class=\"ds-tag-link\" href=\"#\">#notes</a><a class=\"ds-tag-link\" href=\"#\">#research</a></p>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 7px 0 0; font: 11px/1.5 var(--ui, Arial, Helvetica, sans-serif); } .ds-tag-link { color: var(--link, #0000cc); text-underline-offset: 2px; } .ds-tag-link:visited { color: var(--visited, #67429a); } .ds-tag-link:hover { text-decoration-thickness: 2px; } .ds-tag-link:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; }"
+    },
+    {
+      "name": "Table of contents",
+      "kind": "nav",
+      "refersTo": "toc-link",
+      "description": "Heading-depth list; application scroll tracking applies the illustrated current-location state.",
+      "html": "<aside class=\"ds-toc\"><h2 class=\"ds-toc-heading\">On this page</h2><nav aria-label=\"Table of contents\"><ol class=\"ds-toc-list\"><li class=\"ds-toc-item\"><a class=\"ds-toc-link\" href=\"#\">Overview</a></li><li class=\"ds-toc-item ds-toc-nested\"><a class=\"ds-toc-link\" href=\"#\" aria-current=\"location\">Current section</a></li></ol></nav><a class=\"ds-toc-link ds-toc-top\" href=\"#\">Back to top ↑</a></aside>",
+      "css": ".ds-toc { max-width: 190px; font: var(--ui-size, 12px)/1.4 var(--ui, Arial, Helvetica, sans-serif); } .ds-toc-heading { color: var(--navy, #000080); font-size: var(--ui-size, 12px); border-bottom: 1px solid var(--line, #b7c9e2); padding-bottom: 6px; margin: 0 0 9px; } .ds-toc-list { list-style: none; margin: 0; padding: 0; } .ds-toc-item { margin-bottom: 6px; overflow-wrap: anywhere; } .ds-toc-nested { padding-left: 8px; } .ds-toc-link { color: var(--muted, #475977); text-decoration: none; text-underline-offset: 2px; } .ds-toc-link:hover { text-decoration: underline; } .ds-toc-link[aria-current=\"location\"] { color: var(--navy, #000080); background: var(--subtle, #f2f5fa); font-weight: bold; text-decoration: underline; } .ds-toc-link:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; } .ds-toc-top { display: block; margin-top: 15px; text-decoration: underline; }"
+    },
+    {
+      "name": "Folder fallback table",
+      "kind": "custom",
+      "refersTo": "folder-table-heading",
+      "description": "Compact descendant file/date table; illustrative content does not create archive entries.",
+      "html": "<table class=\"ds-folder-table\"><thead><tr><th class=\"ds-folder-cell\" scope=\"col\">File</th><th class=\"ds-folder-cell ds-folder-date\" scope=\"col\">Added</th></tr></thead><tbody><tr class=\"ds-folder-row\"><td class=\"ds-folder-cell\"><a class=\"ds-folder-file\" href=\"#\">Folder/Note</a></td><td class=\"ds-folder-cell ds-folder-date\">Undated</td></tr></tbody></table>",
+      "css": ".ds-folder-table { width: 100%; max-width: 900px; table-layout: fixed; border-collapse: collapse; color: var(--ink, #161616); font: var(--article-size, 16px)/1.45 var(--reading, \"Times New Roman\", Times, serif); } .ds-folder-cell { padding: 7px 8px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line, #b7c9e2); overflow-wrap: anywhere; } th.ds-folder-cell { background: var(--sky, #dce7f6); font: bold var(--ui-size, 12px) var(--ui, Arial, Helvetica, sans-serif); } .ds-folder-date { width: 112px; } td.ds-folder-date { font: var(--ui-size, 12px)/1.5 var(--ui, Arial, Helvetica, sans-serif); color: var(--muted, #475977); font-variant-numeric: tabular-nums; } .ds-folder-row:hover { background: var(--subtle, #f2f5fa); } .ds-folder-file { color: var(--link, #0000cc); text-underline-offset: 2px; } .ds-folder-file:visited { color: var(--visited, #67429a); } .ds-folder-file:hover { text-decoration-thickness: 2px; } .ds-folder-file:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; }"
+    },
+    {
+      "name": "Header external links",
+      "kind": "custom",
+      "refersTo": "external-link",
+      "description": "Known icons render as labeled inline SVG; unknown or absent icons use their text label.",
+      "html": "<nav class=\"ds-external-nav\" aria-label=\"External links\"><a class=\"ds-external-link\" href=\"#\" aria-label=\"RSS feed\" title=\"RSS feed\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"5\" cy=\"19\" r=\"1\" fill=\"currentColor\"></circle><path d=\"M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16\"></path></svg></a><a class=\"ds-external-link\" href=\"#\">Text fallback</a></nav>",
+      "css": ".ds-external-nav { display: flex; justify-content: flex-end; gap: 10px; font: var(--ui-size, 12px)/1.45 var(--ui, Arial, Helvetica, sans-serif); } .ds-external-link { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; min-height: 24px; color: var(--link, #0000cc); text-underline-offset: 2px; } .ds-external-link:visited { color: var(--visited, #67429a); } .ds-external-link:hover { text-decoration-thickness: 2px; } .ds-external-link:focus-visible { outline: 2px solid var(--link, #0000cc); outline-offset: 2px; } @media (max-width: 760px) { .ds-external-nav { gap: 7px; font-size: 11px; } .ds-external-link { min-width: 30px; min-height: 30px; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Personal cyber security notebook",
+    "overview": "Nix is a compact, plainspoken reading environment with the early-2000s NirSoft character explicitly selected by the author. A pale-blue navigation area, navy headings, conventional links and a white document canvas establish its identity. Small Arial interface text supports Times New Roman reading copy.\n\nThe actual Markdown hierarchy gives the interface its structure. Visual treatment should make browsing files, reading a note, following a reference and searching feel immediate. Preserve source images and their authored context; the system requires no decorative raster imagery.",
+    "keyCharacteristics": [
+      "Compact document density and familiar browser conventions.",
+      "Pale-blue navigation beside a white reading canvas.",
+      "Serif prose with small sans-serif controls and headings.",
+      "Square, flat controls and visible rules.",
+      "Navigation derived from the published Markdown hierarchy."
+    ],
+    "rules": [
+      {
+        "name": "The Configuration Rule",
+        "body": "Global palette and type settings come from `config.yaml`; templates consume the corresponding custom properties.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** preserve the compact NirSoft-inspired pale-blue, navy and white identity.",
+      "**Do** retain Times New Roman reading copy and Arial interface text.",
+      "**Do** derive navigation and authored pages from the published Markdown hierarchy.",
+      "**Do** keep keyboard focus visible and native reading and disclosure behavior usable.",
+      "**Do** preserve source images and center their captions.",
+      "**Do** use `config.yaml` for global site, content and theme settings."
+    ],
+    "donts": [
+      "**Don't** introduce a separate primary menu, a visible content-root wrapper or invented topic folders.",
+      "**Don't** replace source-authored index pages with a custom marketing homepage.",
+      "**Don't** turn plain tags or document regions into pill controls or floating cards.",
+      "**Don't** replace familiar links with decorative action treatments.",
+      "**Don't** introduce decorative imagery or animation as a new visual identity."
+    ]
+  }
+}

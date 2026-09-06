@@ -1,0 +1,123 @@
+---
+import { notes, formatDate } from '../lib/data';
+import {
+  displayName,
+  isIndex,
+  folderPathUrl,
+  type FolderPage,
+} from '../lib/navigation';
+interface Props {
+  folder: FolderPage;
+}
+const { folder } = Astro.props;
+const parts = folder.path ? folder.path.split('/') : [];
+const entries = folder.files.map((file) =>
+  notes.find((note) => note.file === file)!,
+);
+function entryName(file: string) {
+  const relative = folder.path ? file.slice(folder.path.length + 1) : file;
+  return isIndex(relative.split('/').at(-1)!)
+    ? relative.replace(/_?index\.md$/i, '')
+    : displayName(relative);
+}
+---
+
+{
+  parts.length > 0 && (
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      {parts.map((part, index) => (
+        <>
+          <span aria-hidden="true">/</span>
+          {index < parts.length - 1 ? (
+            <a href={folderPathUrl(parts.slice(0, index + 1).join('/'))}>
+              {part}
+            </a>
+          ) : (
+            <span>{part}</span>
+          )}
+        </>
+      ))}
+    </nav>
+  )
+}
+<section
+  class="folder-listing"
+  aria-labelledby="folder-title"
+  data-pagefind-ignore
+>
+  <header class="article-header">
+    <h1 id="folder-title">{folder.title}</h1>
+    <p>Files in this folder and its subfolders, newest added first.</p>
+  </header>
+  {
+    entries.length ? (
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">File</th>
+            <th scope="col">Added</th>
+          </tr>
+        </thead>
+        <tbody>
+          {entries.map((note) => (
+            <tr>
+              <td>
+                <a href={note.url} title={note.title}>
+                  {entryName(note.file)}
+                </a>
+              </td>
+              <td>
+                {note.added ? (
+                  <time datetime={note.added}>{formatDate(note.added)}</time>
+                ) : (
+                  'Undated'
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    ) : (
+      <p>No published Markdown files in this folder.</p>
+    )
+  }
+</section>
+
+<style>
+  .folder-listing {
+    max-width: 900px;
+  }
+  .article-header p {
+    margin: 8px 0 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  th,
+  td {
+    padding: 7px 8px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+    overflow-wrap: anywhere;
+  }
+  th {
+    background: var(--sky);
+    font: bold var(--ui-size) var(--ui);
+  }
+  th:last-child,
+  td:last-child {
+    width: 112px;
+  }
+  td:last-child {
+    font: var(--ui-size)/1.5 var(--ui);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  tbody tr:hover {
+    background: var(--subtle);
+  }
+</style>

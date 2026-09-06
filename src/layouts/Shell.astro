@@ -1,0 +1,216 @@
+---
+import Tree from '../components/Tree.astro';
+import ExternalLink from '../components/ExternalLink.astro';
+import { tree, notes, site, config } from '../lib/data';
+import '../styles/global.css';
+interface Props {
+  title: string;
+  description?: string;
+  current?: string;
+  kind?: 'website' | 'article';
+}
+const {
+  title,
+  description = site.description,
+  current = '',
+  kind = 'website',
+} = Astro.props;
+const colors = config.theme.colors;
+const themeStyle = {
+  '--brand': colors.brand,
+  '--brand-stroke': colors.brandStroke,
+  '--paper': colors.paper,
+  '--ink': colors.ink,
+  '--navy': colors.navy,
+  '--link': colors.link,
+  '--visited': colors.visited,
+  '--sky': colors.sidebar,
+  '--line': colors.line,
+  '--subtle': colors.subtle,
+  '--muted': colors.muted,
+  '--ui': config.theme.uiFont,
+  '--reading': config.theme.readingFont,
+  '--sidebar-width': `${config.theme.sidebarWidth}px`,
+  '--body-size': `${config.theme.bodySize}px`,
+  '--article-size': `${config.theme.articleSize}px`,
+  '--ui-size': `${config.theme.uiSize}px`,
+  '--heading-size': `${config.theme.headingSize}px`,
+};
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const pageTitle =
+  Astro.url.pathname === '/' ? site.title : `${title} | ${site.title}`;
+---
+
+<!doctype html>
+<html lang={site.language} style={themeStyle}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={kind} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${site.title} RSS feed`}
+      href="/rss.xml"
+    />
+    <meta name="color-scheme" content="light" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead" id="top">
+      <a class="wordmark" href="/" aria-label={`${site.title} home`}
+        >{site.title}</a
+      >
+      <div class="masthead-note">
+        <span>{site.tagline}</span>
+        <nav aria-label="External links">
+          {site.links.map((link) => <ExternalLink link={link} />)}
+        </nav>
+      </div>
+    </header>
+    <div class="site-grid">
+      <aside class="sidebar" data-pagefind-ignore>
+        <details class="navigation" id="navigation" open>
+          <summary class="mobile-nav-toggle"
+            >Browse this site <span class="toggle-label" aria-hidden="true"
+              >Menu</span
+            ></summary
+          >
+          <form
+            id="sidebar-search"
+            class="sidebar-search"
+            method="get"
+            role="search"
+          >
+            <label for="sidebar-query">Search the notebook</label><div
+              class="search-control"
+            >
+              <input
+                id="sidebar-query"
+                type="search"
+                name="q"
+                placeholder="Find a note…"
+                required
+              /><button type="submit" aria-label="Search"
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  aria-hidden="true"
+                  ><circle
+                    cx="8"
+                    cy="8"
+                    r="5.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"></circle><path
+                    d="m12 12 5 5"
+                    stroke="currentColor"
+                    stroke-width="1.5"></path></svg
+                ></button
+              >
+            </div>
+          </form>
+          <div id="sidebar-results" hidden>
+            <p id="search-status" role="status" aria-live="polite"></p>
+            <ol id="search-results"></ol>
+            <button id="load-more" type="button" hidden>More results</button>
+            <button id="clear-search" type="button">Clear search</button>
+          </div>
+          <nav
+            aria-label="Notes"
+            data-folder-state-key={`notebook-folders:${config.content.directory}:${JSON.stringify(config.content.defaultExpandedFolders)}`}
+          >
+            <Tree nodes={tree} current={current} />
+          </nav>
+          <div class="sidebar-footer">
+            <p>{notes.length} published notes</p><a
+              href={config.source.repository}>Browse the source</a
+            ><p class="small-print">
+              {site.description}
+            </p>
+          </div>
+        </details>
+      </aside>
+      <div class="document">
+        <main id="main" tabindex="-1"><slot /></main>
+        <footer class="site-footer">
+          <span>© {new Date().getFullYear()} {site.author}</span><span
+            >Written in Markdown. Made for reading.</span
+          ><a href="#top">Back to top ↑</a>
+        </footer>
+      </div>
+    </div>
+    <script>
+      const navigation =
+        document.querySelector<HTMLDetailsElement>('#navigation');
+      const mobile = window.matchMedia('(max-width: 760px)');
+      function adaptNavigation() {
+        if (navigation) navigation.open = !mobile.matches;
+      }
+      adaptNavigation();
+      mobile.addEventListener('change', adaptNavigation);
+      const folders = [
+        ...document.querySelectorAll<HTMLDetailsElement>('[data-folder]'),
+      ];
+      const storageKey = document.querySelector<HTMLElement>(
+        '[data-folder-state-key]',
+      )!.dataset.folderStateKey!;
+      let saved: Record<string, boolean> = {};
+      try {
+        saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      } catch {}
+      for (const folder of folders) {
+        const key = folder.dataset.folder!;
+        if (key in saved) folder.open = saved[key];
+        folder.addEventListener('toggle', () => {
+          saved[key] = folder.open;
+          try {
+            localStorage.setItem(storageKey, JSON.stringify(saved));
+          } catch {}
+        });
+      }
+      document
+        .querySelectorAll<HTMLAnchorElement>('[data-folder-page]')
+        .forEach((link) => {
+          link.addEventListener('click', (event) => {
+            if (
+              event.button !== 0 ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey
+            )
+              return;
+            const folder = link.closest<HTMLDetailsElement>('[data-folder]');
+            if (!folder) return;
+            if (link.pathname === window.location.pathname) {
+              event.preventDefault();
+              folder.open = !folder.open;
+            } else {
+              folder.open = true;
+            }
+            saved[folder.dataset.folder!] = folder.open;
+            try {
+              localStorage.setItem(storageKey, JSON.stringify(saved));
+            } catch {}
+          });
+        });
+    </script>
+    <script is:inline type="module">
+      // Pagefind is generated after the Astro build, so it loads outside the bundle.
+      window.loadPagefind = () => import('/pagefind/pagefind.js');
+    </script>
+    <script>
+      import '../scripts/search';
+    </script>
+  </body>
+</html>

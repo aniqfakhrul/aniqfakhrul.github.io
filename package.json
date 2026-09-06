@@ -1,0 +1,53 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An Obsidian-friendly cyber security notebook with a classic web theme",
+  "engines": {
+    "node": ">=24"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "npm run content:prepare && tsx scripts/dev.ts",
+    "build": "tsx scripts/prepare.ts && astro build && pagefind --site dist",
+    "preview": "sirv dist --dev --host 127.0.0.1 --port 4323",
+    "check": "astro check",
+    "test": "tsx --test tests/unit/*.test.ts",
+    "test:e2e": "playwright test",
+    "archives:sync": "git submodule update --init --recursive --remote content",
+    "content:prepare": "tsx scripts/prepare.ts",
+    "verify": "tsx scripts/verify.ts",
+    "format": "prettier --write src scripts tests astro.config.mjs playwright.config.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.13.3",
+    "pagefind": "^1.5.2",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "sirv-cli": "^3.0.1",
+    "tsx": "^4.23.13",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "astro": "^7.3.1",
+    "gray-matter": "^4.0.3",
+    "image-size": "^2.0.2",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-slug": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "^4.4.3",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "yaml": "^2.9.0",
+    "zod": "^4.5.4"
+  }
+}

@@ -1,0 +1,31 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Generated site and content
+.astro/
+.cache/
+dist/
+public/media/
+.DS_Store
+.playwright-mcp/
+
+# Per-machine assistant tooling and local state
+.agents/
+.codex/
+.cursor/
+.gemini/
+.grok/
+.hermes/
+.opencode/
+.pi/
+.claude/settings.local.json
+.impeccable/review/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
+.claude/skills/

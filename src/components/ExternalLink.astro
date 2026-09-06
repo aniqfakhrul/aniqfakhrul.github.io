@@ -1,0 +1,50 @@
+---
+interface Props {
+  link: { label: string; url: string; icon?: string };
+}
+const { link } = Astro.props;
+const known = ['github', 'x', 'rss'].includes(link.icon ?? '');
+---
+
+<a
+  class="external-link"
+  href={link.url}
+  aria-label={link.label}
+  title={link.label}
+>
+  {
+    known ? (
+      <svg
+        width="17"
+        height="17"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        {link.icon === 'github' && (
+          <>
+            <path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-3.3a2.9 2.9 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3s-1.1-.3-3.5 1.3a12 12 0 0 0-6.4 0C6 3.6 4.9 3.9 4.9 3.9a4.3 4.3 0 0 0-.1 3.3 4.7 4.7 0 0 0-1.3 3.3c0 4.7 2.8 5.7 5.5 6a2.9 2.9 0 0 0-.8 2.2V22" />
+          </>
+        )}
+        {link.icon === 'x' && (
+          <>
+            <path d="M4 4h4l12 16h-4z" />
+            <path d="m20 4-6.5 7.5M4 20l6.5-7.5" />
+          </>
+        )}
+        {link.icon === 'rss' && (
+          <>
+            <circle cx="5" cy="19" r="1" fill="currentColor" />
+            <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16" />
+          </>
+        )}
+      </svg>
+    ) : (
+      link.label
+    )
+  }
+</a>

@@ -1,0 +1,49 @@
+site:
+  title: Nix
+  author: Aniq Fakhrul
+  description: Cyber security notes, research, and presentations.
+  tagline: Cyber security · research · personal notes
+  url: https://aniqfakhrul.github.io
+  language: en
+  links:
+    - label: GitHub
+      url: https://github.com/aniqfakhrul
+      icon: github
+    - label: X / Contact
+      url: https://x.com/aniqfakhrul
+      icon: x
+    - label: RSS feed
+      url: /rss.xml
+      icon: rss
+
+content:
+  directory: content
+  # Empty means all folders start collapsed. Add folder paths to open by default.
+  defaultExpandedFolders: []
+  dateLocale: en-GB
+  timeZone: UTC
+
+source:
+  repository: https://github.com/aniqfakhrul/archives
+  branch: master
+
+theme:
+  sidebarWidth: 218
+  bodySize: 16
+  articleSize: 16
+  uiSize: 12
+  headingSize: 22
+  readingFont: '"Times New Roman", Times, serif'
+  uiFont: 'Arial, Helvetica, sans-serif'
+  colors:
+    brand: '#6698ce'
+    brandStroke: '#4b66ab'
+    paper: '#ffffff'
+    ink: '#161616'
+    navy: '#000080'
+    link: '#0000cc'
+    visited: '#67429a'
+    sidebar: '#dce7f6'
+    line: '#b7c9e2'
+    subtle: '#f2f5fa'
+    muted: '#475977'

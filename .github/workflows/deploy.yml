@@ -1,0 +1,77 @@
+name: Build and deploy notebook
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+  repository_dispatch:
+    types: [archives-updated]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  # Production deployments run to completion; only superseded pull-request builds are cancelled.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Load latest archives on deployment builds
+        if: github.event_name != 'pull_request'
+        run: git submodule update --init --recursive --remote content
+      - name: Fetch archive history for note dates
+        run: |
+          if [ "$(git -C content rev-parse --is-shallow-repository)" = "true" ]; then
+            git -C content fetch --unshallow
+          fi
+          git -C content rev-parse HEAD > archives-revision.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: npm run check
+      - name: Verify generated internal links and asset budget
+        run: npm run verify
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Keep the build report even when a step fails
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: content-build-report
+          path: |
+            archives-revision.txt
+            .cache/content-warnings.txt
+            playwright-report/
+          include-hidden-files: true
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
